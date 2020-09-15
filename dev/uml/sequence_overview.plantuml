@@ -1,0 +1,109 @@
+@startuml
+
+title MaSiMiWa - Sequence Overview
+header version: %date("dd.MM.yyyy")
+'header version: 23.11.2018
+
+skinparam defaultFontName Helvetica
+
+skinparam shadowing false
+
+participant "SEEK" as seek
+box "MaSyMoS"
+    control "MaSiMiWa" as miwa
+    control "MaSyMoS-Morre" as morre
+    database "masymos_neo4j_database" as db
+
+
+activate seek #aaf
+
+== INSERT ==
+
+hnote over seek
+    * user added a public model
+    * user made a model public
+end note
+
+seek            ->      miwa            : insert_mode(id)
+    activate miwa
+
+seek            <-      miwa            : get json (link)
+seek            -->     miwa
+    
+    miwa            ->      morre           : TODO insert
+        activate morre
+        
+        morre           ->]                     : get file from Internet
+        morre           <--]
+
+        morre           ->      db              : insert new model
+            activate db
+        morre           <--     db              : SUCCESS
+            deactivate db
+        
+    miwa            <--     morre           : TODO
+        deactivate morre
+
+    miwa            ->      morre           : TODO update annotations,\nontology etc (id)
+        activate morre
+
+        morre           ->]                     : get data from Internet
+        morre           <--]
+
+        morre           ->      db              : insert additional data
+            activate db
+        morre           <--     db              : SUCCESS
+            deactivate db
+    
+    miwa            <--     morre           : TODO
+        deactivate morre 
+
+seek            <--     miwa            : SUCCESS
+
+    deactivate miwa
+
+== DELETE ==
+
+hnote over seek
+    * user deleted a public model
+    * user made a public model non-public
+end note
+
+seek            ->      miwa            : delete_model(id)
+    activate miwa
+    
+    miwa            ->      morre           : TODO delete (id)
+        activate morre
+    
+        morre           ->      db              : delete model
+            activate db
+        morre           <--     db              : SUCCESS
+            deactivate db
+
+    miwa            <--     morre           : SUCCESS
+        deactivate morre 
+
+seek            <-      miwa            : SUCCESS
+    deactivate miwa 
+
+
+
+== UPDATE ==
+
+hnote over seek
+    * user uploads a new version
+       to a public model
+end note
+
+seek            ->      miwa            : update_model(id)
+    activate miwa
+
+    note over miwa,db #fff
+        # do a DELETE
+        # do an INSERT
+    end note
+
+seek            <-      miwa            : SUCCESS
+    deactivate miwa 
+
+@enduml
