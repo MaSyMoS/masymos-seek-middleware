@@ -12,12 +12,28 @@ Questions&Answers
 Seek
 ####
 
-Is the SEEK-ID(json) persistent?
-================================
+What SEEK-ID in json is persistent?
+===================================
 - Answered on 03.09.2020 by SO
-    - SEEK-id and version (i.e. https://fairdomhub.org/models/20.json?version=1) is bound to domain name
+    - SEEK-id(20) and version(1) (i.e. https://fairdomhub.org/models/20.json?version=1) is bound to domain name
         - domain change → force recreate DB
-    - the uuid is persistent
+    - the uuid is persistent per model
+- Overview of the if-related fields (`issue <https://github.com/MaSyMoS/masymos-seek-middleware/issues/6>`__)
+    - ``data.id``
+        - points to the model, ignoring the version (**model id**)
+        - i.e. ``24``
+    - ``data.meta.uuid``
+        - points to the model, ignoring the version (**model uuid**)
+        - i.e. ``67bb3ce0-caa7-0138-f7f7-0242ac120004``
+    - ``data.links.self``
+        - points to the model + version without domain dependency (**model relative link**)
+        - i.e. ``/models/24?version=3``
+    - ``data.attributes.version``
+        - provides the current version number (**model version**)
+        - i.e. ``3``
+    - ``data.attributes.versions.?.url`` (*? is version number*)
+        - provides the model + version with domain dependency (**model absolute link**)
+        - i.e. ``https://sandbox2.fairdomhub.org/models/24.json?version=3``
 
 Are SEEK-ids reused?
 ====================

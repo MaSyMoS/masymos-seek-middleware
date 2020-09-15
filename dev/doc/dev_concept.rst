@@ -17,6 +17,8 @@ The middleware is für INSERT, UPDATE, DELETE.
 
 MaSyMoS-Morre is used as query tool by SEEK.
 
+.. image:: ../uml/structure_overview.svg
+
 Requirements
 ############
 

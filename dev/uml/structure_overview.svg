@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="356px" preserveAspectRatio="none" style="width:500px;height:356px;" version="1.1" viewBox="0 0 500 356" width="500px" zoomAndPan="magnify">
+    <defs />
+    <g><text fill="#888888" font-family="Helvetica" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="95" x="387.5" y="9.2822">version: 15.09.2020</text><text fill="#000000" font-family="Helvetica" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="198" x="142.25" y="28.3486">MaSiMiWa - Overview</text>
+        <!--MD5=[2d7500f8374d846d07e76d62bc1d254d]
+cluster d_miwa-->
+        <rect fill="#CCCCFF" height="113" style="stroke: #000000; stroke-width: 1.5;" width="262" x="221.5" y="39.5938" />
+        <rect fill="#CCCCFF" height="10" style="stroke: #000000; stroke-width: 1.5;" width="15" x="463.5" y="44.5938" />
+        <rect fill="#CCCCFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="461.5" y="46.5938" />
+        <rect fill="#CCCCFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="461.5" y="50.5938" /><text fill="#000000" font-family="Helvetica" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="136" x="284.5" y="65.5889">«docker-container»</text><text fill="#000000" font-family="Helvetica" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="77" x="314" y="81.8857">MaSiMiWa</text>
+        <!--MD5=[508240eeacbe0e9093178647d3e8c5bd]
+cluster d_neo4j-->
+        <rect fill="#CCCCFF" height="130" style="stroke: #000000; stroke-width: 1.5;" width="190" x="55.5" y="215.5938" />
+        <rect fill="#CCCCFF" height="10" style="stroke: #000000; stroke-width: 1.5;" width="15" x="225.5" y="220.5938" />
+        <rect fill="#CCCCFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="223.5" y="222.5938" />
+        <rect fill="#CCCCFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="223.5" y="226.5938" /><text fill="#000000" font-family="Helvetica" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="136" x="82.5" y="241.5889">«docker-container»</text><text fill="#000000" font-family="Helvetica" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="125" x="88" y="257.8857">masymos_neo4j</text>
+        <!--MD5=[3b93063a3927901e04f190caef2b6fa5]
+cluster d_db-->
+        <rect fill="#CCCCFF" height="112" style="stroke: #000000; stroke-width: 1.5;" width="220" x="269.5" y="224.5938" />
+        <rect fill="#CCCCFF" height="10" style="stroke: #000000; stroke-width: 1.5;" width="15" x="469.5" y="229.5938" />
+        <rect fill="#CCCCFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="467.5" y="231.5938" />
+        <rect fill="#CCCCFF" height="2" style="stroke: #000000; stroke-width: 1.5;" width="4" x="467.5" y="235.5938" /><text fill="#000000" font-family="Helvetica" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="122" x="318.5" y="250.5889">«docker-volume»</text><text fill="#000000" font-family="Helvetica" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="204" x="277.5" y="266.8857">masymos_neo4j_database</text>
+        <!--MD5=[ae0d0068ac0ef81694876e8fca011d01]
+entity miwa-->
+        <polygon fill="#FFFFFF" points="237.5,100.5938,247.5,90.5938,467.5,90.5938,467.5,126.8906,457.5,136.8906,237.5,136.8906,237.5,100.5938" style="stroke: #000000; stroke-width: 1.5;" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="457.5" x2="467.5" y1="100.5938" y2="90.5938" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="237.5" x2="457.5" y1="100.5938" y2="100.5938" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="457.5" x2="457.5" y1="100.5938" y2="136.8906" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="190" x="252.5" y="123.5889">MaSyMoS-SEEK-Middleware</text>
+        <!--MD5=[6a1fdf58a6ccf033c5989c890f6048c5]
+entity n-->
+        <polygon fill="#FFFFFF" points="71.5,276.5938,81.5,266.5938,229.5,266.5938,229.5,319.1875,219.5,329.1875,71.5,329.1875,71.5,276.5938" style="stroke: #000000; stroke-width: 1.5;" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="219.5" x2="229.5" y1="276.5938" y2="266.5938" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="71.5" x2="219.5" y1="276.5938" y2="276.5938" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="219.5" x2="219.5" y1="276.5938" y2="329.1875" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="118" x="86.5" y="299.5889">Neo4j Webserver</text><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="86.5" y="315.8857">with MaSyMoS</text>
+        <!--MD5=[9fd9ce6e4692a8f91202a3db3dd67be0]
+entity n_db-->
+        <path d="M286,285.5938 C286,275.5938 351.5,275.5938 351.5,275.5938 C351.5,275.5938 417,275.5938 417,285.5938 L417,310.8906 C417,320.8906 351.5,320.8906 351.5,320.8906 C351.5,320.8906 286,320.8906 286,310.8906 L286,285.5938 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;" />
+        <path d="M286,285.5938 C286,295.5938 351.5,295.5938 351.5,295.5938 C351.5,295.5938 417,295.5938 417,285.5938 " fill="none" style="stroke: #000000; stroke-width: 1.5;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="296" y="312.5889">Neo4j-Database</text>
+        <!--MD5=[d3a850e9f4d87884bd01951c343a26b2]
+entity seek-->
+        <polygon fill="#FEFECE" points="72.5,100.5938,82.5,90.5938,148.5,90.5938,148.5,126.8906,138.5,136.8906,72.5,136.8906,72.5,100.5938" style="stroke: #000000; stroke-width: 1.5;" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="138.5" x2="148.5" y1="100.5938" y2="90.5938" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="72.5" x2="138.5" y1="100.5938" y2="100.5938" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="138.5" x2="138.5" y1="100.5938" y2="136.8906" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="87.5" y="123.5889">SEEK</text>
+        <!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+entity user-->
+        <ellipse cx="21.5" cy="84.0938" fill="#FEFECE" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M21.5,92.0938 L21.5,119.0938 M8.5,100.0938 L34.5,100.0938 M21.5,119.0938 L8.5,134.0938 M21.5,119.0938 L34.5,134.0938 " fill="none" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="31" x="6" y="149.5889">user</text>
+        <!--MD5=[44d3570814c06342ca47dd5234295ec8]
+link user to seek-->
+        <path d="M37.1445,113.5938 C47.149,113.5938 57.1534,113.5938 67.1579,113.5938 " fill="none" id="user-to-seek" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="72.3895,113.5938,63.3895,109.5938,67.3895,113.5938,63.3895,117.5938,72.3895,113.5938" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[72b8b13cd79f0df29326d7a3bd0223c3]
+link seek to miwa-->
+        <path d="M148.579,113.5938 C171.416,113.5938 201.847,113.5938 232.218,113.5938 " fill="none" id="seek-to-miwa" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="237.487,113.5938,228.487,109.5938,232.487,113.5938,228.487,117.5938,237.487,113.5938" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="45" x="170.5" y="76.6606">INSERT</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="167" y="91.7935">UPDATE</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="48" x="169" y="106.9263">DELETE</text>
+        <!--MD5=[24eaad037639f59216a6a15585db24d5]
+link seek to n-->
+        <path d="M115.325,136.6078 C122.098,167.5108 134.505,224.1148 142.626,261.1678 " fill="none" id="seek-to-n" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="143.792,266.4879,145.7712,256.8399,142.7209,261.6039,137.9569,258.5536,143.792,266.4879" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="48" x="129.5" y="195.6606">SELECT</text>
+        <!--MD5=[70b5afaaa6e41002832ba6ae077c5ea0]
+link miwa to n-->
+        <path d="M328.134,136.6078 C293.368,168.0168 229.215,225.9778 188.265,262.9746 " fill="none" id="miwa-to-n" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="184.376,266.4879,193.7359,263.423,188.0863,263.1362,188.3732,257.4866,184.376,266.4879" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[0138ab3c45fa48d6cd3efb8496ec25cd]
+link n to n_db-->
+        <path d="M229.801,298.0938 C246.746,298.0938 263.692,298.0938 280.638,298.0938 " fill="none" id="n-to-n_db" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="285.897,298.0938,276.897,294.0938,280.897,298.0938,276.897,302.0938,285.897,298.0938" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[f8b5279adc5c05b170b47b1269b13d64]
+@startuml
+
+title MaSiMiWa - Overview
+header version: %date("dd.MM.yyyy")
+'header version: 23.11.2018
+
+skinparam defaultFontName Helvetica
+
+skinparam shadowing false
+
+node "SEEK" as seek
+
+component "MaSiMiWa" as d_miwa <<docker-container>> #ccf {
+    node "MaSyMoS-SEEK-Middleware" as miwa #fff
+}
+
+component "masymos_neo4j" as d_neo4j <<docker-container>> #ccf {
+    node "Neo4j Webserver\nwith MaSyMoS" as n #fff
+}
+
+component "masymos_neo4j_database" as d_db <<docker-volume>> #ccf {
+    database "Neo4j-Database" as n_db
+}
+
+actor "user" as user
+
+user    ->      seek
+seek    ->      miwa    : INSERT\nUPDATE\nDELETE
+seek    - ->     n       : SELECT
+miwa    - ->     n
+n       ->      n_db
+
+@enduml
+
+@startuml
+
+title MaSiMiWa - Overview
+header version: 15.09.2020
+
+skinparam defaultFontName Helvetica
+
+skinparam shadowing false
+
+node "SEEK" as seek
+
+component "MaSiMiWa" as d_miwa <<docker-container>> #ccf {
+    node "MaSyMoS-SEEK-Middleware" as miwa #fff
+}
+
+component "masymos_neo4j" as d_neo4j <<docker-container>> #ccf {
+    node "Neo4j Webserver\nwith MaSyMoS" as n #fff
+}
+
+component "masymos_neo4j_database" as d_db <<docker-volume>> #ccf {
+    database "Neo4j-Database" as n_db
+}
+
+actor "user" as user
+
+user    ->      seek
+seek    ->      miwa    : INSERT\nUPDATE\nDELETE
+seek    - ->     n       : SELECT
+miwa    - ->     n
+n       ->      n_db
+
+@enduml
+
+PlantUML version 1.2020.16(Sun Aug 23 22:20:43 CEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+    </g>
+</svg>
