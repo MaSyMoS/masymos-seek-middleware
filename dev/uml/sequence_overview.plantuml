@@ -5,7 +5,6 @@ header version: %date("dd.MM.yyyy")
 'header version: 23.11.2018
 
 skinparam defaultFontName Helvetica
-
 skinparam shadowing false
 
 participant "SEEK" as seek
@@ -24,7 +23,7 @@ hnote over seek
     * user made a model public
 end note
 
-seek            ->      miwa            : insert_mode(id)
+seek            ->      miwa            : insert_model(id)
     activate miwa
 
 seek            <-      miwa            : get json (link)
@@ -33,7 +32,7 @@ seek            -->     miwa
     miwa            ->      morre           : TODO insert
         activate morre
         
-        morre           ->]                     : get file from Internet
+        morre           ->]                     : get file from the Internet
         morre           <--]
 
         morre           ->      db              : insert new model
@@ -47,7 +46,7 @@ seek            -->     miwa
     miwa            ->      morre           : TODO update annotations,\nontology etc (id)
         activate morre
 
-        morre           ->]                     : get data from Internet
+        morre           ->]                     : get data from the Internet
         morre           <--]
 
         morre           ->      db              : insert additional data
@@ -61,6 +60,11 @@ seek            -->     miwa
 seek            <--     miwa            : SUCCESS
 
     deactivate miwa
+
+
+
+
+
 
 == DELETE ==
 
@@ -88,6 +92,9 @@ seek            <-      miwa            : SUCCESS
 
 
 
+
+
+
 == UPDATE ==
 
 hnote over seek
@@ -105,5 +112,61 @@ seek            ->      miwa            : update_model(id)
 
 seek            <-      miwa            : SUCCESS
     deactivate miwa 
+
+
+
+
+== BATCH ==
+
+hnote over seek
+    * admin forces recreation of masymos-db
+end note
+
+seek            ->      miwa            : insert_models(id<<List>>)
+    activate miwa
+
+seek            <-      miwa            : get json (link)
+seek            -->     miwa
+
+    loop #efe id_list
+
+    miwa            ->      morre           : TODO insert
+        activate morre
+        
+        morre           ->]                     : get file from the Internet
+        morre           <--]
+
+        morre           ->      db              : insert new model
+            activate db
+        morre           <--     db              : SUCCESS
+            deactivate db
+        
+    miwa            <--     morre           : TODO
+        deactivate morre
+    
+    end
+
+    miwa            ->      morre           : TODO update annotations,\nontology etc (id)
+        activate morre
+
+        morre           ->]                     : get data from the Internet
+        morre           <--]
+
+        morre           ->      db              : insert additional data
+            activate db
+        morre           <--     db              : SUCCESS
+            deactivate db
+    
+    miwa            <--     morre           : TODO
+        deactivate morre 
+
+seek            <--     miwa            : SUCCESS
+
+    deactivate miwa
+
+
+
+
+
 
 @enduml
