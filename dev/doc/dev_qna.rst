@@ -12,6 +12,13 @@ Questions&Answers
 Seek
 ####
 
+What links are used by the seek-users to link their models?
+===========================================================
+- Answered on 16.09.2020 by SO
+    - there is no restriction on this field, the user can link the model directly or link a website
+- impact
+    - MaSeMiWa must check the target and try to find the model file in the ``content_blobs`` field
+
 What SEEK-ID in json is persistent?
 ===================================
 - Answered on 03.09.2020 by SO

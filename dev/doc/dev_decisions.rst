@@ -39,6 +39,15 @@ MaSyMoS indexes only the latest version
 Connection SEEK - Middleware
 ############################
 
+What ID to use between SEEK and MaSeMiWa to reference a Model?
+==============================================================
+- Decision made on 16.09.2020 by SO, RH, BW
+- Description
+    - use the full URL
+    - optional ``.json``
+    - ignore ``?version=*``
+    - i.e. ``https://fairdomhub.org/models/196.json``, ``https://fairdomhub.org/models/196``, ``https://fairdomhub.org/models/196.json?version=3``
+
 Restricted access rights for the middleware
 ===========================================
 - Decision made on 03.09.2020 by SO, RH, BW
