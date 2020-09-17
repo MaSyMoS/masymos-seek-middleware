@@ -20,6 +20,25 @@ Connecting SEEK - MaSyMoS Morre
     - visual: insert third blue source button
     - decide later: add as "external" search?
 
+Changes in MaSyMoS Morre
+########################
+
+Reference Model via SEEK-ID
+===========================
+- Decision made on 17.09.2020 by RH, BW
+- Description
+    - in the MaSyMoS-database inside the document root is the following meta data
+        - ``filename`` original filename
+		- ``uid`` - generated unique Morre-ID
+		- ``uri`` - internal URI
+		- ``version_id`` - internal version
+		- ``version`` - used by dokument (i.e. sbml)
+		- ``level`` - used by dokument (i.e. sbml)
+    - the used SEEK-ID (URL to model) is stored in ``uri`` - this is the main ID
+    - the used model-version is stored in ``version_id``
+- impact
+    - Morre needs a function to find models by ``uri``
+
 General Concept Middleware
 ##########################
 
