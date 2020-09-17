@@ -10,12 +10,12 @@ skinparam shadowing false
 
 node "SEEK" as seek
 
-component "MaSiMiWa" as d_miwa <<docker-container>> #ccf {
+component "masymos_masimiwa" as d_miwa <<docker-container>> #ccf {
     node "MaSyMoS-SEEK-Middleware" as miwa #fff
 }
 
 component "masymos_neo4j" as d_neo4j <<docker-container>> #ccf {
-    node "Neo4j Webserver\nwith MaSyMoS" as n #fff
+    node "Neo4j Webserver\nwith MaSyMoS Morre" as n #fff
 }
 
 component "masymos_neo4j_database" as d_db <<docker-volume>> #ccf {
