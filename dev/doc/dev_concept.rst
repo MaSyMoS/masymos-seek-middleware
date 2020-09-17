@@ -39,4 +39,14 @@ Requirements - MaSyMoS
 - bulk-import to create/reset the MaSyMoS-database
     - list of all available model-URLs
 
+Process description
+===================
+
+.. image:: ../uml/sequence_overview.svg
+
+
+
+
+
+
 

@@ -15,6 +15,7 @@ box "MaSyMoS"
 
 
 activate seek #aaf
+    activate miwa #afa
 
 == INSERT ==
 
@@ -29,7 +30,7 @@ seek            ->      miwa            : insert_model(id)
 seek            <-      miwa            : get json (link)
 seek            -->     miwa
     
-    miwa            ->      morre           : TODO insert
+    miwa            ->      morre           : ""add_model""
         activate morre
         
         morre           ->]                     : get file from the Internet
@@ -40,10 +41,14 @@ seek            -->     miwa
         morre           <--     db              : SUCCESS
             deactivate db
         
-    miwa            <--     morre           : TODO
+    miwa            <--     morre           : SUCCESS
         deactivate morre
 
-    miwa            ->      morre           : TODO update annotations,\nontology etc (id)
+seek            <--     miwa            : SUCCESS
+    miwa            ->      miwa        : start annotation job in background
+    activate miwa
+
+    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
         activate morre
 
         morre           ->]                     : get data from the Internet
@@ -54,12 +59,12 @@ seek            -->     miwa
         morre           <--     db              : SUCCESS
             deactivate db
     
-    miwa            <--     morre           : TODO
+    miwa            <--     morre           : SUCCESS
         deactivate morre 
-
-seek            <--     miwa            : SUCCESS
-
     deactivate miwa
+    deactivate miwa
+
+
 
 
 
@@ -76,7 +81,7 @@ end note
 seek            ->      miwa            : delete_model(id)
     activate miwa
     
-    miwa            ->      morre           : TODO delete (id)
+    miwa            ->      morre           : ""delete_model""
         activate morre
     
         morre           ->      db              : delete model
@@ -120,6 +125,9 @@ seek            <-      miwa            : SUCCESS
 
 hnote over seek
     * admin forces recreation of masymos-db
+    * can take several hours
+    * data is not usable before annotating is done,
+       so wait with the SUCCESS until finished
 end note
 
 seek            ->      miwa            : insert_models(id<<List>>)
@@ -128,9 +136,18 @@ seek            ->      miwa            : insert_models(id<<List>>)
 seek            <-      miwa            : get json (link)
 seek            -->     miwa
 
+    miwa            ->      morre           : delete whole database
+        activate morre
+        morre           ->      db              : delete whole database
+            activate db
+        morre           <--     db
+            deactivate db
+    miwa            <--     morre           : SUCCESS
+        deactivate morre
+
     loop #efe id_list
 
-    miwa            ->      morre           : TODO insert
+    miwa            ->      morre           : ""add_model""
         activate morre
         
         morre           ->]                     : get file from the Internet
@@ -141,13 +158,15 @@ seek            -->     miwa
         morre           <--     db              : SUCCESS
             deactivate db
         
-    miwa            <--     morre           : TODO
+    miwa            <--     morre           : SUCCESS
         deactivate morre
     
     end
 
-    miwa            ->      morre           : TODO update annotations,\nontology etc (id)
+    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
         activate morre
+
+        loop #efe annotations
 
         morre           ->]                     : get data from the Internet
         morre           <--]
@@ -156,8 +175,10 @@ seek            -->     miwa
             activate db
         morre           <--     db              : SUCCESS
             deactivate db
+        
+        end
     
-    miwa            <--     morre           : TODO
+    miwa            <--     morre           : SUCCESS
         deactivate morre 
 
 seek            <--     miwa            : SUCCESS
