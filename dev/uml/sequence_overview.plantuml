@@ -30,6 +30,7 @@ seek            ->      miwa            : insert_model(id)
 seek            <-      miwa            : get json (link)
 seek            -->     miwa
     
+    loop #ffe insert each content
     miwa            ->      morre           : ""add_model""
         activate morre
         
@@ -43,6 +44,7 @@ seek            -->     miwa
         
     miwa            <--     morre           : SUCCESS
         deactivate morre
+    end
 
 seek            <--     miwa            : SUCCESS
     miwa            ->      miwa        : start annotation job in background
@@ -146,6 +148,8 @@ seek            -->     miwa
         deactivate morre
 
     loop #efe id_list
+    
+    loop #ffe insert each content
 
     miwa            ->      morre           : ""add_model""
         activate morre
@@ -161,6 +165,7 @@ seek            -->     miwa
     miwa            <--     morre           : SUCCESS
         deactivate morre
     
+    end
     end
 
     miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//

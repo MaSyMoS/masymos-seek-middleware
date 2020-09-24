@@ -19,13 +19,20 @@ MaSyMoS-Morre is used as query tool by SEEK.
 
 .. image:: ../uml/structure_overview.svg
 
+Terminology
+###########
+- model
+    - a SEEK model, can have more then one valid content files attached
+- content
+    - a valid file to use with MaSyMoS Morre (SBM, CellML, SEDML)
+
 Requirements
 ############
 
 Requirements - MaSyMoS
 ======================
 
-- MaSyMoS needs an permalink (unique, never changing identifier) per model and version 
+- MaSyMoS needs an permalink (unique, never changing identifier) per model/content and version 
     - mandatory for update, delete
     - given with
         - SEEK id+version, i.e. https://fairdomhub.org/models/20.json

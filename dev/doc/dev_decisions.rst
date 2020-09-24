@@ -34,7 +34,7 @@ Reference Model via SEEK-ID
 		- ``version_id`` - internal version
 		- ``version`` - used by dokument (i.e. sbml)
 		- ``level`` - used by dokument (i.e. sbml)
-    - the used SEEK-ID (URL to model) is stored in ``uri`` - this is the main ID
+    - the used ID (URL to model.content) is stored in ``uri`` - this is the main ID
     - the used model-version is stored in ``version_id``
 - impact
     - Morre needs a function to find models by ``uri``
@@ -54,6 +54,27 @@ MaSyMoS indexes only the latest version
 - Decision made on 03.09.2020 by SO, RH, BW
 - Description
     - for now MaSyMoS has no versioning of the models in relation with SEEK
+
+Middleware and MaSyMoS-Morre will not unpack archives
+=====================================================
+- Decision made on 17.09.2020 by RH, BW
+- Description
+    - models packed in archives cannot be added
+
+Supported Model Types: SBML, CELLML, SEDML
+==========================================
+- Decision made on 18.09.2020 by RH, BW
+- Description
+    - SBML < v3
+    - SEDML < Level 1 Version 3
+
+Allowed Content MIME Types
+==========================
+- Decision made on 18.09.2020 by RH, BW
+- Description
+    - ``application/sbml+xml``
+    - ``application/xml``
+    - ``text/xml``
 
 Connection SEEK - Middleware
 ############################
@@ -89,12 +110,13 @@ call Seek API to get all necessary data
 - Description
     - question was, HOW to get data for id 
 
-Multiple models for one model ID in the ``content_blobs``
-=========================================================
+Multiple contents for one model ID in the ``content_blobs``
+===========================================================
 - Decision made on 03.09.2020 by SO, RH, BW
 - Description
     - check file type
     - check for validity in middleware/MaSyMoS
+    - import all valid contents
 
 Batch/Bulk-import/reset is forced by SEEK
 =========================================
@@ -106,6 +128,14 @@ Batch/Bulk-import/reset is forced by SEEK
 
 Connection Middleware - MaSyMoS
 ###############################
+
+What ID to use between MaSeMiWa and MaSyMoS Morre to reference a Content?
+=========================================================================
+- Decision made on 24.09.2020 by RH, BW
+- Description
+    - one SEEK model can have several valid entries inside the ``content_blobs`` field
+    - to have all these entries inside Morre, we use the full URL to the Blobs instead the link to the model, i.e. ``https://fairdomhub.org/models/196/content_blobs/8745``
+    - the SEEK model ID is included; it's human readable
 
 Deleting a model will not delete any annotations
 ================================================
