@@ -42,8 +42,15 @@ Requirements - MaSyMoS
 Process description
 ===================
 
+Sequence Overview
+-----------------
+
 .. image:: ../uml/sequence_overview.svg
 
+INSERT-Process
+--------------
+
+.. image:: ../uml/activity_insert.svg
 
 
 

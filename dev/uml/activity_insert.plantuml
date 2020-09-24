@@ -16,43 +16,36 @@ skinparam shadowing false
     stop
 !enddefinelong
 !definelong file_failed()
-    :log reason;
-    info(continue)
-    detach
+''    :log;
+''    info(continue)
+''    detach
 !enddefinelong
 
 start
 
 info(file link known)
 
-if (fetch metadate for ID) then (error)
+if (fetch metadata for ID) then (error)
     stoperror(Return 404)
 
 else (success)
     repeat :iterate over ""content_blobs"";
         if (check MIME in allow list) then (no)
             file_failed()
-        else (yes)
-            if (Download file) then (failed)
-                file_failed()
-            else (success)
-                if (validate XML) then (invalid)
-                    file_failed()
-                else (valid)
-                    if (validate namespace) then (invalid)
-                        file_failed()
-                    else (valid)
-                        if (send INSERT to Morre) then (failed)
-                            file_failed()
-                        else (success)
-                            :log "imported model xyz";
-                            :break}
-                            detach
-                        endif
-                    endif
-                endif
-            endif
+        elseif (Download file) then (failed)
+            file_failed()
+        elseif (validate XML) then (invalid)
+            file_failed()
+        elseif (validate namespace) then (invalid)
+            file_failed()
+        elseif (send INSERT to Morre) then (failed)
+            file_failed()
+        else (success)
+''            :log "imported model xyz";
         endif
+        
+        :log;
+        
     repeat while (next item?)
 
     if (s.th. was imported?) then (yes)
