@@ -37,7 +37,8 @@ Reference Model via SEEK-ID
     - the used ID (URL to model.content) is stored in ``uri`` - this is the main ID
     - the used model-version is stored in ``version_id``
 - impact
-    - Morre needs a function to find models by ``uri``
+    - Morre needs a function to find model.contents by ``uri`` (i.e. ``https://fairdomhub.org/models/196/content_blobs/8745``)
+    - Morre needs a function to find model.contents by short ``uri`` with only the model id for DELETE and UPDATE (i.e. ``https://fairdomhub.org/models/196``)
 
 General Concept Middleware
 ##########################
@@ -60,13 +61,6 @@ Middleware and MaSyMoS-Morre will not unpack archives
 - Decision made on 17.09.2020 by RH, BW
 - Description
     - models packed in archives cannot be added
-
-Supported Model Types: SBML, CELLML, SEDML
-==========================================
-- Decision made on 18.09.2020 by RH, BW
-- Description
-    - SBML < v3
-    - SEDML < Level 1 Version 3
 
 Allowed Content MIME Types
 ==========================

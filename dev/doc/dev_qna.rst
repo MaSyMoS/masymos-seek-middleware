@@ -57,3 +57,17 @@ Working with SEEK-versions
     - no
 - Versioning is linear, right?
     - yes
+
+MaSyMoS Morre
+#############
+
+Supported Model Types: SBML, CELLML, SEDML
+==========================================
+- Answered on 30.09.2020 by RH
+- Description
+    - SBML < Level 3, namespaces:
+        - ``http://www.sbml.org/sbml/level1/*``
+        - ``http://www.sbml.org/sbml/level2/*``
+        - SBML versions have no big impact
+    - SEDML < Level 1 Version 3
+    - CELLML <= Version 1.1
