@@ -1,4 +1,3 @@
-from mimetypes import init
 from typing import List
 
 mime_type_allow_list: List = ['application/sbml+xml', \
