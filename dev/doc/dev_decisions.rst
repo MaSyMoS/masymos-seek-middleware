@@ -152,10 +152,9 @@ Annotation-Scanning in the background
     - getting all Annotations for all models can be difficult because this is highly depending on the network and the servers with the data
     - the middleware run automatically once or twice a day the ``create_annotation_index`` job
 
-Response on INSERT directly after inserting the model; Response on Batch/Bulk-import/reset after annotation runner finished
-===========================================================================================================================
-- Decision made on 17.09.2020 by RH, BW
+Response on INSERT an Batch/Bulk-import/reset after Check
+=========================================================
+- Decision made on 20.10.2020 by RH, BW
 - Description
-    - after an INSERT, the middleware returns SUCCESS to the caller, then the ``create_annotation_index`` job is triggered
-    - when starting a Batch/Bulk-import/reset, the Response is sent after the ``create_annotation_index`` job
-        - because the database is not usable for SEEK until this job has finished
+    - after checking the import-request and adding valid models to the Queue, MaSeMiWa will response with 200 - SUCCESS
+    - if there is nothing to import, the return code will differ

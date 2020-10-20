@@ -1,11 +1,77 @@
 @startuml
 
-title MaSiMiWa - Sequence Overview
+title MaSiMiWa - Sequence Overview\nfor a valid request
 header version: %date("dd.MM.yyyy")
 'header version: 23.11.2018
 
 skinparam defaultFontName Helvetica
 skinparam shadowing false
+
+
+!definelong check_logic()
+group #fda check logic<sup>(//see activity UML//)</sup>
+
+seek            <-      miwa            : get json
+seek            -->     miwa
+
+seek            <-      miwa            : OPT: get content_blob (files)
+seek            -->     miwa
+
+end
+!enddefinelong
+
+!definelong process_queue()
+miwa            -->     miwa            : process queue
+
+    activate miwa
+
+    loop #efe queue
+    
+    loop #ffe insert each content
+
+    miwa            ->      morre           : ""add_model""
+        activate morre
+        
+        morre           ->]                     : get file from the Internet
+        morre           <--]
+
+        morre           ->      db              : insert new model
+            activate db
+        morre           <--     db              : SUCCESS
+            deactivate db
+        
+    miwa            <--     morre           : SUCCESS
+        deactivate morre
+    
+    end
+    end
+
+    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
+        activate morre
+
+        loop #efe annotations
+
+        morre           ->]                     : get data from the Internet
+        morre           <--]
+
+        morre           ->      db              : insert additional data
+            activate db
+        morre           <--     db              : SUCCESS
+            deactivate db
+        
+        end
+    
+    miwa            <--     morre           : SUCCESS
+        deactivate morre 
+
+    deactivate miwa
+!enddefinelong
+
+
+
+
+
+
 
 participant "SEEK" as seek
 box "MaSyMoS"
@@ -27,45 +93,12 @@ end note
 seek            ->      miwa            : insert_model(id)
     activate miwa
 
-seek            <-      miwa            : get json (link)
-seek            -->     miwa
-    
-    loop #ffe insert each content
-    miwa            ->      morre           : ""add_model""
-        activate morre
-        
-        morre           ->]                     : get file from the Internet
-        morre           <--]
-
-        morre           ->      db              : insert new model
-            activate db
-        morre           <--     db              : SUCCESS
-            deactivate db
-        
-    miwa            <--     morre           : SUCCESS
-        deactivate morre
-    end
+check_logic()
 
 seek            <--     miwa            : SUCCESS
-    miwa            ->      miwa        : start annotation job in background
-    activate miwa
-
-    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
-        activate morre
-
-        morre           ->]                     : get data from the Internet
-        morre           <--]
-
-        morre           ->      db              : insert additional data
-            activate db
-        morre           <--     db              : SUCCESS
-            deactivate db
-    
-    miwa            <--     morre           : SUCCESS
-        deactivate morre 
-    deactivate miwa
     deactivate miwa
 
+process_queue()
 
 
 
@@ -132,64 +165,27 @@ hnote over seek
        so wait with the SUCCESS until finished
 end note
 
+
 seek            ->      miwa            : insert_models(id<<List>>)
-    activate miwa
+activate miwa
 
-seek            <-      miwa            : get json (link)
-seek            -->     miwa
+loop list
+check_logic()
+end
 
-    miwa            ->      morre           : delete whole database
-        activate morre
-        morre           ->      db              : delete whole database
-            activate db
-        morre           <--     db
-            deactivate db
-    miwa            <--     morre           : SUCCESS
-        deactivate morre
-
-    loop #efe id_list
-    
-    loop #ffe insert each content
-
-    miwa            ->      morre           : ""add_model""
-        activate morre
-        
-        morre           ->]                     : get file from the Internet
-        morre           <--]
-
-        morre           ->      db              : insert new model
-            activate db
-        morre           <--     db              : SUCCESS
-            deactivate db
-        
-    miwa            <--     morre           : SUCCESS
-        deactivate morre
-    
-    end
-    end
-
-    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
-        activate morre
-
-        loop #efe annotations
-
-        morre           ->]                     : get data from the Internet
-        morre           <--]
-
-        morre           ->      db              : insert additional data
-            activate db
-        morre           <--     db              : SUCCESS
-            deactivate db
-        
-        end
-    
-    miwa            <--     morre           : SUCCESS
-        deactivate morre 
+miwa            ->      morre           : delete whole database
+    activate morre
+    morre           ->      db              : delete whole database
+        activate db
+    morre           <--     db
+        deactivate db
+miwa            <--     morre           : SUCCESS
+    deactivate morre
 
 seek            <--     miwa            : SUCCESS
+deactivate miwa
 
-    deactivate miwa
-
+process_queue()
 
 
 

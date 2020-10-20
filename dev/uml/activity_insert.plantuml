@@ -36,11 +36,10 @@ else (success)
             file_failed()
         elseif (validate XML) then (invalid)
             file_failed()
-        elseif (validate namespace) then (invalid)
-            file_failed()
-        elseif (send INSERT to Morre) then (failed)
+        elseif (validate namespace\nand level/version) then (invalid)
             file_failed()
         else (success)
+            #afa:add to Queue;
 ''            :log "imported model xyz";
         endif
         
@@ -48,7 +47,7 @@ else (success)
         
     repeat while (next item?)
 
-    if (s.th. was imported?) then (yes)
+    if (s.th. was added to Queue?) then (yes)
         stopsuccess(Return 200)
     else (no)
         stoperror(Return 400)
