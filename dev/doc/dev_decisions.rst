@@ -70,6 +70,14 @@ Allowed Content MIME Types
     - ``application/xml``
     - ``text/xml``
 
+Checks in MaSeMiWa before sending anything to MaSyMoS Morre
+===========================================================
+- Decision made on 19.10.2020 by RH, BW
+- Description
+    #. MIME (from JSON-Metadata)
+    #. namespace, level, version (from file)
+        - if level/version in namespace differ from level/version from attributes, ignore file
+
 Connection SEEK - Middleware
 ############################
 
