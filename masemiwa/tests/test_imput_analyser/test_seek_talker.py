@@ -1,4 +1,6 @@
 import unittest
+from unittest.mock import patch
+
 import pytest
 
 import masemiwa.input_analyser.seek_talker as t
@@ -21,9 +23,23 @@ class TestSeekUrlObject(unittest.TestCase):
     def test_readonly_attributes(self):
         obj = t.SeekUrl('https://fairdomhub.org/models/24.json?version=3')
         with pytest.raises(AttributeError):
-            obj.id=42
+            obj.id = 42
         with pytest.raises(AttributeError):
-            obj.url="blablubb"
+            obj.url = "blablubb"
+
+
+class TestJsonForResource(unittest.TestCase):
+    """
+    FIXME this test case should use a mock/monkey patch
+    """
+
+    def test_success(self):
+        # t.logging.basicConfig(level=t.logging.DEBUG)
+        self.assertIsNotNone(t.json_for_resource(t.SeekUrl("https://fairdomhub.org/models/24.json?version=3")))
+
+    def test_403(self):
+        self.assertIsNone(t.json_for_resource(t.SeekUrl("https://fairdomhub.org/models/22.json?version=3")))
+
 
 if __name__ == '__main__':
     unittest.main()

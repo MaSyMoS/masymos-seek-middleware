@@ -1,5 +1,9 @@
 from typing import List
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 mime_type_allow_list: List = ['application/sbml+xml', \
                               'application/xml', \
                               'text/xml']

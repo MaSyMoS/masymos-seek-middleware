@@ -5,6 +5,12 @@ from typing import Any
 from urllib.parse import urlparse, ParseResultBytes
 
 import requests
+import logging
+
+from requests import HTTPError, Response, ConnectTimeout
+from urllib3.exceptions import ConnectTimeoutError
+
+logger = logging.getLogger(__name__)
 
 
 class SeekUrlException(ValueError):
@@ -59,6 +65,23 @@ def json_for_resource(url: SeekUrl) -> Any:
         "Accept-Charset": "ISO-8859-1"
     }
 
-    r = requests.get(url.url, headers=headers)
-    r.raise_for_status()
+    logger.debug("request JSON from %s", url.url)
+    r: Response = None
+    try:
+        r = requests.get(url.url, headers=headers, timeout=5)
+        r.raise_for_status()
+    except ConnectTimeoutError or ConnectTimeout:
+        logger.warning("unable to get JSON from %s; Timeout!", url.url)
+        return None
+    except HTTPError:
+        code: str = 'unknown'
+        if not r:
+            code = r.status_code
+
+        logger.warning("unable to get JSON from %s; HTTP-ErrorCode %s", url.url, code)
+        return None
+
+    logger.debug("successfully got JSON from %s")
     return r.json()
+
+
