@@ -28,17 +28,17 @@ class TestSeekUrlObject(unittest.TestCase):
             obj.url = "blablubb"
 
 
-class TestJsonForResource(unittest.TestCase):
+class TestDownloadSeekMetadata(unittest.TestCase):
     """
     FIXME this test case should use a mock/monkey patch
     """
 
-    def test_success(self):
-        # t.logging.basicConfig(level=t.logging.DEBUG)
-        self.assertIsNotNone(t.json_for_resource(t.SeekUrl("https://fairdomhub.org/models/24.json?version=3")))
-
-    def test_403(self):
-        self.assertIsNone(t.json_for_resource(t.SeekUrl("https://fairdomhub.org/models/22.json?version=3")))
+#    def test_success(self):
+#        # t.logging.basicConfig(level=t.logging.DEBUG)
+#        self.assertIsNotNone(t.download_seek_metadata(t.SeekUrl("https://fairdomhub.org/models/24.json?version=3")))
+#
+#    def test_403(self):
+#        self.assertIsNone(t.download_seek_metadata(t.SeekUrl("https://fairdomhub.org/models/22.json?version=3")))
 
 
 if __name__ == '__main__':

@@ -4,11 +4,11 @@ get and deal with data from the seek instance
 from typing import Any
 from urllib.parse import urlparse, ParseResultBytes
 
-import requests
 import logging
 
-from requests import HTTPError, Response, ConnectTimeout
-from urllib3.exceptions import ConnectTimeoutError
+from requests import  Response
+
+from masemiwa.input_analyser.NetworkTools import download_file
 
 logger = logging.getLogger(__name__)
 
@@ -53,35 +53,19 @@ class SeekUrl():
         return self.url
 
 
-def json_for_resource(url: SeekUrl) -> Any:
+def download_seek_metadata(seek_url: SeekUrl) -> Any:
     """
-    get json meta data fro a seek object
-    :param url: the url o.O
-    :return: JSON, hopefully
+    get json meta data from a seek object
+    :param seek_url: the url o.O
+    :return: None on Error else json-filled-dict, hopefully
     """
 
     headers = {
         "Accept": "application/vnd.api+json",
-        "Accept-Charset": "ISO-8859-1"
+        "Accept-Charset": "UTF-8"
     }
 
-    logger.debug("request JSON from %s", url.url)
-    r: Response = None
-    try:
-        r = requests.get(url.url, headers=headers, timeout=5)
-        r.raise_for_status()
-    except ConnectTimeoutError or ConnectTimeout:
-        logger.warning("unable to get JSON from %s; Timeout!", url.url)
+    r: Response = download_file(seek_url.url, headers=headers)
+    if r is None:
         return None
-    except HTTPError:
-        code: str = 'unknown'
-        if not r:
-            code = r.status_code
-
-        logger.warning("unable to get JSON from %s; HTTP-ErrorCode %s", url.url, code)
-        return None
-
-    logger.debug("successfully got JSON from %s")
     return r.json()
-
-
