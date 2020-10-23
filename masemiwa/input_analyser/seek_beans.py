@@ -5,6 +5,7 @@ class ContentBlob():
     """
     dumb container for a content_blob JSON object
     """
+    __json: dict
 
     @property
     def mime(self) -> str:
@@ -25,6 +26,7 @@ class SeekJson():
     """
     dumb container for the whole JSON returned from SEEK
     """
+    __json: dict
 
     @property
     def id(self) -> int:
@@ -38,7 +40,7 @@ class SeekJson():
     def content_blobs(self) -> List[ContentBlob]:
         ret: List[ContentBlob] = []
         blob: dict
-        for blob in self.__json['data']['attributes']['content_blobs']:
+        for blob in self.__json['data']['attributes']['content_blobs'].values():
             obj: ContentBlob = ContentBlob(blob)
             ret.append(obj)
         return ret

@@ -1,4 +1,5 @@
 import unittest
+from unittest import TestCase
 
 import masemiwa.input_analyser.meta_checker as t
 
@@ -19,3 +20,13 @@ class TestMime(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestCheckContentBlob(TestCase):
+    def test_check_content_blob(self):
+        self.fail()
+
+
+class Test(TestCase):
+    def test__download_blob_content(self):
+        self.fail()
