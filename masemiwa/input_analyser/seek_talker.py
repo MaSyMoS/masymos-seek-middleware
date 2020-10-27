@@ -20,6 +20,7 @@ class SeekUrlException(ValueError):
 class SeekUrl():
     """
     parse and interpret a SEEk URL
+    :raises SeekUrlException on error
     """
     __input: ParseResultBytes
 

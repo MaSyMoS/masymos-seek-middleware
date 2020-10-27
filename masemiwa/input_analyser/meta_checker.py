@@ -8,12 +8,12 @@ import logging
 from requests import Response
 
 from masemiwa.input_analyser.NetworkTools import download_file
-from masemiwa.input_analyser.seek_beans import ContentBlob
+from masemiwa.input_analyser.beans import SeekContentBlob
 
 logger = logging.getLogger(__name__)
 
 
-def check_content_blob(blob: ContentBlob) -> bool:
+def check_content_blob(blob: SeekContentBlob) -> bool:
     """
     checks the JSON meta data of a content_blob
     and provides a simple boolean result
@@ -21,18 +21,18 @@ def check_content_blob(blob: ContentBlob) -> bool:
 
     logger.debug("check content_blob %s", blob.__repr__())
 
-    ## CHECK BASE
+    # CHECK BASE
     if blob.mime.strip() is '' or \
             blob.link.strip() is '':
         return False
 
-    ## CHECK MIME
+    # CHECK MIME
     if not _check_mime_type(blob.mime):
         return False
 
-    ## CHECK NAMESPACE, LEVEL and VERSION
+    # CHECK NAMESPACE, LEVEL and VERSION
     content: str = _download_blob_content(blob)
-    if not _check_namespace(content):
+    if content is None or not _check_namespace(content):
         return False
 
     return True
@@ -50,10 +50,10 @@ def _check_mime_type(mime: str) -> bool:
     return mime in mime_type_allow_list
 
 
-def _download_blob_content(blob: ContentBlob) -> Optional[str]:
+def _download_blob_content(blob: SeekContentBlob) -> Optional[str]:
     """
     get XML for content_blob-link
-    :param blob: the ContentBlob object
+    :param blob: the SeekContentBlob object
     :return: None on Error else xml as text
     """
 
@@ -63,7 +63,7 @@ def _download_blob_content(blob: ContentBlob) -> Optional[str]:
     return r.text
 
 
-def _check_namespace(content) -> bool:
+def _check_namespace(content: str) -> bool:
     # TODO change to Optionl[bool] when adding retry functionality \
     #  indicate File not Found with None\
     #  or throw exception, maybe thats better!\

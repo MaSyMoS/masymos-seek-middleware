@@ -22,7 +22,6 @@ if __name__ == '__main__':
     unittest.main()
 
 
-
 class Test(TestCase):
     def test_check_content_blob(self):
         # TODO mock _download_blob_content()
@@ -30,7 +29,15 @@ class Test(TestCase):
 
     def test__download_blob_content(self):
         # TODO mock downloading
-        pass
+        self.fail()
+
+    namespace_valid1: str = """
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Schorsch on 2011/04/04 15:53:02-->
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+<model name="Schorsch" >
+</model></sbml>
+"""
 
     def test__check_namespace(self):
-        self.fail()
+        self.assertTrue(t._check_namespace(self.namespace_valid1))
