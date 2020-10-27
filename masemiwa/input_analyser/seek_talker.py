@@ -67,5 +67,5 @@ def download_seek_metadata(seek_url: SeekUrl) -> Any:
 
     r: Response = download_file(seek_url.url, headers=headers)
     if r is None:
-        return None
+        return
     return r.json()

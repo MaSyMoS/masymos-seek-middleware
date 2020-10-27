@@ -22,11 +22,15 @@ if __name__ == '__main__':
     unittest.main()
 
 
-class TestCheckContentBlob(TestCase):
-    def test_check_content_blob(self):
-        self.fail()
-
 
 class Test(TestCase):
+    def test_check_content_blob(self):
+        # TODO mock _download_blob_content()
+        self.fail()
+
     def test__download_blob_content(self):
+        # TODO mock downloading
+        pass
+
+    def test__check_namespace(self):
         self.fail()

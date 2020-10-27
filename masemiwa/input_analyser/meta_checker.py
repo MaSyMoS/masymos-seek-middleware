@@ -1,5 +1,5 @@
 from json.decoder import JSONObject
-from typing import List
+from typing import List, Optional
 from xml.etree import ElementTree as ET
 import requests
 
@@ -19,6 +19,8 @@ def check_content_blob(blob: ContentBlob) -> bool:
     and provides a simple boolean result
     """
 
+    logger.debug("check content_blob %s", blob.__repr__())
+
     ## CHECK BASE
     if blob.mime.strip() is '' or \
             blob.link.strip() is '':
@@ -29,7 +31,11 @@ def check_content_blob(blob: ContentBlob) -> bool:
         return False
 
     ## CHECK NAMESPACE, LEVEL and VERSION
-    # TODO
+    content: str = _download_blob_content(blob)
+    if not _check_namespace(content):
+        return False
+
+    return True
 
 
 mime_type_allow_list: List = ['application/sbml+xml', \
@@ -44,7 +50,7 @@ def _check_mime_type(mime: str) -> bool:
     return mime in mime_type_allow_list
 
 
-def _download_blob_content(blob: ContentBlob) -> str:
+def _download_blob_content(blob: ContentBlob) -> Optional[str]:
     """
     get XML for content_blob-link
     :param blob: the ContentBlob object
@@ -53,6 +59,15 @@ def _download_blob_content(blob: ContentBlob) -> str:
 
     r: Response = download_file(blob.link + "/download")
     if r is None:
-        return None
+        return
     return r.text
 
+
+def _check_namespace(content) -> bool:
+    # TODO change to Optionl[bool] when adding retry functionality \
+    #  indicate File not Found with None\
+    #  or throw exception, maybe thats better!\
+    #  https://github.com/MaSyMoS/masymos-seek-middleware/issues/11
+
+    # TODO
+    return False
