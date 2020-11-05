@@ -81,3 +81,15 @@ class TestXmlNamespace(TestCase):
             t.XmlNamespace("http://www.sbml.org/sbml/level2/version4", level=1, version=4)
         with pytest.raises(AttributeError):
             t.XmlNamespace(None)
+
+    def test_cellml(self):
+        c=t.XmlNamespace("http://www.cellml.org/cellml/1.0#")
+        self.assertIsNone(c.level)
+        self.assertIsNone(c.version)
+        self.assertEqual("http://www.cellml.org/cellml/1.0#",c.namespace)
+
+    def test_sedml(self):
+        s=t.XmlNamespace("http://sed-ml.org/")
+        self.assertIsNone(s.level)
+        self.assertIsNone(s.version)
+        self.assertEqual("http://sed-ml.org/", s.namespace)

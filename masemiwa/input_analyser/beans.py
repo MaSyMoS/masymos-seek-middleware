@@ -76,6 +76,8 @@ def _extract_level_version_from_namespace(namespace):
 
 class XmlNamespace():
     """
+    container for the namespace + level + version
+    with a bit logic to check level/version from namespace against given level/version
     :raises XmlNamespaceVersionLevelMismatchException
     """
 
@@ -103,12 +105,8 @@ class XmlNamespace():
         self.__level = level
         self.__version = version
 
-        # todo check namespace level/version with provided level/version
-        pass
-
     def __repr__(self):
-        # todo
-        pass
+        return self.namespace
 
     @property
     def namespace(self) -> str:

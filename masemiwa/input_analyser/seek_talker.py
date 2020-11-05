@@ -8,7 +8,7 @@ import logging
 
 from requests import  Response
 
-from masemiwa.input_analyser.NetworkTools import download_file
+from masemiwa.input_analyser.network_tools import download_file
 
 logger = logging.getLogger(__name__)
 
