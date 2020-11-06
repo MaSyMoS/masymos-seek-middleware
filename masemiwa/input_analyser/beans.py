@@ -1,5 +1,50 @@
+import logging
 from typing import List, Optional, Match
 import re
+from urllib.parse import ParseResultBytes, urlparse
+
+from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
+
+logger = logging.getLogger(__name__)
+
+
+class SeekUrl():
+    """
+    parse and interpret a SEEk URL
+    :raises InputAnalyseError on error
+    """
+
+    def __init__(self, url: str):
+        self.__input: ParseResultBytes = urlparse(url)
+
+        # remove unnecessary components
+        self.__input = self.__input._replace(params=''). \
+            _replace(query=''). \
+            _replace(fragment='')
+
+        # remove endings like '.json'
+        if '.' in self.__input.path:
+            self.__input = self.__input._replace(path=self.__input.path.split(".")[0])
+
+        try:
+            if self.url is None or self.url.strip() is '' or self.id is None:
+                logger.debug("URL invalid - result-URL or ID is empty: {0}".format(url))
+                raise Exception("URL invalid - result-URL or ID is empty: {0}".format(url))
+        except Exception as e:
+            # this try is for the url.strip() call
+            logger.debug("URL invalid")
+            raise InputAnalyseError(InputAnalyseErrorReason.URL_INVALID, url)
+
+    @property
+    def url(self) -> str:
+        return str(self.__input.geturl())
+
+    @property
+    def id(self) -> int:
+        return int(self.__input.path.rsplit('/', 1)[-1])
+
+    def __repr__(self):
+        return self.ur
 
 
 class SeekContentBlob():
@@ -53,27 +98,6 @@ class SeekJson():
         return "seek-json#" + self.id
 
 
-class XmlNamespaceVersionLevelMismatchException(Exception):
-    pass
-
-
-def _extract_level_version_from_namespace(namespace):
-    """
-    extracts level and version from namespace like "http://www.sbml.org/sbml/level2/version4"
-    :param namespace:
-    :return: namespace_level, namespace_version as Optional[int]
-    """
-    namespace_level: Optional[int] = None
-    l: Optional[Match] = re.search(r'level(\d*)', namespace)
-    if l is not None:
-        namespace_level = int(l.group(1))
-    namespace_version: Optional[int] = None
-    v: Optional[Match] = re.search(r'version(\d*)', namespace)
-    if v is not None:
-        namespace_version = int(v.group(1))
-    return namespace_level, namespace_version
-
-
 class XmlNamespace():
     """
     container for the namespace + level + version
@@ -84,10 +108,11 @@ class XmlNamespace():
     def __init__(self, namespace: str, level: Optional[int] = None, version: Optional[int] = None):
         # check namespace
         if namespace is None or namespace.strip() is "":
-            raise AttributeError("namespace cannot be empty or None")
+            logger.debug("namespace cannot be empty or None")
+            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_EMPTY)
 
         # get level and version from namespace
-        namespace_level, namespace_version = _extract_level_version_from_namespace(namespace)
+        namespace_level, namespace_version = self._extract_level_version_from_namespace(namespace)
 
         # compare level/version with level/version from namespace
         if level is None:
@@ -97,9 +122,9 @@ class XmlNamespace():
 
         if level is not namespace_level or \
                 version is not namespace_version:
-            raise XmlNamespaceVersionLevelMismatchException(
-                "level/version ({0}/{1}) is not matching with namespace level/version ({2}/{3})".format(
-                    level, version, namespace_level, namespace_version))
+            logger.debug("level/version ({0}/{1}) is not matching with namespace level/version ({2}/{3})".format(
+                level, version, namespace_level, namespace_version))
+            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH, namespace)
 
         self.__namespace = namespace
         self.__level = level
@@ -119,3 +144,20 @@ class XmlNamespace():
     @property
     def version(self) -> Optional[int]:
         return self.__version
+
+    @staticmethod
+    def _extract_level_version_from_namespace(namespace: str) -> (Optional[int], Optional[int]):
+        """
+        extracts level and version from namespace like "http://www.sbml.org/sbml/level2/version4"
+        :param namespace:
+        :return: namespace_level, namespace_version as Optional[int]
+        """
+        namespace_level: Optional[int] = None
+        l: Optional[Match] = re.search(r'level(\d*)', namespace)
+        if l is not None:
+            namespace_level = int(l.group(1))
+        namespace_version: Optional[int] = None
+        v: Optional[Match] = re.search(r'version(\d*)', namespace)
+        if v is not None:
+            namespace_version = int(v.group(1))
+        return namespace_level, namespace_version

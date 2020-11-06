@@ -2,56 +2,15 @@
 get and deal with data from the seek instance
 """
 from typing import Any
-from urllib.parse import urlparse, ParseResultBytes
 
 import logging
 
 from requests import  Response
 
+from masemiwa.input_analyser.beans import SeekUrl
 from masemiwa.input_analyser.network_tools import download_file
 
 logger = logging.getLogger(__name__)
-
-
-class SeekUrlException(ValueError):
-    pass
-
-
-class SeekUrl():
-    """
-    parse and interpret a SEEk URL
-    :raises SeekUrlException on error
-    """
-    __input: ParseResultBytes
-
-    def __init__(self, url: str):
-        self.__input = urlparse(url)
-
-        # remove unnecessary components
-        self.__input = self.__input._replace(params=''). \
-            _replace(query=''). \
-            _replace(fragment='')
-
-        # remove endings like '.json'
-        if '.' in self.__input.path:
-            self.__input = self.__input._replace(path=self.__input.path.split(".")[0])
-
-        try:
-            if self.url is None or self.url.strip() is '' or self.id is None:
-                raise SeekUrlException("URL invalid - result-URLor ID is empty: {0}".format(url))
-        except Exception as e:
-            raise SeekUrlException("invalid SEEK-URL: {0}".format(url))
-
-    @property
-    def url(self) -> str:
-        return str(self.__input.geturl())
-
-    @property
-    def id(self) -> int:
-        return int(self.__input.path.rsplit('/', 1)[-1])
-
-    def __repr__(self):
-        return self.url
 
 
 def download_seek_metadata(seek_url: SeekUrl) -> Any:

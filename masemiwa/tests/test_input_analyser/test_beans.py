@@ -3,6 +3,7 @@ from unittest import TestCase
 import pytest
 
 import masemiwa.input_analyser.beans as t
+from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 
 
 class TestSeekContentBlob(TestCase):
@@ -32,14 +33,14 @@ class TestSeekJson(TestCase):
 class TestXmlNamespace(TestCase):
 
     def test__extract_level_version_from_namespace(self):
-        self.assertEqual(2, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2/version4")[0])
-        self.assertEqual(4, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2/version4")[1])
-        self.assertEqual(None, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[0])
-        self.assertEqual(4, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[1])
-        self.assertEqual(2, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2")[0])
-        self.assertEqual(None, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2")[1])
-        self.assertEqual(None, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/")[0])
-        self.assertEqual(None, t._extract_level_version_from_namespace("http://www.sbml.org/sbml/")[0])
+        self.assertEqual(2, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2/version4")[0])
+        self.assertEqual(4, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2/version4")[1])
+        self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[0])
+        self.assertEqual(4, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[1])
+        self.assertEqual(2, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2")[0])
+        self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2")[1])
+        self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/")[0])
+        self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/")[0])
 
     def test_success(self):
         self.assertEqual("http://www.sbml.org/sbml/level2/version4",
@@ -75,12 +76,17 @@ class TestXmlNamespace(TestCase):
         t.XmlNamespace("http://www.sbml.org/sbml/")
 
     def test_exceptions(self):
-        with pytest.raises(t.XmlNamespaceVersionLevelMismatchException):
+        with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace("http://www.sbml.org/sbml/level2/version4", level=2, version=3)
-        with pytest.raises(t.XmlNamespaceVersionLevelMismatchException):
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH,e.value.reason)
+
+        with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace("http://www.sbml.org/sbml/level2/version4", level=1, version=4)
-        with pytest.raises(AttributeError):
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH,e.value.reason)
+
+        with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace(None)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_EMPTY,e.value.reason)
 
     def test_cellml(self):
         c=t.XmlNamespace("http://www.cellml.org/cellml/1.0#")
