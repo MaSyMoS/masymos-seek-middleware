@@ -1,19 +1,18 @@
 """
-get and deal with data from the seek instance
+get data from the seek instance
 """
-from typing import Any
-
 import logging
+from typing import Any, Optional
 
-from requests import  Response
+from requests import Response
 
-from masemiwa.input_analyser.beans import SeekUrl
+from masemiwa.input_analyser.beans import SeekUrl, SeekContentBlob
 from masemiwa.input_analyser.network_tools import download_file
 
 logger = logging.getLogger(__name__)
 
 
-def download_seek_metadata(seek_url: SeekUrl) -> Any:
+def _download_seek_metadata(seek_url: SeekUrl) -> Any:
     """
     get json meta data from a seek object
     :param seek_url: the url o.O
@@ -29,3 +28,16 @@ def download_seek_metadata(seek_url: SeekUrl) -> Any:
     if r is None:
         return
     return r.json()
+
+
+def _download_blob_content(blob: SeekContentBlob) -> Optional[str]:
+    """
+    get XML for content_blob-link
+    :param blob: the SeekContentBlob object
+    :return: None on Error else xml as text
+    """
+
+    r: Response = download_file(blob.link + "/download")
+    if r is None:
+        return
+    return r.text

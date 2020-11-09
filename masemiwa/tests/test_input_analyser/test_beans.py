@@ -1,44 +1,139 @@
+import copy
 from unittest import TestCase
 
 import pytest
 
+import masemiwa.input_analyser.beans
 import masemiwa.input_analyser.beans as t
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 
 
-class TestSeekContentBlob(TestCase):
+class TestSeekUrlObject(TestCase):
     def test_success(self):
-        self.assertEqual('blo', t.SeekContentBlob({'content_type': 'blo'}).mime)
-        self.assertEqual('bla', t.SeekContentBlob({'link': 'bla'}).link)
-        cb = t.SeekContentBlob({'content_type': 'blo', 'link': 'bla'})
+        obj = masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/24.json?version=3')
+        self.assertEqual('https://fairdomhub.org/models/24', obj.url)
+        self.assertEqual(24, obj.id)
+
+    def test_inkscape(self):
+        with pytest.raises(InputAnalyseError) as e:
+            masemiwa.input_analyser.beans.SeekUrl('inkscape.org')
+        self.assertEqual(InputAnalyseErrorReason.URL_INVALID, e.value.reason)
+
+    def test_incomplete(self):
+        with pytest.raises(InputAnalyseError) as e:
+            masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/')
+        self.assertEqual(InputAnalyseErrorReason.URL_INVALID, e.value.reason)
+
+    def test_readonly_attributes(self):
+        obj = masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/24.json?version=3')
+        with pytest.raises(AttributeError):
+            obj.id = 42
+        with pytest.raises(AttributeError):
+            obj.url = "blablubb"
+
+
+class TestSeekContentBlob(TestCase):
+    valid_blob = {'content_type': 'blo', 'link': 'bla'}
+
+    def test_success(self):
+        cb = t.SeekContentBlob(self.valid_blob)
         self.assertEqual('blo', cb.mime)
         self.assertEqual('bla', cb.link)
 
+    def test_exceptions(self):
+        # test valid_blob first
+        t.SeekContentBlob(self.valid_blob)
+
+        tmp: dict
+        # content_type missing
+        tmp = copy.deepcopy(self.valid_blob)
+        tmp.pop('content_type')
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekContentBlob(tmp)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
+
+        # link missing
+        tmp = copy.deepcopy(self.valid_blob)
+        tmp.pop('link')
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekContentBlob(tmp)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
+
+        tmp: dict
+        # content_type empty
+        tmp = copy.deepcopy(self.valid_blob)
+        tmp['content_type'] = ''
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekContentBlob(tmp)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
+
+        # link empty
+        tmp = copy.deepcopy(self.valid_blob)
+        tmp['link'] = ''
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekContentBlob(tmp)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
+
 
 class TestSeekJson(TestCase):
-    def test_success(self):
-        self.assertEqual('1234', t.SeekJson({'data': {'id': '1234'}}).id)
-        self.assertEqual('5', t.SeekJson({'data': {'attributes': {'latest_version': '5'}}}).latest_version)
-        self.assertEqual('hurra', t.SeekJson(
-            {'data': {'attributes': {'content_blobs': {'0': {'link': 'hurra'}}}}}).content_blobs[0].link)
-
-        s = t.SeekJson({'data': {'id': '1234',
+    valid_json: dict = {'data': {'id': '1234',
                                  'attributes': {'latest_version': '5',
-                                                'content_blobs': {'0': {'link': 'hurra'}}}}})
-        self.assertEqual('1234', s.id)
-        self.assertEqual('5', s.latest_version)
+                                                'content_blobs': {'0': {'content_type': '42', 'link': 'hurra'}}}}}
+
+    def test_success(self):
+        s = t.SeekJson(self.valid_json)
+        self.assertEqual(1234, s.id)
+        self.assertEqual(5, s.latest_version)
         self.assertEqual('hurra', s.content_blobs[0].link)
+
+    def test_exceptions(self):
+        # no exception with valid data
+        t.SeekJson(self.valid_json)
+
+        tmp: dict
+        # last version missing
+        tmp = copy.deepcopy(self.valid_json)
+        tmp['data']['attributes'].pop('latest_version')
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekJson(tmp)
+        self.assertEqual(InputAnalyseErrorReason.JSON_CONTENT_INVALID, e.value.reason)
+
+        # id missing
+        tmp = copy.deepcopy(self.valid_json)
+        tmp['data'].pop('id')
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekJson(tmp)
+        self.assertEqual(InputAnalyseErrorReason.JSON_CONTENT_INVALID, e.value.reason)
+
+        # id alphanumeric
+        tmp = copy.deepcopy(self.valid_json)
+        tmp['data']['id'] = "a38"
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekJson(tmp)
+        self.assertEqual(InputAnalyseErrorReason.JSON_CONTENT_INVALID, e.value.reason)
+
+        # version alphanumeric
+        tmp = copy.deepcopy(self.valid_json)
+        tmp['data']['attributes']['latest_version'] = "eof"
+        with pytest.raises(InputAnalyseError) as e:
+            t.SeekJson(tmp)
+        self.assertEqual(InputAnalyseErrorReason.JSON_CONTENT_INVALID, e.value.reason)
 
 
 class TestXmlNamespace(TestCase):
 
     def test__extract_level_version_from_namespace(self):
-        self.assertEqual(2, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2/version4")[0])
-        self.assertEqual(4, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2/version4")[1])
-        self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[0])
-        self.assertEqual(4, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[1])
+        self.assertEqual(2, t.XmlNamespace._extract_level_version_from_namespace(
+            "http://www.sbml.org/sbml/level2/version4")[0])
+        self.assertEqual(4, t.XmlNamespace._extract_level_version_from_namespace(
+            "http://www.sbml.org/sbml/level2/version4")[1])
+        self.assertEqual(None,
+                         t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[0])
+        self.assertEqual(4,
+                         t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/version4")[1])
         self.assertEqual(2, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2")[0])
-        self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2")[1])
+        self.assertEqual(None,
+                         t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/level2")[1])
         self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/")[0])
         self.assertEqual(None, t.XmlNamespace._extract_level_version_from_namespace("http://www.sbml.org/sbml/")[0])
 
@@ -78,24 +173,24 @@ class TestXmlNamespace(TestCase):
     def test_exceptions(self):
         with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace("http://www.sbml.org/sbml/level2/version4", level=2, version=3)
-        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH,e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH, e.value.reason)
 
         with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace("http://www.sbml.org/sbml/level2/version4", level=1, version=4)
-        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH,e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH, e.value.reason)
 
         with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace(None)
-        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_EMPTY,e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_EMPTY, e.value.reason)
 
     def test_cellml(self):
-        c=t.XmlNamespace("http://www.cellml.org/cellml/1.0#")
+        c = t.XmlNamespace("http://www.cellml.org/cellml/1.0#")
         self.assertIsNone(c.level)
         self.assertIsNone(c.version)
-        self.assertEqual("http://www.cellml.org/cellml/1.0#",c.namespace)
+        self.assertEqual("http://www.cellml.org/cellml/1.0#", c.namespace)
 
     def test_sedml(self):
-        s=t.XmlNamespace("http://sed-ml.org/")
+        s = t.XmlNamespace("http://sed-ml.org/")
         self.assertIsNone(s.level)
         self.assertIsNone(s.version)
         self.assertEqual("http://sed-ml.org/", s.namespace)

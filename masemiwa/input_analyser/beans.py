@@ -44,12 +44,13 @@ class SeekUrl():
         return int(self.__input.path.rsplit('/', 1)[-1])
 
     def __repr__(self):
-        return self.ur
+        return "seek-url#" + self.__input.geturl()
 
 
 class SeekContentBlob():
     """
-    dumb container for a content_blob JSON object
+    container for a content_blob JSON object; including base check (type, keys)
+    :raises `InputAnalyseError`
     """
     __json: dict
 
@@ -63,24 +64,32 @@ class SeekContentBlob():
 
     def __init__(self, json: dict):
         self.__json = json
+        try:
+            if self.mime.strip() is '' or \
+                    self.link.strip() is '':
+                raise ValueError("MIME or LINK of content_blob empty")
+        except (ValueError, KeyError) as e:
+            logger.debug("content_blob json invalid, error: %s", e)
+            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID)
 
     def __repr__(self):
-        return "blob-json#" + self.link
+        return "seek-blob-json#" + self.link
 
 
 class SeekJson():
     """
-    dumb container for the whole JSON returned from SEEK
+    container for the whole JSON returned from SEEK; including base check (type, keys)
+    :raises `InputAnalyseError`
     """
     __json: dict
 
     @property
     def id(self) -> int:
-        return self.__json['data']['id']
+        return int(self.__json['data']['id'])
 
     @property
     def latest_version(self) -> int:
-        return self.__json['data']['attributes']['latest_version']
+        return int(self.__json['data']['attributes']['latest_version'])
 
     @property
     def content_blobs(self) -> List[SeekContentBlob]:
@@ -93,9 +102,22 @@ class SeekJson():
 
     def __init__(self, json: dict):
         self.__json = json
+        try:
+            # referencing a non-existing key will result in a KeyError
+            # the call of self.id etc. will also raise a ValueError, if the value is wrong
+            if type(self.id) is not int \
+                    or self.id is None:
+                raise ValueError("ID is invalid (%s)", self.id)
+            if type(self.latest_version) is not int \
+                    or self.latest_version is None:
+                raise ValueError("latest_version is invalid (%s)", self.latest_version)
+            self.__json['data']['attributes']['content_blobs']
+        except (ValueError, KeyError) as e:
+            logger.debug("json invalid, error: %s", e)
+            raise InputAnalyseError(InputAnalyseErrorReason.JSON_CONTENT_INVALID)
 
     def __repr__(self):
-        return "seek-json#" + self.id
+        return "seek-json#" + str(self.id)
 
 
 class XmlNamespace():
