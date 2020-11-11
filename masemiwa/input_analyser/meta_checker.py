@@ -70,7 +70,8 @@ class MetaChecker():
         # CHECK NAMESPACE, LEVEL and VERSION
         xml: str = _download_blob_content(blob)
         if xml is None:
-            # TODO throw an exception, indicating File not Found with None
+            logger.debug("unable to download file for %s", blob.__repr__())
+            raise InputAnalyseError(InputAnalyseErrorReason.DATA_FILE_NOT_FOUND)
             pass
         if not MetaChecker._check_namespace(xml):
             logger.debug("namespace check FAILED for %s", blob.__repr__())
@@ -94,19 +95,20 @@ class MetaChecker():
     def _check_namespace(xml: str) -> bool:
         # TODO add retry-functionality https://github.com/MaSyMoS/masymos-seek-middleware/issues/11
 
-        namespace: XmlNamespace
-        # TODO extract namespace
+        namespace: XmlNamespace = MetaChecker._extract_namespace(xml)
 
         if namespace.namespace.startswith('http://www.sbml.org/sbml'):
-            # TODO
-            pass
+            if namespace.level <= 2:
+                return True
+
         elif namespace.namespace.startswith('http://sed-ml.org'):
-            # TODO
-            pass
-        elif namespace.namespace.startswith('http://www.cellml.org/cellml/1.0') or \
-                namespace.namespace.startswith('http://www.cellml.org/cellml/1.1'):
-            # TODO
-            pass
+            if namespace.level is 1 \
+                    and namespace.version < 3:
+                return True
+
+        elif namespace.namespace.startswith('http://www.cellml.org/cellml/1.0') \
+                or namespace.namespace.startswith('http://www.cellml.org/cellml/1.1'):
+            return True
 
         return False
 
@@ -125,7 +127,7 @@ class MetaChecker():
         for child in root.findall('.'):
             try:
                 data['namespace'] = re.search('.*{(.*)}.*', str(child)).group(1)
-                logger.debug("found namespace '%s'",data['namespace'])
+                logger.debug("found namespace '%s'", data['namespace'])
             except AttributeError:
                 continue
             # gt version ans level from attribute
@@ -139,6 +141,8 @@ class MetaChecker():
                     pass
                 try:
                     data['level'] = int(child.attrib['level'])
+                except ValueError:
+                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE)
                 except KeyError:
                     # optional
                     pass

@@ -25,6 +25,36 @@ class TestMime(unittest.TestCase):
         self.assertTrue(t.MetaChecker._check_mime_type('application/xml'))
 
 
+class TestCheckNamespace(TestCase):
+    def test_success(self):
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4" />'))
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.sbml.org/sbml/level1/version42" />'))
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.sbml.org/sbml/level2/version23" />'))
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://sed-ml.org/level1/version1" />'))
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://sed-ml.org/level1/version2" />'))
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.cellml.org/cellml/1.0" />'))
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.cellml.org/cellml/1.1" />'))
+
+    def test_fail(self):
+        self.assertFalse(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.sbml.org/sbml/level3/version23" />'))
+        self.assertFalse(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://sed-ml.org/level1/version3" />'))
+        self.assertFalse(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://sed-ml.org" />'))
+        self.assertFalse(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.cellml.org/cellml" />'))
+        self.assertFalse(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.cellml.org/cellml/1.2" />'))
+
+
 class TestExtractNamespace(TestCase):
     namespace_valid1: str = """
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,6 +108,11 @@ class TestExtractNamespace(TestCase):
         with pytest.raises(InputAnalyseError) as e:
             t.MetaChecker._extract_namespace(
                 '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4a" />')
+        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE, e.value.reason)
+
+        with pytest.raises(InputAnalyseError) as e:
+            t.MetaChecker._extract_namespace(
+                '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2y" version="4" />')
         self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE, e.value.reason)
 
     def test_invalid_xml(self):
