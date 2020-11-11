@@ -1,6 +1,9 @@
+import re
 from typing import List
 
 import logging
+from xml.etree import ElementTree as ET
+from xml.etree.ElementTree import ElementTree
 
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 from masemiwa.input_analyser.beans import SeekContentBlob, XmlNamespace, SeekUrl, SeekJson
@@ -71,7 +74,7 @@ class MetaChecker():
             pass
         if not MetaChecker._check_namespace(xml):
             logger.debug("namespace check FAILED for %s", blob.__repr__())
-            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_NOT_SUPPORTED, blob.__repr__())
+            raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_NOT_SUPPORTED, blob.__repr__())
         logger.debug("namespace check passed")
 
         return True
@@ -88,7 +91,7 @@ class MetaChecker():
         return mime in MetaChecker._mime_type_allow_list
 
     @staticmethod
-    def _check_namespace(content: str) -> bool:
+    def _check_namespace(xml: str) -> bool:
         # TODO add retry-functionality https://github.com/MaSyMoS/masymos-seek-middleware/issues/11
 
         namespace: XmlNamespace
@@ -106,3 +109,46 @@ class MetaChecker():
             pass
 
         return False
+
+    @staticmethod
+    def _extract_namespace(xml: str) -> XmlNamespace:
+        # parse XML
+        root: ElementTree.Element
+        try:
+            root: ElementTree = ET.fromstring(xml.strip())
+        except ET.ParseError:
+            logger.debug("unable to parse file")
+            raise InputAnalyseError(InputAnalyseErrorReason.DATA_NOT_VALID_XML)
+
+        child: ElementTree.Element
+        data: dict = {}
+        for child in root.findall('.'):
+            try:
+                data['namespace'] = re.search('.*{(.*)}.*', str(child)).group(1)
+                logger.debug("found namespace '%s'",data['namespace'])
+            except AttributeError:
+                continue
+            # gt version ans level from attribute
+            if data.get('namespace') is not None:
+                try:
+                    data['version'] = int(child.attrib['version'])
+                except ValueError:
+                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE)
+                except KeyError:
+                    # optional
+                    pass
+                try:
+                    data['level'] = int(child.attrib['level'])
+                except KeyError:
+                    # optional
+                    pass
+                break
+
+        if data.get('namespace') is None:
+            logger.debug("no namespace found")
+            raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_EMPTY)
+
+        # create XmlNamespace
+        return XmlNamespace(data['namespace'],
+                            data.get('level'),
+                            data.get('version'))

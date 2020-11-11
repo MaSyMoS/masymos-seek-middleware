@@ -131,7 +131,7 @@ class XmlNamespace():
         # check namespace
         if namespace is None or namespace.strip() is "":
             logger.debug("namespace cannot be empty or None")
-            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_EMPTY)
+            raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_EMPTY)
 
         # get level and version from namespace
         namespace_level, namespace_version = self._extract_level_version_from_namespace(namespace)
@@ -146,7 +146,7 @@ class XmlNamespace():
                 version is not namespace_version:
             logger.debug("level/version ({0}/{1}) is not matching with namespace level/version ({2}/{3})".format(
                 level, version, namespace_level, namespace_version))
-            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH, namespace)
+            raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH, namespace)
 
         self.__namespace = namespace
         self.__level = level

@@ -173,15 +173,15 @@ class TestXmlNamespace(TestCase):
     def test_exceptions(self):
         with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace("http://www.sbml.org/sbml/level2/version4", level=2, version=3)
-        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH, e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH, e.value.reason)
 
         with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace("http://www.sbml.org/sbml/level2/version4", level=1, version=4)
-        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH, e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH, e.value.reason)
 
         with pytest.raises(InputAnalyseError) as e:
             t.XmlNamespace(None)
-        self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_NAMESPACE_EMPTY, e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.DATA_NAMESPACE_EMPTY, e.value.reason)
 
     def test_cellml(self):
         c = t.XmlNamespace("http://www.cellml.org/cellml/1.0#")

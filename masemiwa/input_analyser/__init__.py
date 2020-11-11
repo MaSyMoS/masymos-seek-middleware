@@ -13,10 +13,12 @@ class InputAnalyseErrorReason(Enum):
     JSON_CONTENT_INVALID = "the JSON content is invalid, i.e. an Integer is String or missing, check ID ans LINK"
     CONTENT_BLOB_CONTENT_INVALID = "SEEK-Metadata: the metadata is not valid, i.e. there is no file name or mime"
     CONTENT_BLOB_MIME_NOT_SUPPORTED = "SEEK-Metadata: the MIME of this file is not supported"
-    CONTENT_BLOB_NAMESPACE_EMPTY = "namespace not defined"
-    CONTENT_BLOB_NAMESPACE_NOT_SUPPORTED = "XML-File: the NAMESPACE, LEVEL or VERSION of this file is not supported"
-    CONTENT_BLOB_NAMESPACE_LEVEL_VERSION_MISMATCH = "level/version of XML-attributes is not matching with namespace level/version "
     DATA_FILE_NOT_FOUND = "file specified in conten_blob could not be found"
+    DATA_NOT_VALID_XML = "XML-File: cannot parse file s XML"
+    DATA_ATTRIBUTE_NOT_PARSABLE = "cannot parse level or version; must be Integer"
+    DATA_NAMESPACE_EMPTY = "XML-File: namespace not defined"
+    DATA_NAMESPACE_NOT_SUPPORTED = "XML-File: the NAMESPACE, LEVEL or VERSION of this file is not supported"
+    DATA_NAMESPACE_LEVEL_VERSION_MISMATCH = "XML-File: level/version of XML-attributes is not matching with namespace level/version "
 
 
 class InputAnalyseError(AttributeError):
