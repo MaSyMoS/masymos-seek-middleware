@@ -70,7 +70,10 @@ Supported Model Types: SBML, CELLML, SEDML
         - ``http://www.sbml.org/sbml/level2/*``
         - SBML versions have no big impact
     - SEDML < Level 1 Version 3
+        - ``http://sed-ml.org``
     - CELLML <= Version 1.1
+        - ``http://www.cellml.org/cellml/1.0``
+        - ``http://www.cellml.org/cellml/1.1``
 
 Check of the SEEK Model data - numbers
 ######################################
