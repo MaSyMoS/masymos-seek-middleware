@@ -95,8 +95,13 @@ class SeekJson():
     def content_blobs(self) -> List[SeekContentBlob]:
         ret: List[SeekContentBlob] = []
         blob: dict
-        for blob in self.__json['data']['attributes']['content_blobs'].values():
-            obj: SeekContentBlob = SeekContentBlob(blob)
+        for blob in self.__json['data']['attributes']['content_blobs']:
+            obj: SeekContentBlob
+            try:
+                obj = SeekContentBlob(blob)
+            except InputAnalyseError as e:
+                logger.debug("skip blob, error initialising SeekContentBlob",e)
+                continue
             ret.append(obj)
         return ret
 
@@ -137,10 +142,15 @@ class XmlNamespace():
         namespace_level, namespace_version = self._extract_level_version_from_namespace(namespace)
 
         # compare level/version with level/version from namespace
+        # # non-existing values are ignored here
         if level is None:
             level = namespace_level
         if version is None:
             version = namespace_version
+        if namespace_level is None:
+            namespace_level = level
+        if namespace_version is None:
+            namespace_version = version
 
         if level is not namespace_level or \
                 version is not namespace_version:

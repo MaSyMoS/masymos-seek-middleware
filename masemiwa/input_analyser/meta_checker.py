@@ -14,11 +14,13 @@ logger = logging.getLogger(__name__)
 
 class MetaChecker():
     """
-    this class combines all meta checks done for a candidate file link
+    this class combines all meta checks done for a SEEK model
+    extracts all valid content blobs
     raises InputAnalyseError on any error
     """
 
     def __init__(self, url: str):
+        self.__valid_blobs: List[SeekContentBlob] = []
         self.__valid: bool = False
 
         # parse URL
@@ -34,11 +36,23 @@ class MetaChecker():
         self.__json: SeekJson = SeekJson(seek_json)
 
         # check content_blobs
-        for blob in self.__json.content_blobs:
-            # TODO
-            pass
-
-    # check mime
+        blobs: List[SeekContentBlob] = self.__json.content_blobs
+        if blobs is None or len(blobs) is 0:
+            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, self.__url)
+        blob: SeekContentBlob
+        for blob in blobs:
+            try:
+                if self._check_content_blob(blob):
+                    self.__valid = True
+                    self.__valid_blobs.append(blob)
+            except InputAnalyseError as e:
+                if e.reason is InputAnalyseErrorReason.DATA_FILE_NOT_FOUND:
+                    logger.info("unable to download file %s", blob.link)
+                elif e.reason is InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH:
+                    logger.info("namespace vs. attribute level/version mismatch in file %s", blob.link)
+                else:
+                    logger.debug("unable to process content blob %s; %s - %s",
+                                 blob.link, e.reason, e.message)
 
     @property
     def is_valid(self) -> bool:
@@ -47,6 +61,10 @@ class MetaChecker():
     @property
     def url(self) -> SeekUrl:
         return self.__url
+
+    @property
+    def valid_blobs(self) -> List[SeekContentBlob]:
+        return self.__valid_blobs
 
     def __repr__(self):
         return "metachecker#" + str(self.__url.url)
@@ -93,7 +111,6 @@ class MetaChecker():
 
     @staticmethod
     def _check_namespace(xml: str) -> bool:
-        # TODO add retry-functionality https://github.com/MaSyMoS/masymos-seek-middleware/issues/11
 
         namespace: XmlNamespace = MetaChecker._extract_namespace(xml)
 

@@ -35,5 +35,5 @@ def download_file(url: str, headers: Dict = None) -> Optional[Response]:
         logger.warning("unable to get file %s; HTTP-ErrorCode %s", url, code)
         return
 
-    logger.debug("successfully got file %s")
+    logger.debug("successfully got file %s", url)
     return r

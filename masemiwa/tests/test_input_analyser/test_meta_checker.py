@@ -41,6 +41,8 @@ class TestCheckNamespace(TestCase):
             '<sbml xmlns="http://www.cellml.org/cellml/1.0" />'))
         self.assertTrue(t.MetaChecker._check_namespace(
             '<sbml xmlns="http://www.cellml.org/cellml/1.1" />'))
+        self.assertTrue(t.MetaChecker._check_namespace(
+            '<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1" />'))
 
     def test_fail(self):
         self.assertFalse(t.MetaChecker._check_namespace(
