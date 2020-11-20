@@ -78,7 +78,7 @@ class TestSeekContentBlob(TestCase):
 class TestSeekJson(TestCase):
     valid_json: dict = {'data': {'id': '1234',
                                  'attributes': {'latest_version': '5',
-                                                'content_blobs': {'0': {'content_type': '42', 'link': 'hurra'}}}}}
+                                                'content_blobs': [{'content_type': '42', 'link': 'hurra'}]}}}
 
     def test_success(self):
         s = t.SeekJson(self.valid_json)

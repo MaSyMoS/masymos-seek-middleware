@@ -94,11 +94,14 @@ class SeekJson():
     @property
     def content_blobs(self) -> List[SeekContentBlob]:
         ret: List[SeekContentBlob] = []
-        blob_key: str
-        for blob_key in self.__json['data']['attributes']['content_blobs']:
+        blob: dict
+        for blob in list(self.__json['data']['attributes']['content_blobs']):
+            if type(blob) is not dict:
+                logger.debug("blob type (%s) incorrect, skip", type(blob))
+                continue
             obj: SeekContentBlob
             try:
-                obj = SeekContentBlob(self.__json['data']['attributes']['content_blobs'][blob_key])
+                obj = SeekContentBlob(blob)
             except InputAnalyseError as e:
                 logger.debug("skip blob, error initialising SeekContentBlob", e)
                 continue
@@ -116,7 +119,8 @@ class SeekJson():
             if type(self.latest_version) is not int \
                     or self.latest_version is None:
                 raise ValueError("latest_version is invalid (%s)", self.latest_version)
-            if type(self.__json['data']['attributes']['content_blobs']) is not dict:
+            if type(self.__json['data']['attributes']['content_blobs']) is not dict \
+                    and type(self.__json['data']['attributes']['content_blobs']) is not list:
                 raise ValueError("content_blob invalid")
         except (ValueError, KeyError) as e:
             logger.debug("json invalid, error: %s", e)

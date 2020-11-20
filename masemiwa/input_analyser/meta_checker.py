@@ -22,6 +22,7 @@ class MetaChecker():
     def __init__(self, url: str):
         self.__valid_blobs: List[SeekContentBlob] = []
         self.__valid: bool = False
+        self.__one_download_failed = False
 
         # parse URL
         self.__url: SeekUrl = SeekUrl(url)
@@ -48,6 +49,7 @@ class MetaChecker():
             except InputAnalyseError as e:
                 if e.reason is InputAnalyseErrorReason.DATA_FILE_NOT_FOUND:
                     logger.info("unable to download file %s", blob.link)
+                    self.__one_download_failed = True
                 elif e.reason is InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH:
                     logger.info("namespace vs. attribute level/version mismatch in file %s", blob.link)
                 else:
@@ -65,6 +67,18 @@ class MetaChecker():
     @property
     def valid_blobs(self) -> List[SeekContentBlob]:
         return self.__valid_blobs
+
+    @property
+    def valid_blobs_links(self) -> List[str]:
+        ret: list[str] = []
+        b: SeekContentBlob
+        for b in self.__valid_blobs:
+            ret.append(b.link)
+        return ret
+
+    @property
+    def did_one_download_fail(self) -> bool:
+        return self.__one_download_failed
 
     def __repr__(self):
         return "metachecker#" + str(self.__url.url)
