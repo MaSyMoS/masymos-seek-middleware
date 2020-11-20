@@ -15,6 +15,18 @@ Source Code, Feedback and Contribution
 Table of Content
 ################
 
+
+.. toctree::
+    :maxdepth: 2
+    :name: maintoc
+    :includehidden:
+
+.. toctree::
+    :caption: Usage
+    :maxdepth: 2
+    
+    usage
+
 .. toctree::
     :caption: Development
     :maxdepth: 2

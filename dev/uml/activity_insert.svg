@@ -1,85 +1,112 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="635px" preserveAspectRatio="none" style="width:823px;height:635px;" version="1.1" viewBox="0 0 823 635" width="823px" zoomAndPan="magnify">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="737px" preserveAspectRatio="none" style="width:949px;height:737px;" version="1.1" viewBox="0 0 949 737" width="949px" zoomAndPan="magnify">
     <defs />
-    <g><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="95" x="716" y="19.2822">version: 20.10.2020</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="98" x="361.5" y="38.3486">MaSeMiWa</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="165" x="328" y="59.3018">INSERT-Procedure</text>
-        <ellipse cx="247" cy="73.5469" fill="#000000" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;" />
-        <path d="M198.5,103.5469 L193.5,120.5313 L198.5,137.5156 M295.5,103.5469 L300.5,120.5313 L295.5,137.5156 " fill="#FFFFFF" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="87" x="203.5" y="124.6855">file link known</text>
-        <polygon fill="#FEFECE" points="186.5,157.5156,307.5,157.5156,319.5,169.5156,307.5,181.5156,186.5,181.5156,174.5,169.5156,186.5,157.5156" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="121" x="186.5" y="173.3237">fetch metadata for ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="29" x="145.5" y="166.9214">error</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="319.5" y="166.9214">success</text>
-        <rect fill="#FFAAAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="11" y="191.5156" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="21" y="212.6543">Return 404</text>
-        <ellipse cx="56" cy="256.4844" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
-        <ellipse cx="56" cy="256.4844" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
-        <polygon fill="#FEFECE" points="123,284.2891,255,284.2891,267,296.2891,255,308.2891,123,308.2891,111,296.2891,123,284.2891" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="14" x="193" y="318.4995">no</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="132" x="123" y="300.0972">check MIME in allow list</text>
-        <polygon fill="#FEFECE" points="299,284.2891,375,284.2891,387,296.2891,375,308.2891,299,308.2891,287,296.2891,299,284.2891" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="31" x="341" y="318.4995">failed</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="299" y="300.0972">Download file</text>
-        <polygon fill="#FEFECE" points="419,284.2891,489,284.2891,501,296.2891,489,308.2891,419,308.2891,407,296.2891,419,284.2891" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="458" y="318.4995">invalid</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="419" y="300.0972">validate XML</text>
-        <polygon fill="#FEFECE" points="533,283.4844,647,283.4844,659,296.2891,647,309.0938,533,309.0938,521,296.2891,533,283.4844" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="594" y="319.3042">invalid</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="114" x="533" y="293.6948">validate namespace</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="97" x="533" y="306.4995">and level/version</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="659" y="293.6948">success</text>
-        <rect fill="#AAFFAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="106" x="679" y="323.0879" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="689" y="344.2266">add to Queue</text>
-        <rect fill="#FEFECE" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="428.5" y="417.0566" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="19" x="438.5" y="438.1953">log</text>
-        <rect fill="#FEFECE" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="188" x="354" y="191.5156" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="364" y="212.6543">iterate over</text><text fill="#000000" font-family="monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="91" x="441" y="212.6543">content_blobs</text>
-        <polygon fill="#FEFECE" points="418.5,471.0254,477.5,471.0254,489.5,483.0254,477.5,495.0254,418.5,495.0254,406.5,483.0254,418.5,471.0254" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="59" x="418.5" y="486.8335">next item?</text>
-        <polygon fill="#FEFECE" points="371,515.0254,525,515.0254,537,527.0254,525,539.0254,371,539.0254,359,527.0254,371,515.0254" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="154" x="371" y="530.8335">s.th. was added to Queue?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="20" x="339" y="524.4312">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="14" x="537" y="524.4312">no</text>
-        <rect fill="#AAFFAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="304" y="549.0254" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="314" y="570.1641">Return 200</text>
-        <ellipse cx="349" cy="613.9941" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
-        <ellipse cx="349" cy="613.9941" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
-        <rect fill="#FFAAAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="502" y="549.0254" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="512" y="570.1641">Return 400</text>
-        <ellipse cx="547" cy="613.9941" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
-        <ellipse cx="547" cy="613.9941" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="247" x2="247" y1="83.5469" y2="103.5469" />
-        <polygon fill="#A80036" points="243,93.5469,247,103.5469,251,93.5469,247,97.5469" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="56" x2="56" y1="225.4844" y2="245.4844" />
-        <polygon fill="#A80036" points="52,235.4844,56,245.4844,60,235.4844,56,239.4844" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="189" x2="189" y1="308.2891" y2="397.0566" />
-        <polygon fill="#A80036" points="185,387.0566,189,397.0566,193,387.0566,189,391.0566" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="337" x2="337" y1="308.2891" y2="397.0566" />
-        <polygon fill="#A80036" points="333,387.0566,337,397.0566,341,387.0566,337,391.0566" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="454" x2="454" y1="308.2891" y2="397.0566" />
-        <polygon fill="#A80036" points="450,387.0566,454,397.0566,458,387.0566,454,391.0566" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="590" x2="590" y1="309.0938" y2="397.0566" />
-        <polygon fill="#A80036" points="586,387.0566,590,397.0566,594,387.0566,590,391.0566" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="267" x2="287" y1="296.2891" y2="296.2891" />
-        <polygon fill="#A80036" points="277,292.2891,287,296.2891,277,300.2891,281,296.2891" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="387" x2="407" y1="296.2891" y2="296.2891" />
-        <polygon fill="#A80036" points="397,292.2891,407,296.2891,397,300.2891,401,296.2891" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="501" x2="521" y1="296.2891" y2="296.2891" />
-        <polygon fill="#A80036" points="511,292.2891,521,296.2891,511,300.2891,515,296.2891" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="448" x2="448" y1="225.4844" y2="258.4844" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="448" x2="189" y1="258.4844" y2="258.4844" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="189" x2="189" y1="258.4844" y2="284.2891" />
-        <polygon fill="#A80036" points="185,274.2891,189,284.2891,193,274.2891,189,278.2891" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="659" x2="732" y1="296.2891" y2="296.2891" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="732" x2="732" y1="296.2891" y2="323.0879" />
-        <polygon fill="#A80036" points="728,313.0879,732,323.0879,736,313.0879,732,317.0879" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="732" x2="732" y1="357.0566" y2="397.0566" />
-        <polygon fill="#A80036" points="728,387.0566,732,397.0566,736,387.0566,732,391.0566" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="189" x2="732" y1="397.0566" y2="397.0566" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="448" x2="448" y1="397.0566" y2="417.0566" />
-        <polygon fill="#A80036" points="444,407.0566,448,417.0566,452,407.0566,448,411.0566" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="489.5" x2="797" y1="483.0254" y2="483.0254" />
-        <polygon fill="#A80036" points="793,377.0566,797,367.0566,801,377.0566,797,373.0566" style="stroke: #A80036; stroke-width: 1.5;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="797" x2="797" y1="208.5" y2="483.0254" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="797" x2="542" y1="208.5" y2="208.5" />
-        <polygon fill="#A80036" points="552,204.5,542,208.5,552,212.5,548,208.5" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="448" x2="448" y1="451.0254" y2="471.0254" />
-        <polygon fill="#A80036" points="444,461.0254,448,471.0254,452,461.0254,448,465.0254" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="349" x2="349" y1="582.9941" y2="602.9941" />
-        <polygon fill="#A80036" points="345,592.9941,349,602.9941,353,592.9941,349,596.9941" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="547" x2="547" y1="582.9941" y2="602.9941" />
-        <polygon fill="#A80036" points="543,592.9941,547,602.9941,551,592.9941,547,596.9941" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="359" x2="349" y1="527.0254" y2="527.0254" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="349" x2="349" y1="527.0254" y2="549.0254" />
-        <polygon fill="#A80036" points="345,539.0254,349,549.0254,353,539.0254,349,543.0254" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="537" x2="547" y1="527.0254" y2="527.0254" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="547" x2="547" y1="527.0254" y2="549.0254" />
-        <polygon fill="#A80036" points="543,539.0254,547,549.0254,551,539.0254,547,543.0254" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="448" x2="448" y1="495.0254" y2="515.0254" />
-        <polygon fill="#A80036" points="444,505.0254,448,515.0254,452,505.0254,448,509.0254" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="174.5" x2="56" y1="169.5156" y2="169.5156" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="56" x2="56" y1="169.5156" y2="191.5156" />
+    <g><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="95" x="842.5" y="19.2822">version: 19.11.2020</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="98" x="424.75" y="38.3486">MaSeMiWa</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="165" x="391.25" y="59.3018">INSERT-Procedure</text>
+        <ellipse cx="213" cy="73.5469" fill="#000000" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;" />
+        <polygon fill="#FEFECE" points="159,103.5469,267,103.5469,279,115.5469,267,127.5469,159,127.5469,147,115.5469,159,103.5469" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="159" y="119.355">new insert request</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="111" y="112.9526">invalid</text>
+        <rect fill="#FFAAAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="11" y="137.5469" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="21" y="158.6855">Return 405</text>
+        <ellipse cx="56" cy="202.5156" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
+        <ellipse cx="56" cy="202.5156" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
+        <path d="M325,137.5469 L320,154.5313 L325,171.5156 M422,137.5469 L427,154.5313 L422,171.5156 " fill="#FFFFFF" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="87" x="330" y="158.6855">file link known</text>
+        <polygon fill="#FEFECE" points="313,191.5156,434,191.5156,446,203.5156,434,215.5156,313,215.5156,301,203.5156,313,191.5156" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="121" x="313" y="207.3237">fetch metadata for ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="29" x="272" y="200.9214">error</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="446" y="200.9214">success</text>
+        <rect fill="#FFAAAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="127.5" y="225.5156" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="137.5" y="246.6543">Return 404</text>
+        <ellipse cx="172.5" cy="290.4844" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
+        <ellipse cx="172.5" cy="290.4844" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
+        <polygon fill="#FEFECE" points="249.5,318.2891,381.5,318.2891,393.5,330.2891,381.5,342.2891,249.5,342.2891,237.5,330.2891,249.5,318.2891" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="14" x="319.5" y="352.4995">no</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="132" x="249.5" y="334.0972">check MIME in allow list</text>
+        <polygon fill="#FEFECE" points="425.5,318.2891,501.5,318.2891,513.5,330.2891,501.5,342.2891,425.5,342.2891,413.5,330.2891,425.5,318.2891" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="31" x="467.5" y="352.4995">failed</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="425.5" y="334.0972">Download file</text>
+        <path d="M426.5,375.0938 L421.5,392.0781 L426.5,409.0625 M500.5,375.0938 L505.5,392.0781 L500.5,409.0625 " fill="#FFFFFF" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="64" x="431.5" y="396.2324">remember</text>
+        <polygon fill="#FEFECE" points="545.5,318.2891,615.5,318.2891,627.5,330.2891,615.5,342.2891,545.5,342.2891,533.5,330.2891,545.5,318.2891" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="584.5" y="352.4995">invalid</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="545.5" y="334.0972">validate XML</text>
+        <polygon fill="#FEFECE" points="659.5,317.4844,773.5,317.4844,785.5,330.2891,773.5,343.0938,659.5,343.0938,647.5,330.2891,659.5,317.4844" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="720.5" y="353.3042">invalid</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="114" x="659.5" y="327.6948">validate namespace</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="97" x="659.5" y="340.4995">and level/version</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="785.5" y="327.6948">success</text>
+        <rect fill="#AAFFAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="106" x="805.5" y="371.2891" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="815.5" y="392.4277">add to Queue</text>
+        <rect fill="#FEFECE" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="555" y="469.0625" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="19" x="565" y="490.2012">log</text>
+        <rect fill="#FEFECE" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="188" x="480.5" y="225.5156" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="490.5" y="246.6543">iterate over</text><text fill="#000000" font-family="monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="91" x="567.5" y="246.6543">content_blobs</text>
+        <polygon fill="#FEFECE" points="545,523.0313,604,523.0313,616,535.0313,604,547.0313,545,547.0313,533,535.0313,545,523.0313" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="59" x="545" y="538.8394">next item?</text>
+        <polygon fill="#FEFECE" points="497.5,567.0313,651.5,567.0313,663.5,579.0313,651.5,591.0313,497.5,591.0313,485.5,579.0313,497.5,567.0313" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="154" x="497.5" y="582.8394">s.th. was added to Queue?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="20" x="465.5" y="576.437">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="14" x="663.5" y="576.437">no</text>
+        <rect fill="#AAFFAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="428.5" y="601.0313" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="438.5" y="622.1699">Return 200</text>
+        <ellipse cx="473.5" cy="681" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
+        <ellipse cx="473.5" cy="681" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
+        <polygon fill="#FEFECE" points="615.5,601.0313,735.5,601.0313,747.5,613.0313,735.5,625.0313,615.5,625.0313,603.5,613.0313,615.5,601.0313" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="120" x="615.5" y="616.8394">one download failed?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="20" x="583.5" y="610.437">yes</text>
+        <rect fill="#FFAAAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="548.5" y="635.0313" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="558.5" y="656.1699">Return 502</text>
+        <ellipse cx="593.5" cy="715" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
+        <ellipse cx="593.5" cy="715" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
+        <rect fill="#AAFFAA" height="33.9688" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="712.5" y="635.0313" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="722.5" y="656.1699">Return 204</text>
+        <ellipse cx="757.5" cy="715" fill="#FFFFFF" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;" />
+        <ellipse cx="757.5" cy="715" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="56" x2="56" y1="171.5156" y2="191.5156" />
         <polygon fill="#A80036" points="52,181.5156,56,191.5156,60,181.5156,56,185.5156" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="319.5" x2="448" y1="169.5156" y2="169.5156" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="448" x2="448" y1="169.5156" y2="191.5156" />
-        <polygon fill="#A80036" points="444,181.5156,448,191.5156,452,181.5156,448,185.5156" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="247" x2="247" y1="137.5156" y2="157.5156" />
-        <polygon fill="#A80036" points="243,147.5156,247,157.5156,251,147.5156,247,151.5156" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[3d6f23e192fa3a60f2226244cb5fe59d]
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="172.5" x2="172.5" y1="259.4844" y2="279.4844" />
+        <polygon fill="#A80036" points="168.5,269.4844,172.5,279.4844,176.5,269.4844,172.5,273.4844" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="315.5" x2="315.5" y1="342.2891" y2="449.0625" />
+        <polygon fill="#A80036" points="311.5,439.0625,315.5,449.0625,319.5,439.0625,315.5,443.0625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="463.5" x2="463.5" y1="342.2891" y2="375.0938" />
+        <polygon fill="#A80036" points="459.5,365.0938,463.5,375.0938,467.5,365.0938,463.5,369.0938" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="463.5" x2="463.5" y1="409.0625" y2="449.0625" />
+        <polygon fill="#A80036" points="459.5,439.0625,463.5,449.0625,467.5,439.0625,463.5,443.0625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="580.5" x2="580.5" y1="342.2891" y2="449.0625" />
+        <polygon fill="#A80036" points="576.5,439.0625,580.5,449.0625,584.5,439.0625,580.5,443.0625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="716.5" x2="716.5" y1="343.0938" y2="449.0625" />
+        <polygon fill="#A80036" points="712.5,439.0625,716.5,449.0625,720.5,439.0625,716.5,443.0625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="393.5" x2="413.5" y1="330.2891" y2="330.2891" />
+        <polygon fill="#A80036" points="403.5,326.2891,413.5,330.2891,403.5,334.2891,407.5,330.2891" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="513.5" x2="533.5" y1="330.2891" y2="330.2891" />
+        <polygon fill="#A80036" points="523.5,326.2891,533.5,330.2891,523.5,334.2891,527.5,330.2891" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="627.5" x2="647.5" y1="330.2891" y2="330.2891" />
+        <polygon fill="#A80036" points="637.5,326.2891,647.5,330.2891,637.5,334.2891,641.5,330.2891" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="574.5" x2="574.5" y1="259.4844" y2="292.4844" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="574.5" x2="315.5" y1="292.4844" y2="292.4844" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="315.5" x2="315.5" y1="292.4844" y2="318.2891" />
+        <polygon fill="#A80036" points="311.5,308.2891,315.5,318.2891,319.5,308.2891,315.5,312.2891" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="785.5" x2="858.5" y1="330.2891" y2="330.2891" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="858.5" x2="858.5" y1="330.2891" y2="371.2891" />
+        <polygon fill="#A80036" points="854.5,361.2891,858.5,371.2891,862.5,361.2891,858.5,365.2891" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="858.5" x2="858.5" y1="405.2578" y2="449.0625" />
+        <polygon fill="#A80036" points="854.5,439.0625,858.5,449.0625,862.5,439.0625,858.5,443.0625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="315.5" x2="858.5" y1="449.0625" y2="449.0625" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="574.5" x2="574.5" y1="449.0625" y2="469.0625" />
+        <polygon fill="#A80036" points="570.5,459.0625,574.5,469.0625,578.5,459.0625,574.5,463.0625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="616" x2="923.5" y1="535.0313" y2="535.0313" />
+        <polygon fill="#A80036" points="919.5,429.0625,923.5,419.0625,927.5,429.0625,923.5,425.0625" style="stroke: #A80036; stroke-width: 1.5;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="923.5" x2="923.5" y1="242.5" y2="535.0313" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="923.5" x2="668.5" y1="242.5" y2="242.5" />
+        <polygon fill="#A80036" points="678.5,238.5,668.5,242.5,678.5,246.5,674.5,242.5" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="574.5" x2="574.5" y1="503.0313" y2="523.0313" />
+        <polygon fill="#A80036" points="570.5,513.0313,574.5,523.0313,578.5,513.0313,574.5,517.0313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="473.5" x2="473.5" y1="635" y2="670" />
+        <polygon fill="#A80036" points="469.5,660,473.5,670,477.5,660,473.5,664" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="593.5" x2="593.5" y1="669" y2="704" />
+        <polygon fill="#A80036" points="589.5,694,593.5,704,597.5,694,593.5,698" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="757.5" x2="757.5" y1="669" y2="704" />
+        <polygon fill="#A80036" points="753.5,694,757.5,704,761.5,694,757.5,698" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="603.5" x2="593.5" y1="613.0313" y2="613.0313" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="593.5" x2="593.5" y1="613.0313" y2="635.0313" />
+        <polygon fill="#A80036" points="589.5,625.0313,593.5,635.0313,597.5,625.0313,593.5,629.0313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="747.5" x2="757.5" y1="613.0313" y2="613.0313" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="757.5" x2="757.5" y1="613.0313" y2="635.0313" />
+        <polygon fill="#A80036" points="753.5,625.0313,757.5,635.0313,761.5,625.0313,757.5,629.0313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="485.5" x2="473.5" y1="579.0313" y2="579.0313" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="473.5" x2="473.5" y1="579.0313" y2="601.0313" />
+        <polygon fill="#A80036" points="469.5,591.0313,473.5,601.0313,477.5,591.0313,473.5,595.0313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="663.5" x2="675.5" y1="579.0313" y2="579.0313" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="675.5" x2="675.5" y1="579.0313" y2="601.0313" />
+        <polygon fill="#A80036" points="671.5,591.0313,675.5,601.0313,679.5,591.0313,675.5,595.0313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="574.5" x2="574.5" y1="547.0313" y2="567.0313" />
+        <polygon fill="#A80036" points="570.5,557.0313,574.5,567.0313,578.5,557.0313,574.5,561.0313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="301" x2="172.5" y1="203.5156" y2="203.5156" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="172.5" x2="172.5" y1="203.5156" y2="225.5156" />
+        <polygon fill="#A80036" points="168.5,215.5156,172.5,225.5156,176.5,215.5156,172.5,219.5156" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="446" x2="574.5" y1="203.5156" y2="203.5156" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="574.5" x2="574.5" y1="203.5156" y2="225.5156" />
+        <polygon fill="#A80036" points="570.5,215.5156,574.5,225.5156,578.5,215.5156,574.5,219.5156" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="373.5" x2="373.5" y1="171.5156" y2="191.5156" />
+        <polygon fill="#A80036" points="369.5,181.5156,373.5,191.5156,377.5,181.5156,373.5,185.5156" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="147" x2="56" y1="115.5469" y2="115.5469" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="56" x2="56" y1="115.5469" y2="137.5469" />
+        <polygon fill="#A80036" points="52,127.5469,56,137.5469,60,127.5469,56,131.5469" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="279" x2="373.5" y1="115.5469" y2="115.5469" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="373.5" x2="373.5" y1="115.5469" y2="137.5469" />
+        <polygon fill="#A80036" points="369.5,127.5469,373.5,137.5469,377.5,127.5469,373.5,131.5469" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="213" x2="213" y1="83.5469" y2="103.5469" />
+        <polygon fill="#A80036" points="209,93.5469,213,103.5469,217,93.5469,213,97.5469" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[c3cbfda0d8397a3cf220ef6ca35d6e75]
 @startuml
 
 title: MaSeMiWa\nINSERT-Procedure
@@ -105,44 +132,53 @@ skinparam shadowing false
 
 start
 
-info(file link known)
+if (new insert request) then (invalid)
+    stoperror(Return 405)
+else
 
-if (fetch metadata for ID) then (error)
-    stoperror(Return 404)
+    info(file link known)
 
-else (success)
-    repeat :iterate over ""content_blobs"";
-        if (check MIME in allow list) then (no)
-            file_failed()
-        elseif (Download file) then (failed)
-            file_failed()
-        elseif (validate XML) then (invalid)
-            file_failed()
-        elseif (validate namespace\nand level/version) then (invalid)
-            file_failed()
-        else (success)
-            #afa:add to Queue;
-''            :log "imported model xyz";
-        endif
-        
-        :log;
-        
-    repeat while (next item?)
+    if (fetch metadata for ID) then (error)
+        stoperror(Return 404)
 
-    if (s.th. was added to Queue?) then (yes)
-        stopsuccess(Return 200)
-    else (no)
-        stoperror(Return 400)
+    else (success)
+        repeat :iterate over ""content_blobs"";
+            if (check MIME in allow list) then (no)
+                file_failed()
+            elseif (Download file) then (failed)
+                info(remember)
+                file_failed()
+            elseif (validate XML) then (invalid)
+                file_failed()
+            elseif (validate namespace\nand level/version) then (invalid)
+                file_failed()
+            else (success)
+                #afa:add to Queue;
+    ''            :log "imported model xyz";
+            endif
+            
+            :log;
+            
+        repeat while (next item?)
 
+        if (s.th. was added to Queue?) then (yes)
+            stopsuccess(Return 200)
+        else (no)
+            if (one download failed?) then (yes)
+                stoperror(Return 502)
+            else
+                stopsuccess(Return 204)
+            endif
+
+    endif
 endif
-
 
 @enduml
 
 @startuml
 
 title: MaSeMiWa\nINSERT-Procedure
-header version: 20.10.2020
+header version: 19.11.2020
 
 skinparam shadowing false
 
@@ -150,35 +186,46 @@ skinparam shadowing false
 
 start
 
-#fff:file link known}
+if (new insert request) then (invalid)
+        #faa:Return 405;
+    stop
+else
 
-if (fetch metadata for ID) then (error)
-        #faa:Return 404;
+    #fff:file link known}
+
+    if (fetch metadata for ID) then (error)
+            #faa:Return 404;
     stop
 
-else (success)
-    repeat :iterate over ""content_blobs"";
-        if (check MIME in allow list) then (no)
-                    elseif (Download file) then (failed)
-                    elseif (validate XML) then (invalid)
-                    elseif (validate namespace\nand level/version) then (invalid)
-                    else (success)
-            #afa:add to Queue;
-        endif
-        
-        :log;
-        
-    repeat while (next item?)
+    else (success)
+        repeat :iterate over ""content_blobs"";
+            if (check MIME in allow list) then (no)
+                            elseif (Download file) then (failed)
+                #fff:remember}
+                            elseif (validate XML) then (invalid)
+                            elseif (validate namespace\nand level/version) then (invalid)
+                            else (success)
+                #afa:add to Queue;
+            endif
+            
+            :log;
+            
+        repeat while (next item?)
 
-    if (s.th. was added to Queue?) then (yes)
-            #afa:Return 200;
+        if (s.th. was added to Queue?) then (yes)
+                #afa:Return 200;
     stop
-    else (no)
-            #faa:Return 400;
+        else (no)
+            if (one download failed?) then (yes)
+                    #faa:Return 502;
     stop
+            else
+                    #afa:Return 204;
+    stop
+            endif
 
+    endif
 endif
-
 
 @enduml
 

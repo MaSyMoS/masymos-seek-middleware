@@ -23,36 +23,45 @@ skinparam shadowing false
 
 start
 
-info(file link known)
+if (new insert request) then (invalid)
+    stoperror(Return 405)
+else
 
-if (fetch metadata for ID) then (error)
-    stoperror(Return 404)
+    info(file link known)
 
-else (success)
-    repeat :iterate over ""content_blobs"";
-        if (check MIME in allow list) then (no)
-            file_failed()
-        elseif (Download file) then (failed)
-            file_failed()
-        elseif (validate XML) then (invalid)
-            file_failed()
-        elseif (validate namespace\nand level/version) then (invalid)
-            file_failed()
-        else (success)
-            #afa:add to Queue;
-''            :log "imported model xyz";
-        endif
-        
-        :log;
-        
-    repeat while (next item?)
+    if (fetch metadata for ID) then (error)
+        stoperror(Return 404)
 
-    if (s.th. was added to Queue?) then (yes)
-        stopsuccess(Return 200)
-    else (no)
-        stoperror(Return 400)
+    else (success)
+        repeat :iterate over ""content_blobs"";
+            if (check MIME in allow list) then (no)
+                file_failed()
+            elseif (Download file) then (failed)
+                info(remember)
+                file_failed()
+            elseif (validate XML) then (invalid)
+                file_failed()
+            elseif (validate namespace\nand level/version) then (invalid)
+                file_failed()
+            else (success)
+                #afa:add to Queue;
+    ''            :log "imported model xyz";
+            endif
+            
+            :log;
+            
+        repeat while (next item?)
 
+        if (s.th. was added to Queue?) then (yes)
+            stopsuccess(Return 200)
+        else (no)
+            if (one download failed?) then (yes)
+                stoperror(Return 502)
+            else
+                stopsuccess(Return 204)
+            endif
+
+    endif
 endif
-
 
 @enduml
