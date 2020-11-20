@@ -110,12 +110,12 @@ class TestExtractNamespace(TestCase):
         with pytest.raises(InputAnalyseError) as e:
             t.MetaChecker._extract_namespace(
                 '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4a" />')
-        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE, e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE, e.value.reason)
 
         with pytest.raises(InputAnalyseError) as e:
             t.MetaChecker._extract_namespace(
                 '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2y" version="4" />')
-        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE, e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE, e.value.reason)
 
     def test_invalid_xml(self):
         with pytest.raises(InputAnalyseError) as e:

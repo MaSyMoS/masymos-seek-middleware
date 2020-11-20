@@ -3,7 +3,12 @@ from .listener.server_functions import app
 
 logger = logging.getLogger(__name__)
 
+"""
 
+to start the server use a framework like gunicorn
+gunicorn --bind 0.0.0.0:5000 start_server:app
+
+"""
 
 
 # TODO handle configuration

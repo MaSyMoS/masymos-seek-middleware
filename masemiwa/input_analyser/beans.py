@@ -63,7 +63,7 @@ class SeekContentBlob():
         return self.__json['link']
 
     def __init__(self, json: dict):
-        self.__json = json
+        self.__json: dict = json
         try:
             if self.mime.strip() is '' or \
                     self.link.strip() is '':
@@ -94,19 +94,19 @@ class SeekJson():
     @property
     def content_blobs(self) -> List[SeekContentBlob]:
         ret: List[SeekContentBlob] = []
-        blob: dict
-        for blob in self.__json['data']['attributes']['content_blobs']:
+        blob_key: str
+        for blob_key in self.__json['data']['attributes']['content_blobs']:
             obj: SeekContentBlob
             try:
-                obj = SeekContentBlob(blob)
+                obj = SeekContentBlob(self.__json['data']['attributes']['content_blobs'][blob_key])
             except InputAnalyseError as e:
-                logger.debug("skip blob, error initialising SeekContentBlob",e)
+                logger.debug("skip blob, error initialising SeekContentBlob", e)
                 continue
             ret.append(obj)
         return ret
 
     def __init__(self, json: dict):
-        self.__json = json
+        self.__json = json.copy()
         try:
             # referencing a non-existing key will result in a KeyError
             # the call of self.id etc. will also raise a ValueError, if the value is wrong
@@ -116,7 +116,8 @@ class SeekJson():
             if type(self.latest_version) is not int \
                     or self.latest_version is None:
                 raise ValueError("latest_version is invalid (%s)", self.latest_version)
-            self.__json['data']['attributes']['content_blobs']
+            if type(self.__json['data']['attributes']['content_blobs']) is not dict:
+                raise ValueError("content_blob invalid")
         except (ValueError, KeyError) as e:
             logger.debug("json invalid, error: %s", e)
             raise InputAnalyseError(InputAnalyseErrorReason.JSON_CONTENT_INVALID)

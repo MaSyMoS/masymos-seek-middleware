@@ -15,10 +15,17 @@ class InputAnalyseErrorReason(Enum):
     CONTENT_BLOB_MIME_NOT_SUPPORTED = "SEEK-Metadata: the MIME of this file is not supported"
     DATA_FILE_NOT_FOUND = "file specified in conten_blob could not be found"
     DATA_NOT_VALID_XML = "XML-File: cannot parse file s XML"
-    DATA_ATTRIBUTE_NOT_PARSABLE = "cannot parse level or version; must be Integer"
+    DATA_ATTRIBUTE_NOT_PARSEABLE = "cannot parse level or version; must be Integer"
     DATA_NAMESPACE_EMPTY = "XML-File: namespace not defined"
     DATA_NAMESPACE_NOT_SUPPORTED = "XML-File: the NAMESPACE, LEVEL or VERSION of this file is not supported"
     DATA_NAMESPACE_LEVEL_VERSION_MISMATCH = "XML-File: level/version of XML-attributes is not matching with namespace level/version "
+
+    def __init__(self, error_message: str):
+        self.__msg = error_message
+
+    @property
+    def error_message(self) -> str:
+        return self.__msg
 
 
 class InputAnalyseError(AttributeError):
@@ -38,7 +45,3 @@ class InputAnalyseError(AttributeError):
     @property
     def resource(self) -> Optional[str]:
         return self.__resource
-
-    @property
-    def message(self) -> str:
-        return self.__reason.value

@@ -27,7 +27,7 @@ class MorreQueue(Thread):
                 if type(s) is not str:
                     raise TypeError("the list must contain strings only!")
                 self.__queue.append(s)
-            logger.debug("added list with %d elements to Morre-Queue", len(list))
+            logger.debug("added list with %d elements to Morre-Queue", len(add_queue))
         finally:
             self.__lock.release()
 

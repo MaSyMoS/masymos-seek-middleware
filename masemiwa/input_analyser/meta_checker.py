@@ -52,7 +52,7 @@ class MetaChecker():
                     logger.info("namespace vs. attribute level/version mismatch in file %s", blob.link)
                 else:
                     logger.debug("unable to process content blob %s; %s - %s",
-                                 blob.link, e.reason, e.message)
+                                 blob.link, e.reason, e.reason.error_message)
 
     @property
     def is_valid(self) -> bool:
@@ -152,14 +152,14 @@ class MetaChecker():
                 try:
                     data['version'] = int(child.attrib['version'])
                 except ValueError:
-                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE)
+                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE)
                 except KeyError:
                     # optional
                     pass
                 try:
                     data['level'] = int(child.attrib['level'])
                 except ValueError:
-                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE)
+                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE)
                 except KeyError:
                     # optional
                     pass
