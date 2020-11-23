@@ -25,7 +25,7 @@ start
 
 if (new insert request) then (invalid)
     stoperror(Return 405)
-else
+else (valid)
 
     info(file link known)
 

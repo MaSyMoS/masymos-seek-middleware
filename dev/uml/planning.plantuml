@@ -1,0 +1,50 @@
+@startgantt
+<style>
+ganttDiagram {
+	task {
+		FontName Helvetica
+		FontColor #000
+		FontSize 10
+		FontStyle normal
+		BackGroundColor #afa
+		LineColor #666
+	}
+}
+</style>
+
+today is %date("yyyy-MM-dd") and is colored in #AAF
+
+Project starts 2020-10-19
+printscale daily
+scale 2
+
+saturday are closed
+sunday are closed
+tuesday are closed
+2020-12-22 is open
+2020-12-29 is open
+2020-12-24 to 2020-12-26 are named [Christmas] and are closed
+2020-12-30 to 2020-12-31 are named [New Year] and are closed
+2020-12-17 to 2020-12-31 are named [Holiday BW] and are colored orange
+
+
+-- MaSeMiWa --
+
+[Basic Structure] as [structure]   lasts 4 days and is     100% completed
+then [Seek Beans] as [beans]   lasts 3 days and is     100% completed
+then [MIME Check] as [mime]   lasts 2 days and is     100% completed
+then [Namespace Check] as [namespace]   lasts 4 days and is   100% completed
+then [content_blob Check] as [blob]   lasts 2 days and is     100% completed
+then [MetaChecker] as [metachecker]   lasts 1 days and is     100% completed
+then [JSON-HTTP-Server] as [http]   lasts 4 days and is   100% completed
+then [Threadify] as [thread]   lasts 2 days and is   50% completed
+then [Morre Interface] as [morre]   lasts 4 days and is   0% completed
+then [Configuration and Logger] as [log]   lasts 1 days and is   0% completed
+then [Dockerisation] as [docker]   lasts 2 days and is   0% completed
+
+-- MaSyMoS --
+[Morre: add Funktions to change work with SEEK-content_blob-id miwa#12] as [id]   lasts 2 days and is   0% completed  and ends at [morre]'s end
+then [exchange lib for resolving URN/CompactID core#12] lasts 3 days and is 0% completed
+then [Exception thrown from SBML library core#9] lasts 1 days and is 50% completed
+
+@endgantt
