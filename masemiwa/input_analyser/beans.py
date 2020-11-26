@@ -1,7 +1,7 @@
 import logging
 from typing import List, Optional, Match
 import re
-from urllib.parse import ParseResultBytes, urlparse
+from urllib.parse import ParseResult, urlparse
 
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 
@@ -15,7 +15,7 @@ class SeekUrl():
     """
 
     def __init__(self, url: str):
-        self.__input: ParseResultBytes = urlparse(url)
+        self.__input: ParseResult = urlparse(url)
 
         # remove unnecessary components
         self.__input = self.__input._replace(params=''). \

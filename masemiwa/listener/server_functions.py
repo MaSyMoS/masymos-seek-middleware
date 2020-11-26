@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 app = Flask("MaSeMiWa")
 
 
-
 def __check_if_valid_post_json_request(request: request, key_to_check: str = 'link') -> bool:
     if request.method == 'POST' \
             and request.is_json \
@@ -43,10 +42,9 @@ def insert():
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
-    insert:Minsert=Minsert(link)
+    insert: Minsert = Minsert(link)
 
     return insert.process()
-
 
 
 @app.route('/delete', methods=['POST'])

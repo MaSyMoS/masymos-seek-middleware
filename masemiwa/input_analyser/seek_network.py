@@ -3,6 +3,8 @@ from typing import Dict, Optional
 import requests
 import logging
 
+import masemiwa.config as config
+
 from requests import HTTPError, Response, ConnectTimeout
 from urllib3.exceptions import ConnectTimeoutError
 
@@ -20,9 +22,9 @@ def download_file(url: str, headers: Dict = None) -> Optional[Response]:
     r: Response = None
     try:
         if headers is None:
-            r = requests.get(url, timeout=5)
+            r = requests.get(url, timeout=config.Configuration.CONNECTION_TIMEOUT.value)
         else:
-            r = requests.get(url, headers=headers, timeout=5)
+            r = requests.get(url, headers=headers, timeout=config.Configuration.CONNECTION_TIMEOUT.value)
         r.raise_for_status()
     except ConnectTimeoutError or ConnectTimeout:
         logger.warning("unable to get file %s; Timeout!", url)
