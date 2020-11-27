@@ -3,7 +3,7 @@ from typing import Dict, Optional
 import requests
 import logging
 
-import masemiwa.config as config
+from masemiwa import config
 
 from requests import HTTPError, Response, ConnectTimeout
 from urllib3.exceptions import ConnectTimeoutError
@@ -27,7 +27,7 @@ def download_file(url: str, headers: Dict = None) -> Optional[Response]:
             r = requests.get(url, headers=headers, timeout=config.Configuration.CONNECTION_TIMEOUT.value)
         r.raise_for_status()
     except ConnectTimeoutError or ConnectTimeout:
-        logger.warning("unable to get file %s; Timeout!", url)
+        logger.warning("timeout - unable to get file %s; Timeout!", url)
         return
     except HTTPError:
         code: str = 'unknown'

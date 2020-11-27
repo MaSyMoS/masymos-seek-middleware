@@ -35,9 +35,10 @@ class MorreQueue(Thread):
         finally:
             self.__lock.release()
 
-    def add_to_queue_and_start(self, add_queue: list = []) -> None:
+    def add_to_queue_and_eventually_start(self, add_queue: list = []) -> None:
         self._add_to_queue(add_queue)
-        self.start()
+        if not self.is_alive():
+            self.start()
 
     def _pop(self) -> str:
         self.__lock.acquire()

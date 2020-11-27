@@ -57,4 +57,4 @@ class Minsert():
         links: list = self.__metachecker.valid_blobs_links
 
         if links is not None and len(links) > 0:
-            conf.the_queue.add_to_queue_and_start(links)
+            conf.the_queue.add_to_queue_and_eventually_start(links)

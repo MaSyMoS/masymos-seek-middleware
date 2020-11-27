@@ -7,7 +7,7 @@ from typing import Any, Optional
 from requests import Response
 
 from masemiwa.input_analyser.beans import SeekUrl, SeekContentBlob
-from masemiwa.input_analyser.network_tools import download_file
+from masemiwa.input_analyser.seek_network import download_file
 
 logger = logging.getLogger(__name__)
 
