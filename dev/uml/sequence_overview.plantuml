@@ -27,8 +27,6 @@ miwa            -->     miwa            : process queue
 
     loop #efe queue
     
-    loop #ffe insert each content
-
     miwa            ->      morre           : ""add_model""
         activate morre
         
@@ -43,7 +41,6 @@ miwa            -->     miwa            : process queue
     miwa            <--     morre           : SUCCESS
         deactivate morre
     
-    end
     end
 
     miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//

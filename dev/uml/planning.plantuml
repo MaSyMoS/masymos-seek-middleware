@@ -25,7 +25,7 @@ tuesday are closed
 2020-12-29 is open
 2020-12-24 to 2020-12-26 are named [Christmas] and are closed
 2020-12-30 to 2020-12-31 are named [New Year] and are closed
-2020-12-17 to 2020-12-31 are named [Holiday BW] and are colored orange
+2020-12-21 to 2020-12-31 are named [Holiday BW] and are colored orange
 
 
 -- MaSeMiWa --
@@ -37,9 +37,9 @@ then [Namespace Check] as [namespace]   lasts 4 days and is   100% completed
 then [content_blob Check] as [blob]   lasts 2 days and is     100% completed
 then [MetaChecker] as [metachecker]   lasts 1 days and is     100% completed
 then [JSON-HTTP-Server] as [http]   lasts 4 days and is   100% completed
-then [Threadify] as [thread]   lasts 2 days and is   50% completed
-then [Morre Interface] as [morre]   lasts 4 days and is   0% completed
-then [Configuration and Logger] as [log]   lasts 1 days and is   0% completed
+then [Threadify] as [thread]   lasts 2 days and is   100% completed
+then [Morre Interface] as [morre]   lasts 4 days and is   35% completed
+then [Configuration and Logger] as [log]   lasts 1 days and is   25% completed
 then [Dockerisation] as [docker]   lasts 2 days and is   0% completed
 
 -- MaSyMoS --
