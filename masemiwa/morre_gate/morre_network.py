@@ -28,6 +28,7 @@ def _send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
     url: str = _prepare_url(module)
     headers = {
         "Content-Type": "application/json",
+        "Accept": "application/json",
         "Accept-Charset": "UTF-8"
     }
 
