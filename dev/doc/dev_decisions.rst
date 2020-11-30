@@ -137,6 +137,7 @@ What ID to use between MaSeMiWa and MaSyMoS Morre to reference a Content?
 - Description
     - one SEEK model can have several valid entries inside the ``content_blobs`` field
     - to have all these entries inside Morre, we use the full URL to the Blobs instead the link to the model, i.e. ``https://fairdomhub.org/models/196/content_blobs/8745``
+    - if any user uploaded an external linked model (with the external url in the ``content_blob``-field ``url``), the field ``link`` will also reference that file as a copy from the time the model was created
     - the SEEK model ID is included; it's human readable
 
 Deleting a model will not delete any annotations
