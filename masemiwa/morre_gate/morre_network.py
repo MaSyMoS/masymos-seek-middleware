@@ -1,4 +1,5 @@
 import logging
+from typing import Optional
 from urllib.error import HTTPError
 from urllib.parse import ParseResult, urljoin
 
@@ -17,7 +18,7 @@ def _prepare_url(module: str):
     return config.Configuration.MORRE_SERVER.value + _MODEL_UPDATE_SERVICE_URL + module
 
 
-def _send_post_request_with_json(module: str, data: dict) -> dict:
+def _send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
     """
     :param module: the last part of the URL. i.e. `add_modul`
     :param data: the JSON to send
@@ -41,7 +42,7 @@ def _send_post_request_with_json(module: str, data: dict) -> dict:
         return
     except HTTPError:
         code: str = 'unknown'
-        if not r:
+        if r:
             code = r.status_code
 
         logger.warning("unable to make request %s; HTTP-ErrorCode %s", url, code)

@@ -31,7 +31,7 @@ def download_file(url: str, headers: Dict = None) -> Optional[Response]:
         return
     except HTTPError:
         code: str = 'unknown'
-        if not r:
+        if r:
             code = r.status_code
 
         logger.warning("unable to get file %s; HTTP-ErrorCode %s", url, code)
