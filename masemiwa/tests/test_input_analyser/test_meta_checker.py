@@ -5,7 +5,7 @@ import pytest
 
 import masemiwa.input_analyser.meta_checker as t
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
-from masemiwa.input_analyser.beans import XmlNamespace
+from masemiwa.input_analyser.beans import XmlNamespace, SeekContentBlob, SeekContentBlobType
 
 if __name__ == '__main__':
     unittest.main()
@@ -27,34 +27,60 @@ class TestMime(unittest.TestCase):
 
 class TestCheckNamespace(TestCase):
     def test_success(self):
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4" />'))
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.sbml.org/sbml/level1/version42" />'))
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.sbml.org/sbml/level2/version23" />'))
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://sed-ml.org/level1/version1" />'))
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://sed-ml.org/level1/version2" />'))
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.cellml.org/cellml/1.0" />'))
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.cellml.org/cellml/1.1" />'))
-        self.assertTrue(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1" />'))
+        b: SeekContentBlob = SeekContentBlob({'content_type': 'blo', 'link': 'bla'})
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4" />'))
+        self.assertEqual(SeekContentBlobType.SBML, b.type)
+
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://www.sbml.org/sbml/level1/version42" />'))
+        self.assertEqual(SeekContentBlobType.SBML, b.type)
+
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://www.sbml.org/sbml/level2/version23" />'))
+        self.assertEqual(SeekContentBlobType.SBML, b.type)
+
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://sed-ml.org/level1/version1" />'))
+        self.assertEqual(SeekContentBlobType.SEDML, b.type)
+
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://sed-ml.org/level1/version2" />'))
+        self.assertEqual(SeekContentBlobType.SEDML, b.type)
+
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://www.cellml.org/cellml/1.0" />'))
+        self.assertEqual(SeekContentBlobType.CELLML, b.type)
+
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://www.cellml.org/cellml/1.1" />'))
+        self.assertEqual(SeekContentBlobType.CELLML, b.type)
+
+        self.assertTrue(t.MetaChecker._check_namespace(b,
+                                                       '<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1" />'))
+        self.assertEqual(SeekContentBlobType.SBML, b.type)
 
     def test_fail(self):
-        self.assertFalse(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.sbml.org/sbml/level3/version23" />'))
-        self.assertFalse(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://sed-ml.org/level1/version3" />'))
-        self.assertFalse(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://sed-ml.org" />'))
-        self.assertFalse(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.cellml.org/cellml" />'))
-        self.assertFalse(t.MetaChecker._check_namespace(
-            '<sbml xmlns="http://www.cellml.org/cellml/1.2" />'))
+        b: SeekContentBlob = SeekContentBlob({'content_type': 'blo', 'link': 'bla'})
+        self.assertFalse(t.MetaChecker._check_namespace(b,
+                                                        '<sbml xmlns="http://www.sbml.org/sbml/level3/version23" />'))
+        self.assertIsNone(b.type)
+
+        self.assertFalse(t.MetaChecker._check_namespace(b,
+                                                        '<sbml xmlns="http://sed-ml.org/level1/version3" />'))
+        self.assertIsNone(b.type)
+
+        self.assertFalse(t.MetaChecker._check_namespace(b,
+                                                        '<sbml xmlns="http://sed-ml.org" />'))
+        self.assertIsNone(b.type)
+
+        self.assertFalse(t.MetaChecker._check_namespace(b,
+                                                        '<sbml xmlns="http://www.cellml.org/cellml" />'))
+        self.assertIsNone(b.type)
+
+        self.assertFalse(t.MetaChecker._check_namespace(b,
+                                                        '<sbml xmlns="http://www.cellml.org/cellml/1.2" />'))
+        self.assertIsNone(b.type)
 
 
 class TestExtractNamespace(TestCase):

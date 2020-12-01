@@ -6,7 +6,7 @@ from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import ElementTree
 
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
-from masemiwa.input_analyser.beans import SeekContentBlob, XmlNamespace, SeekUrl, SeekJson
+from masemiwa.input_analyser.beans import SeekContentBlob, XmlNamespace, SeekUrl, SeekJson, SeekContentBlobType
 from masemiwa.input_analyser.seek_talker import _download_seek_metadata, _download_blob_content
 
 logger = logging.getLogger(__name__)
@@ -69,14 +69,6 @@ class MetaChecker():
         return self.__valid_blobs
 
     @property
-    def valid_blobs_links(self) -> List[str]:
-        ret: list[str] = []
-        b: SeekContentBlob
-        for b in self.__valid_blobs:
-            ret.append(b.link)
-        return ret
-
-    @property
     def did_one_download_fail(self) -> bool:
         return self.__one_download_failed
 
@@ -105,7 +97,7 @@ class MetaChecker():
             logger.debug("unable to download file for %s", blob.__repr__())
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_FILE_NOT_FOUND)
             pass
-        if not MetaChecker._check_namespace(xml):
+        if not MetaChecker._check_namespace(blob, xml):
             logger.debug("namespace check FAILED for %s", blob.__repr__())
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_NOT_SUPPORTED, blob.__repr__())
         logger.debug("namespace check passed")
@@ -124,21 +116,24 @@ class MetaChecker():
         return mime in MetaChecker._mime_type_allow_list
 
     @staticmethod
-    def _check_namespace(xml: str) -> bool:
+    def _check_namespace(blob: SeekContentBlob, xml: str) -> bool:
 
         namespace: XmlNamespace = MetaChecker._extract_namespace(xml)
 
         if namespace.namespace.startswith('http://www.sbml.org/sbml'):
             if namespace.level <= 2:
+                blob.set_type(SeekContentBlobType.SBML)
                 return True
 
         elif namespace.namespace.startswith('http://sed-ml.org'):
             if namespace.level is 1 \
                     and namespace.version < 3:
+                blob.set_type(SeekContentBlobType.SEDML)
                 return True
 
         elif namespace.namespace.startswith('http://www.cellml.org/cellml/1.0') \
                 or namespace.namespace.startswith('http://www.cellml.org/cellml/1.1'):
+            blob.set_type(SeekContentBlobType.CELLML)
             return True
 
         return False

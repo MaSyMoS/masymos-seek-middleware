@@ -2,6 +2,7 @@ import logging
 
 import masemiwa.config as conf
 from masemiwa.input_analyser import InputAnalyseErrorReason, InputAnalyseError
+from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.input_analyser.meta_checker import MetaChecker
 from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, \
     E502_HTTP_RETURN_CODE_NO_CONNECTION_TO_FILE_DOWNLOAD, E200_HTTP_RETURN_CODE_SUCCESS_ADDED
@@ -54,7 +55,13 @@ class Minsert():
         """
         will send the Link to the running Morre-Queue
         """
-        links: list = self.__metachecker.valid_blobs_links
+        blobs: list = self.__metachecker.valid_blobs
 
-        if links is not None and len(links) > 0:
-            conf.the_queue.add_to_queue_and_eventually_start(links)
+        if blobs is not None \
+                and len(blobs) > 0 \
+                and all(isinstance(x, SeekContentBlob) for x in list):
+            conf.the_queue.add_to_insert_queue_and_eventually_start(blobs)
+        else:
+            logger.fatal(
+                "the seems to be a check missing, \
+                this list here is empty or has the wrong type of objects. this must not happen here!")

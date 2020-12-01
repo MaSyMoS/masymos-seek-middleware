@@ -1,4 +1,5 @@
 import logging
+from enum import unique, Enum
 from typing import List, Optional, Match
 import re
 from urllib.parse import ParseResult, urlparse
@@ -47,12 +48,21 @@ class SeekUrl():
         return "seek-url#" + self.__input.geturl()
 
 
+@unique
+class SeekContentBlobType(Enum):
+    """
+    define type of document by namespace, value is the string used in MaSyMoS Morre
+    """
+    SBML = "SBML"
+    CELLML = "CELLML"
+    SEDML = "SEDML"
+
+
 class SeekContentBlob():
     """
     container for a content_blob JSON object; including base check (type, keys)
     :raises `InputAnalyseError`
     """
-    __json: dict
 
     @property
     def mime(self) -> str:
@@ -62,7 +72,15 @@ class SeekContentBlob():
     def link(self) -> str:
         return self.__json['link']
 
+    @property
+    def type(self) -> SeekContentBlobType:
+        return self.__type
+
+    def set_type(self, t: SeekContentBlobType):
+        self.__type = t
+
     def __init__(self, json: dict):
+        self.__type = None
         self.__json: dict = json
         try:
             if self.mime.strip() is '' or \

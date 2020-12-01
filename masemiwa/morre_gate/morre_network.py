@@ -18,7 +18,7 @@ def _prepare_url(module: str):
     return config.Configuration.MORRE_SERVER.value + _MODEL_UPDATE_SERVICE_URL + module
 
 
-def _send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
+def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
     """
     :param module: the last part of the URL. i.e. `add_modul`
     :param data: the JSON to send
