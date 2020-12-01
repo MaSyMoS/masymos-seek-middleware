@@ -6,6 +6,7 @@ import pytest
 import masemiwa.input_analyser.beans
 import masemiwa.input_analyser.beans as t
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
+from masemiwa.input_analyser.beans import SeekContentBlobType
 
 
 class TestSeekUrlObject(TestCase):
@@ -73,6 +74,13 @@ class TestSeekContentBlob(TestCase):
         with pytest.raises(InputAnalyseError) as e:
             t.SeekContentBlob(tmp)
         self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
+
+    def test_type(self):
+        b = t.SeekContentBlob(self.valid_blob)
+        self.assertIsNone(b.type)
+        b.set_type(SeekContentBlobType.SBML)
+        self.assertEqual(SeekContentBlobType.SBML, b.type)
+        self.assertNotEqual(SeekContentBlobType.CELLML, b.type)
 
 
 class TestSeekJson(TestCase):

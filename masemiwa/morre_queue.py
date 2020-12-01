@@ -72,7 +72,7 @@ class MorreQueue(Thread):
         if not self.is_alive():
             self.start()
 
-    def _pop(self) -> SeekContentBlob:
+    def _pop_from_insert_queue(self) -> SeekContentBlob:
         """
         :return: one element from INSERT queue
         """
@@ -103,8 +103,13 @@ class MorreQueue(Thread):
         return ret
 
     @property
-    def queue_length(self) -> int:
+    def insert_queue_length(self) -> int:
         return len(self.__queue_insert)
+
+    @property
+    def delete_queue_length(self) -> int:
+        return len(self.__queue_delete)
+
 
     def run(self) -> None:
         """
@@ -118,11 +123,11 @@ class MorreQueue(Thread):
         while len(self.__queue_insert) + len(self.__queue_delete) is not 0:
             if len(self.__queue_delete) > 0:
                 # TODO send DELETE to Morre
-                next_delete: SeekContentBlob = self._pop()
+                next_delete: SeekContentBlob = self._pop_from_insert_queue()
                 continue
 
             if len(self.__queue_insert) > 0:
-                next_insert: SeekContentBlob = self._pop()
+                next_insert: SeekContentBlob = self._pop_from_insert_queue()
 
                 if next_insert in self.__queue_delete:
                     # this is an UPDATE → fist delete, then insert

@@ -13,30 +13,31 @@ class TestMorreQueue(TestCase):
     c4: SeekContentBlob = SeekContentBlob({'content_type': 'blo4', 'link': 'bla4'})
     c5: SeekContentBlob = SeekContentBlob({'content_type': 'blo5', 'link': 'bla5'})
 
-    def test_queue_handling(self):
+    def test_insert_queue_handling(self):
         q = t.MorreQueue()
-        self.assertEqual(0, q.queue_length)
+        self.assertEqual(0, q.insert_queue_length)
         q._add_to_insert_queue()
-        self.assertEqual(0, q.queue_length)
+        self.assertEqual(0, q.insert_queue_length)
         q._add_to_insert_queue([])
-        self.assertEqual(0, q.queue_length)
+        self.assertEqual(0, q.insert_queue_length)
 
         q = t.MorreQueue()
         q._add_to_insert_queue([self.c1])
-        self.assertEqual(1, q.queue_length)
+        self.assertEqual(1, q.insert_queue_length)
         q._add_to_insert_queue([self.c2, self.c3])
-        self.assertEqual(3, q.queue_length)
-        i: SeekContentBlob = q._pop()
-        self.assertEqual(2, q.queue_length)
+        self.assertEqual(3, q.insert_queue_length)
+        i: SeekContentBlob = q._pop_from_insert_queue()
+        self.assertEqual(2, q.insert_queue_length)
+        self.assertEqual(0, q.delete_queue_length)
         self.assertEqual(self.c3, i)
-        i: SeekContentBlob = q._pop()
-        self.assertEqual(1, q.queue_length)
+        i: SeekContentBlob = q._pop_from_insert_queue()
+        self.assertEqual(1, q.insert_queue_length)
         self.assertEqual(self.c2, i)
-        i: SeekContentBlob = q._pop()
-        self.assertEqual(0, q.queue_length)
+        i: SeekContentBlob = q._pop_from_insert_queue()
+        self.assertEqual(0, q.insert_queue_length)
         self.assertEqual(self.c1, i)
 
-    def test_queue_exceptions(self):
+    def test_insert_queue_exceptions(self):
         with pytest.raises(TypeError) as e:
             f = t.MorreQueue()
             f._add_to_insert_queue([42])
@@ -46,7 +47,7 @@ class TestMorreQueue(TestCase):
         with pytest.raises(TypeError) as e:
             q._add_to_insert_queue([42])
 
-    def test_queue_consistency(self):
+    def test_insert_queue_consistency(self):
         q1: list = [self.c1, self.c2, self.c3]
         q1_tmp: list = q1.copy()
         self.assertEqual(q1, q1_tmp)
@@ -60,4 +61,57 @@ class TestMorreQueue(TestCase):
         m._add_to_insert_queue([self.c5])
         self.assertEqual(q1, q1_tmp)
 
-# TODO add more tests, delete, update
+    def test_delete_queue_handling(self):
+        q = t.MorreQueue()
+        self.assertEqual(0, q.delete_queue_length)
+        q._add_to_delete_queue()
+        self.assertEqual(0, q.delete_queue_length)
+        q._add_to_delete_queue([])
+        self.assertEqual(0, q.delete_queue_length)
+
+        q = t.MorreQueue()
+        q._add_to_delete_queue([self.c1])
+        self.assertEqual(1, q.delete_queue_length)
+        q._add_to_delete_queue([self.c2, self.c3])
+        self.assertEqual(3, q.delete_queue_length)
+        i: SeekContentBlob = q._pop_from_delete_queue()
+        self.assertEqual(2, q.delete_queue_length)
+        self.assertEqual(0, q.insert_queue_length)
+        self.assertEqual(self.c3, i)
+        i: SeekContentBlob = q._pop_from_delete_queue()
+        self.assertEqual(1, q.delete_queue_length)
+        self.assertEqual(self.c2, i)
+        i: SeekContentBlob = q._pop_from_delete_queue()
+        self.assertEqual(0, q.delete_queue_length)
+        self.assertEqual(self.c1, i)
+
+    def test_update_queue_handling(self):
+        q = t.MorreQueue()
+        self.assertEqual(0, q.delete_queue_length)
+        self.assertEqual(0, q.insert_queue_length)
+        q._add_to_update_queue()
+        self.assertEqual(0, q.delete_queue_length)
+        self.assertEqual(0, q.insert_queue_length)
+        q._add_to_update_queue([])
+        self.assertEqual(0, q.delete_queue_length)
+        self.assertEqual(0, q.insert_queue_length)
+
+        q = t.MorreQueue()
+        q._add_to_update_queue([self.c1])
+        self.assertEqual(1, q.delete_queue_length)
+        self.assertEqual(1, q.insert_queue_length)
+        q._add_to_update_queue([self.c2, self.c3])
+        self.assertEqual(3, q.delete_queue_length)
+        self.assertEqual(3, q.insert_queue_length)
+        i: SeekContentBlob = q._pop_from_delete_queue(self.c2)
+        self.assertEqual(2, q.delete_queue_length)
+        self.assertEqual(3, q.insert_queue_length)
+        self.assertEqual(self.c2, i)
+        i: SeekContentBlob = q._pop_from_delete_queue()
+        self.assertEqual(1, q.delete_queue_length)
+        self.assertEqual(3, q.insert_queue_length)
+        self.assertEqual(self.c3, i)
+        i: SeekContentBlob = q._pop_from_delete_queue()
+        self.assertEqual(0, q.delete_queue_length)
+        self.assertEqual(3, q.insert_queue_length)
+        self.assertEqual(self.c1, i)
