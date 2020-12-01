@@ -5,6 +5,9 @@ from threading import Thread
 import logging
 
 from masemiwa.input_analyser.beans import SeekContentBlob
+from masemiwa.morre_gate.morre_annotations import MorreAnnotations
+from masemiwa.morre_gate.morre_delete import MorreDelete
+from masemiwa.morre_gate.morre_insert import MorreInsert
 
 logger = logging.getLogger(__name__)
 
@@ -110,20 +113,22 @@ class MorreQueue(Thread):
     def delete_queue_length(self) -> int:
         return len(self.__queue_delete)
 
-
     def run(self) -> None:
         """
         idea behind the runner:
         - delete all morre entries defines in delete queue
         - insert all entries defines in insert queue
             - check delete queue before every insert - if there is still an entry in the delete queue, this is an update
+        - wehen queue is empty, run annotation index
         """
         logger.debug("start the Morre-Queue")
 
         while len(self.__queue_insert) + len(self.__queue_delete) is not 0:
             if len(self.__queue_delete) > 0:
-                # TODO send DELETE to Morre
+                # send DELETE to Morre
                 next_delete: SeekContentBlob = self._pop_from_insert_queue()
+                delete: MorreDelete = MorreDelete(next_delete)
+                delete.send()
                 continue
 
             if len(self.__queue_insert) > 0:
@@ -131,9 +136,19 @@ class MorreQueue(Thread):
 
                 if next_insert in self.__queue_delete:
                     # this is an UPDATE → fist delete, then insert
-                    # TODO send DELETE to Morre
-                    pass
+                    # send DELETE to Morre
+                    delete: MorreDelete = MorreDelete(next_insert)
+                    delete.send()
 
-            # TODO send INSERT to Morre
+                # send INSERT to Morre
+                insert: MorreInsert = MorreInsert(next_insert)
+                insert.send()
+                # TODO handle a return false here with adding the blob/link to the backlog and try later https: // github.com / MaSyMoS / masymos - seek - middleware / issues / 11
+
+        logger.debug("start Annotation Indexing")
+
+        # Annotation Indexing
+        anno: MorreAnnotations = MorreAnnotations()
+        anno.send()
 
         logger.debug("finish the Morre-Queue")
