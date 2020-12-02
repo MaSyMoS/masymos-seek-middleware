@@ -5,12 +5,13 @@ from masemiwa.input_analyser import InputAnalyseErrorReason, InputAnalyseError
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.input_analyser.meta_checker import MetaChecker
 from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, \
-    E502_HTTP_RETURN_CODE_NO_CONNECTION_TO_FILE_DOWNLOAD, E200_HTTP_RETURN_CODE_SUCCESS_ADDED
+    E502_HTTP_RETURN_CODE_NO_CONNECTION_TO_FILE_DOWNLOAD, E200_HTTP_RETURN_CODE_SUCCESS_ADDED, \
+    E500_HTTP_RETURN_CODE_INTERNAL_ERROR, HandleIO
 
 logger = logging.getLogger(__name__)
 
 
-class Minsert():
+class handle_insert(HandleIO):
     """
     handles all INSERT logic for a single model link (can have several content_blob)
     """
@@ -20,6 +21,10 @@ class Minsert():
         self.__metachecker: MetaChecker = None
 
     def process(self) -> (str, int):
+        """
+        processes the meta checking
+        :return: the HTTP message and code
+        """
         # fetch metadata from SEEK, check it, fetch blobs and check namespaces
         try:
             valid: bool = self._check()
@@ -38,9 +43,11 @@ class Minsert():
 
         if valid:
             # pass to morre-queue
-            self._send()
+            if not self._send():
+                return "FATAL unable to add {0} to insert queue; check the logs!".format(
+                    self.__link), E500_HTTP_RETURN_CODE_INTERNAL_ERROR
 
-        return "added {0} to queue".format(self.__link), E200_HTTP_RETURN_CODE_SUCCESS_ADDED
+        return "added {0} to insert-queue".format(self.__link), E200_HTTP_RETURN_CODE_SUCCESS_ADDED
 
     def _check(self) -> bool:
         """
@@ -51,9 +58,9 @@ class Minsert():
         self.__metachecker = MetaChecker(self.__link)
         return self.__metachecker.is_valid
 
-    def _send(self) -> None:
+    def _send(self) -> bool:
         """
-        will send the Link to the running Morre-Queue
+        will send the Link to the Morre-Queue
         """
         blobs: list = self.__metachecker.valid_blobs
 
@@ -61,7 +68,9 @@ class Minsert():
                 and len(blobs) > 0 \
                 and all(isinstance(x, SeekContentBlob) for x in list):
             conf.the_queue.add_to_insert_queue_and_eventually_start(blobs)
-        else:
-            logger.fatal(
-                "the seems to be a check missing, \
-                this list here is empty or has the wrong type of objects. this must not happen here!")
+            return True
+
+        logger.fatal(
+            "the seems to be a check missing, \
+            this list here is empty or has the wrong type of objects. this must not happen here!")
+        return False

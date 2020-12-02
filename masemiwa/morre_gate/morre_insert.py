@@ -10,7 +10,14 @@ logger = logging.getLogger(__name__)
 
 class MorreInsert(MorreConnect):
     def __init__(self, blob: SeekContentBlob):
-        super().__init__(blob)
+        super().__init__()
+
+        if not blob \
+                or type(blob) is not SeekContentBlob \
+                or blob.link.strip() is "":
+            logger.fatal("MorreInsert called with invalid content_blob: %s", blob)
+            raise AttributeError("MorreInsert called with invalid content_blob")
+
         self.__blob = blob
 
     def send(self) -> bool:

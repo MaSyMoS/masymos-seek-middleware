@@ -23,8 +23,10 @@ class MorreQueue(Thread):
         # make synchronise possible
         self.__lock = threading.Lock()
         # create queues
+        # INSERT contains SeekContentBlob
         self.__queue_insert: list = []
-        self.__queue_delete: list = []
+        # DELETE contains str
+        self.__queue_delete: set = set()
 
     def _add_to_insert_queue(self, add_queue: list = []) -> None:
         self.__lock.acquire()
@@ -40,10 +42,11 @@ class MorreQueue(Thread):
     def _add_to_delete_queue(self, del_queue: list = []) -> None:
         self.__lock.acquire()
         try:
+            s: str
             for s in del_queue:
-                if type(s) is not SeekContentBlob:
-                    raise TypeError("the list must contain SeekContentBlob only!")
-                self.__queue_delete.append(s)
+                if type(s) is not str:
+                    raise TypeError("the list must contain String only!")
+                self.__queue_delete.add(s.strip())
             logger.debug("added list with %d elements to Morre-DELETE-Queue", len(del_queue))
         finally:
             self.__lock.release()
@@ -51,10 +54,11 @@ class MorreQueue(Thread):
     def _add_to_update_queue(self, upd_queue: list = []) -> None:
         self.__lock.acquire()
         try:
+            s: SeekContentBlob
             for s in upd_queue:
                 if type(s) is not SeekContentBlob:
                     raise TypeError("the list must contain SeekContentBlob only!")
-                self.__queue_delete.append(s)
+                self.__queue_delete.add(s.link_to_model)
                 self.__queue_insert.append(s)
             logger.debug("added list with %d elements to Morre-UPDATE-Queue", len(upd_queue))
         finally:
@@ -65,8 +69,8 @@ class MorreQueue(Thread):
         if not self.is_alive():
             self.start()
 
-    def add_to_delete_queue_and_eventually_start(self, del_queue: list = []) -> None:
-        self._add_to_delete_queue(del_queue)
+    def add_to_delete_queue_and_eventually_start(self, url: str) -> None:
+        self._add_to_delete_queue([url])
         if not self.is_alive():
             self.start()
 
@@ -86,21 +90,21 @@ class MorreQueue(Thread):
             self.__lock.release()
         return ret
 
-    def _pop_from_delete_queue(self, specific: SeekContentBlob = None) -> SeekContentBlob:
+    def _pop_from_delete_queue(self, specific: SeekContentBlob = None) -> str:
         """
-        :return: one element from DELETE queue
+        :return: one link from DELETE queue
         """
         self.__lock.acquire()
         try:
             if specific is not None:
                 try:
-                    self.__queue_delete.remove(specific)
-                except ValueError as e:
+                    self.__queue_delete.remove(specific.link_to_model)
+                except KeyError as e:
                     # this error can be ignored
                     logger.debug("couldn't remove value '%s' from delete queue - not found", specific)
-                ret: SeekContentBlob = specific
+                ret: str = specific.link_to_model
             else:
-                ret: SeekContentBlob = self.__queue_delete.pop()
+                ret: str = self.__queue_delete.pop()
         finally:
             self.__lock.release()
         return ret
@@ -126,7 +130,7 @@ class MorreQueue(Thread):
         while len(self.__queue_insert) + len(self.__queue_delete) is not 0:
             if len(self.__queue_delete) > 0:
                 # send DELETE to Morre
-                next_delete: SeekContentBlob = self._pop_from_insert_queue()
+                next_delete: str = self._pop_from_delete_queue()
                 delete: MorreDelete = MorreDelete(next_delete)
                 delete.send()
                 continue
@@ -134,10 +138,11 @@ class MorreQueue(Thread):
             if len(self.__queue_insert) > 0:
                 next_insert: SeekContentBlob = self._pop_from_insert_queue()
 
-                if next_insert in self.__queue_delete:
+                if next_insert.link_to_model in self.__queue_delete:
                     # this is an UPDATE → fist delete, then insert
                     # send DELETE to Morre
-                    delete: MorreDelete = MorreDelete(next_insert)
+                    next_delete: str = self._pop_from_delete_queue(next_insert)
+                    delete: MorreDelete = MorreDelete(next_delete)
                     delete.send()
 
                 # send INSERT to Morre

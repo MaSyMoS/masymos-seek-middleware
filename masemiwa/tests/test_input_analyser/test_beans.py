@@ -34,27 +34,28 @@ class TestSeekUrlObject(TestCase):
 
 
 class TestSeekContentBlob(TestCase):
-    valid_blob = {'content_type': 'blo', 'link': 'bla'}
+    valid_blob1 = {'content_type': 'blo', 'link': 'bla'}
+    valid_blob2 = {'content_type': 'blo', 'link': 'my.website/bla/blo/42/blu/content_blob/4711?parameter=true'}
 
     def test_success(self):
-        cb = t.SeekContentBlob(self.valid_blob)
+        cb = t.SeekContentBlob(self.valid_blob1)
         self.assertEqual('blo', cb.mime)
         self.assertEqual('bla', cb.link)
 
     def test_exceptions(self):
         # test valid_blob first
-        t.SeekContentBlob(self.valid_blob)
+        t.SeekContentBlob(self.valid_blob1)
 
         tmp: dict
         # content_type missing
-        tmp = copy.deepcopy(self.valid_blob)
+        tmp = copy.deepcopy(self.valid_blob1)
         tmp.pop('content_type')
         with pytest.raises(InputAnalyseError) as e:
             t.SeekContentBlob(tmp)
         self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
 
         # link missing
-        tmp = copy.deepcopy(self.valid_blob)
+        tmp = copy.deepcopy(self.valid_blob1)
         tmp.pop('link')
         with pytest.raises(InputAnalyseError) as e:
             t.SeekContentBlob(tmp)
@@ -62,26 +63,30 @@ class TestSeekContentBlob(TestCase):
 
         tmp: dict
         # content_type empty
-        tmp = copy.deepcopy(self.valid_blob)
+        tmp = copy.deepcopy(self.valid_blob1)
         tmp['content_type'] = ''
         with pytest.raises(InputAnalyseError) as e:
             t.SeekContentBlob(tmp)
         self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
 
         # link empty
-        tmp = copy.deepcopy(self.valid_blob)
+        tmp = copy.deepcopy(self.valid_blob1)
         tmp['link'] = ''
         with pytest.raises(InputAnalyseError) as e:
             t.SeekContentBlob(tmp)
         self.assertEqual(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, e.value.reason)
 
     def test_type(self):
-        b = t.SeekContentBlob(self.valid_blob)
+        b = t.SeekContentBlob(self.valid_blob1)
         self.assertIsNone(b.type)
         b.set_type(SeekContentBlobType.SBML)
         self.assertEqual(SeekContentBlobType.SBML, b.type)
         self.assertNotEqual(SeekContentBlobType.CELLML, b.type)
 
+    def test_link(self):
+        b = t.SeekContentBlob(self.valid_blob2)
+        self.assertEqual("my.website/bla/blo/42/blu/content_blob/4711?parameter=true",b.link)
+        self.assertEqual("my.website/bla/blo/42/blu",b.link_to_model)
 
 class TestSeekJson(TestCase):
     valid_json: dict = {'data': {'id': '1234',

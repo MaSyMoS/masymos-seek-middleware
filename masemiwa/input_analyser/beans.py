@@ -76,6 +76,13 @@ class SeekContentBlob():
     def type(self) -> SeekContentBlobType:
         return self.__type
 
+    @property
+    def link_to_model(self) -> str:
+        """
+        :return:URL to model without "conten_blob/…"
+        """
+        return self.link.rsplit('/content_blob', 1)[0]
+
     def set_type(self, t: SeekContentBlobType):
         self.__type = t
 

@@ -4,7 +4,7 @@ import logging
 
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 from masemiwa.listener import E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
-from masemiwa.listener.insert import Minsert
+from masemiwa.listener.insert import handle_insert
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +42,7 @@ def insert():
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
-    insert: Minsert = Minsert(link)
+    insert: handle_insert = handle_insert(link)
 
     return insert.process()
 
