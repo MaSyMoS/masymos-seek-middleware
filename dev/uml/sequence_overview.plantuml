@@ -14,8 +14,8 @@ group #fda check logic<sup>(//see activity UML//)</sup>
 seek            <-      miwa            : get json
 seek            -->     miwa
 
-miwa            ->]                     : OPT: get content_blob (files)
-miwa            <--]
+seek            <-      miwa            : OPT: get content_blob (files)
+seek            -->     miwa
 
 end
 !enddefinelong

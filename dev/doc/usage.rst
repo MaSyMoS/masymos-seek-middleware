@@ -15,11 +15,11 @@ INSERT single entry
 - define link in field ``link``
 - example with curl: :c_bash:`curl -X POST http://localhost:5000/insert -H "Content-Type: application/json" -d '{"link":"https://fairdomhub.org/models/24.json?version=3"}'`
 - return codes
-    - ``200`` success - something was added to Morre-Queue
+    - ``200`` success - something was added to Morre-Insert-Queue
     - ``204`` success - data checked successfully, nothing added to Morre-Queue
     - ``404`` unable to get metadata for this link (cannot connect to SEEK)
     - ``405`` malformed request
-    - ``502`` unable to download at least one of the content_blob files (cannot connect to external server)
+    - ``502`` unable to download at least one of the content_blob files (cannot connect to server)
 
 UPDATE entry
 ############
@@ -35,7 +35,10 @@ DELETE entry
 - define link in field ``link``
 - example with curl: :c_bash:`curl -X POST http://localhost:5000/delete -H "Content-Type: application/json" -d '{"link":"https://fairdomhub.org/models/24.json?version=3"}'`
 - return codes
-    - .. Note:: TODO error codes
+    - ``200`` success - something was added to Morre-Delete-Queue
+    - ``404`` unable to get metadata for this link (cannot connect to SEEK)
+    - ``405`` malformed request
+    - ``502`` unable to download at least one of the content_blob files (cannot connect to server)
 
 BATCH-INSERT
 ############
