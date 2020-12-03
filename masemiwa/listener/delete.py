@@ -1,12 +1,10 @@
 import logging
 
-import masemiwa.config as conf
+import masemiwa.morre_queue as morre
 from masemiwa.input_analyser import InputAnalyseErrorReason, InputAnalyseError
-from masemiwa.input_analyser.beans import SeekContentBlob, SeekUrl
-from masemiwa.input_analyser.meta_checker import MetaChecker
+from masemiwa.input_analyser.beans import SeekUrl
 from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, \
-    E502_HTTP_RETURN_CODE_NO_CONNECTION_TO_FILE_DOWNLOAD, E200_HTTP_RETURN_CODE_SUCCESS_ADDED, \
-    E500_HTTP_RETURN_CODE_INTERNAL_ERROR, HandleIO
+    E200_HTTP_RETURN_CODE_SUCCESS_ADDED, E500_HTTP_RETURN_CODE_INTERNAL_ERROR, HandleIO
 
 logger = logging.getLogger(__name__)
 
@@ -54,7 +52,7 @@ class handle_delete(HandleIO):
 
         if self.__link is not None \
                 and self.__link.strip() is "":
-            conf.the_queue.add_to_delete_queue_and_eventually_start(self.__link)
+            morre.the_queue.add_to_delete_queue_and_eventually_start(self.__link)
             return True
 
         logger.fatal(

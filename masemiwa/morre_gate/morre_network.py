@@ -5,7 +5,7 @@ from urllib.parse import ParseResult, urljoin
 
 import requests
 
-from masemiwa import config
+import masemiwa.config as conf
 from requests import Response, ConnectTimeout
 from urllib3.exceptions import ConnectTimeoutError
 
@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 def _prepare_url(module: str):
-    return config.Configuration.MORRE_SERVER.value + _MODEL_UPDATE_SERVICE_URL + module
+    return conf.Configuration.MORRE_SERVER.value + _MODEL_UPDATE_SERVICE_URL + module
 
 
 def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
@@ -36,7 +36,7 @@ def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
     r: Response = None
     try:
         r = requests.post(url, data=data,
-                          headers=headers, timeout=config.Configuration.CONNECTION_TIMEOUT_MORRE.value)
+                          headers=headers, timeout=conf.Configuration.CONNECTION_TIMEOUT_MORRE.value)
         r.raise_for_status()
     except ConnectTimeoutError or ConnectTimeout:
         logger.warning("timeout - unable to make request %s; Timeout!", url)

@@ -1,6 +1,6 @@
 import logging
 
-import masemiwa.config as conf
+import masemiwa.morre_queue as morre
 from masemiwa.input_analyser import InputAnalyseErrorReason, InputAnalyseError
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.input_analyser.meta_checker import MetaChecker
@@ -67,7 +67,7 @@ class handle_insert(HandleIO):
         if blobs is not None \
                 and len(blobs) > 0 \
                 and all(isinstance(x, SeekContentBlob) for x in list):
-            conf.the_queue.add_to_insert_queue_and_eventually_start(blobs)
+            morre.the_queue.add_to_insert_queue_and_eventually_start(blobs)
             return True
 
         logger.fatal(

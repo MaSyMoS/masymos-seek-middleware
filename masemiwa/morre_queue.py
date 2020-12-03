@@ -157,3 +157,7 @@ class MorreQueue(Thread):
         anno.send()
 
         logger.debug("finish the Morre-Queue")
+
+
+# this is the one and only Morre-Queue - a Thread runing in the background, managing the talking to Morre
+the_queue: MorreQueue = MorreQueue()

@@ -1,14 +1,12 @@
 import logging
-from abc import ABC
 
-from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.morre_gate import MorreConnect
 from masemiwa.morre_gate.morre_network import send_post_request_with_json
 
 logger = logging.getLogger(__name__)
 
 
-class MorreAnnotations():
+class MorreAnnotations(MorreConnect):
     def __init__(self):
         pass
 
