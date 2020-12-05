@@ -25,20 +25,20 @@ Changes in MaSyMoS Morre
 
 Reference Model via SEEK-ID
 ===========================
-- Decision made on 17.09.2020 by RH, BW
+- Decision made on 04.12.2020 by RH, BW
 - Description
     - in the MaSyMoS-database inside the document root is the following meta data
-        - ``filename`` original filename
-		- ``uid`` - generated unique Morre-ID
-		- ``uri`` - internal URI
-		- ``version_id`` - internal version
-		- ``version`` - used by dokument (i.e. sbml)
-		- ``level`` - used by dokument (i.e. sbml)
-    - the used ID (URL to model.content) is stored in ``uri`` - this is the main ID
-    - the used model-version is stored in ``version_id``
+        - ``FILENAME`` original filename
+        - ``UID`` - generated unique Morre-ID
+        - ``URI`` - internal URI
+        - ``VERSION_ID`` - internal version
+        - ``VERSION`` - used by dokument (i.e. sbml)
+        - ``LEVEL`` - used by dokument (i.e. sbml)
+        - ``FILEID`` - used by dokument (i.e. sbml)
+    - the used ID (URL to model.content) is stored in ``FILEID`` - this is the main ID
 - impact
-    - Morre needs a function to find model.contents by ``uri`` (i.e. ``https://fairdomhub.org/models/196/content_blobs/8745``)
-    - Morre needs a function to find model.contents by short ``uri`` with only the model id for DELETE and UPDATE (i.e. ``https://fairdomhub.org/models/196``)
+    - Morre needs a function to find model.contents by ``FILEID`` (i.e. ``https://fairdomhub.org/models/196/content_blobs/8745``)
+    - Morre needs a function to find model.contents by short ``FILEID`` with only the model id for DELETE and UPDATE (i.e. ``https://fairdomhub.org/models/196``)
 
 General Concept Middleware
 ##########################
@@ -145,6 +145,13 @@ Deleting a model will not delete any annotations
 - Decision made on 17.09.2020 by RH, BW
 - Description
     - deleting annotations can lead to unexpected behaviour
+
+Update - if deleting fails the insert is done anyway
+====================================================
+- Decision made on 04.12.2020 by RH, BW
+- Description
+    - update is delete + insert
+    - if for whatever reason the delete fails, the insert is done with the ``enforceUniqueFileId==true`` fag, because there is no risk on having an inconsistent state
 
 Annotation-Scanning in the background
 =====================================
