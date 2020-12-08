@@ -17,7 +17,7 @@ class MorreDelete(MorreConnect):
         logger.debug("delete - start sending %s", self.__link)
 
         data: dict = dict(fileId=self.__link)
-        response: dict = send_post_request_with_json('delete_model', data)
+        response: dict = send_post_request_with_json('delete_model_by_fileid', data)
 
         if response \
                 and response.get('ok') is not None \
@@ -25,5 +25,10 @@ class MorreDelete(MorreConnect):
             logger.info("delete - successfully removed %s", self.__link)
             return True
 
-        logger.info("delete - failed to remove %s", self.__link)
+        response_message: str = ""
+        if response \
+                and response.get('message') is not None:
+            response_message = response.get('message')
+
+        logger.info("delete - failed to remove %s|%s", self.__link, response_message)
         return False

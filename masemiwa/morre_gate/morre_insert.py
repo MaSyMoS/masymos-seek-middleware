@@ -25,7 +25,8 @@ class MorreInsert(MorreConnect):
 
         data: dict = dict(fileId=self.__blob.link,
                           url=self.__blob.link,
-                          modelType=self.__blob.type.value)
+                          modelType=self.__blob.type.value,
+                          enforceUniqueFileId=True)
         response: dict = send_post_request_with_json('add_model', data)
 
         if response \
@@ -34,5 +35,10 @@ class MorreInsert(MorreConnect):
             logger.info("insert - successfully added %s", self.__blob.link)
             return True
 
-        logger.info("insert - failed to add %s", self.__blob.link)
+        response_message: str = ""
+        if response \
+                and response.get('message') is not None:
+            response_message = response.get('message')
+
+        logger.info("insert - failed to add %s|%s", self.__link, response_message)
         return False

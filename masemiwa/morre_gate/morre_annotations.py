@@ -19,8 +19,13 @@ class MorreAnnotations(MorreConnect):
         if response \
                 and response.get('ok') is not None \
                 and str(response.get('ok')).strip().lower() is "true":
-            logger.info("annotations - successfully removed %s", self.__blob.link)
+            logger.info("annotations - successfully updated")
             return True
 
-        logger.info("annotations - failed to update annotation index", self.__blob.link)
+        response_message: str = ""
+        if response \
+                and response.get('message') is not None:
+            response_message = response.get('message')
+
+        logger.info("annotations - failed to update annotation index|%s", response_message)
         return False
