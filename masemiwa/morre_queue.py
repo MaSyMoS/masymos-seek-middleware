@@ -1,8 +1,6 @@
-import threading
-from lib2to3.patcomp import _type_of_literal
-from threading import Thread
-
 import logging
+import threading
+from threading import Thread, Lock
 
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.morre_gate.morre_annotations import MorreAnnotations
@@ -17,6 +15,9 @@ class MorreQueue(Thread):
     this thread runs in the background and handles the interaction with MaSyMoS Morre
     thread starts automatically after calling `add_to_queue_and_start()`
     """
+    __queue_delete: set
+    __queue_insert: list
+    __lock: Lock
 
     def __init__(self):
         super().__init__()
@@ -24,11 +25,13 @@ class MorreQueue(Thread):
         self.__lock = threading.Lock()
         # create queues
         # INSERT contains SeekContentBlob
-        self.__queue_insert: list = []
+        self.__queue_insert = []
         # DELETE contains str
-        self.__queue_delete: set = set()
+        self.__queue_delete = set()
 
-    def _add_to_insert_queue(self, add_queue: list = []) -> None:
+    def _add_to_insert_queue(self, add_queue=None) -> None:
+        if add_queue is None:
+            add_queue = []
         self.__lock.acquire()
         try:
             for s in add_queue:
@@ -39,7 +42,9 @@ class MorreQueue(Thread):
         finally:
             self.__lock.release()
 
-    def _add_to_delete_queue(self, del_queue: list = []) -> None:
+    def _add_to_delete_queue(self, del_queue=None) -> None:
+        if del_queue is None:
+            del_queue = []
         self.__lock.acquire()
         try:
             s: str
@@ -51,7 +56,9 @@ class MorreQueue(Thread):
         finally:
             self.__lock.release()
 
-    def _add_to_update_queue(self, upd_queue: list = []) -> None:
+    def _add_to_update_queue(self, upd_queue=None) -> None:
+        if upd_queue is None:
+            upd_queue = []
         self.__lock.acquire()
         try:
             s: SeekContentBlob
@@ -64,7 +71,9 @@ class MorreQueue(Thread):
         finally:
             self.__lock.release()
 
-    def add_to_insert_queue_and_eventually_start(self, add_queue: list = []) -> None:
+    def add_to_insert_queue_and_eventually_start(self, add_queue=None) -> None:
+        if add_queue is None:
+            add_queue = []
         self._add_to_insert_queue(add_queue)
         if not self.is_alive():
             self.start()
@@ -74,7 +83,9 @@ class MorreQueue(Thread):
         if not self.is_alive():
             self.start()
 
-    def add_to_update_queue_and_eventually_start(self, upd_queue: list = []) -> None:
+    def add_to_update_queue_and_eventually_start(self, upd_queue=None) -> None:
+        if upd_queue is None:
+            upd_queue = []
         self._add_to_update_queue(upd_queue)
         if not self.is_alive():
             self.start()
@@ -99,7 +110,7 @@ class MorreQueue(Thread):
             if specific is not None:
                 try:
                     self.__queue_delete.remove(specific.link_to_model)
-                except KeyError as e:
+                except KeyError:
                     # this error can be ignored
                     logger.debug("couldn't remove value '%s' from delete queue - not found", specific)
                 ret: str = specific.link_to_model
@@ -148,13 +159,14 @@ class MorreQueue(Thread):
                 # send INSERT to Morre
                 insert: MorreInsert = MorreInsert(next_insert)
                 insert.send()
-                # TODO handle a return false here with adding the blob/link to the backlog and try later https: // github.com / MaSyMoS / masymos - seek - middleware / issues / 11
+                # TODO handle a return false here with adding the blob/link to the backlog and try later
+                #  https://github.com/MaSyMoS/masymos-seek-middleware/issues/11
 
         logger.debug("start Annotation Indexing")
 
         # Annotation Indexing
-        anno: MorreAnnotations = MorreAnnotations()
-        anno.send()
+        annotations: MorreAnnotations = MorreAnnotations()
+        annotations.send()
 
         logger.debug("finish the Morre-Queue")
 

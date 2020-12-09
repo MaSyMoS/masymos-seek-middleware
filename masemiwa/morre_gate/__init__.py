@@ -1,8 +1,6 @@
 import logging
 from abc import abstractmethod, ABC
 
-from masemiwa.input_analyser.beans import SeekContentBlob
-
 logger = logging.getLogger(__name__)
 
 

@@ -6,7 +6,7 @@ import pytest
 import masemiwa.input_analyser.beans
 import masemiwa.input_analyser.beans as t
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
-from masemiwa.input_analyser.beans import SeekContentBlobType
+from masemiwa.input_analyser.beans import SeekContentBlobType, SeekUrl
 
 
 class TestSeekUrlObject(TestCase):
@@ -25,12 +25,13 @@ class TestSeekUrlObject(TestCase):
             masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/')
         self.assertEqual(InputAnalyseErrorReason.URL_INVALID, e.value.reason)
 
+    # noinspection PyPropertyAccess
     def test_readonly_attributes(self):
-        obj = masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/24.json?version=3')
+        obj: SeekUrl = masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/24.json?version=3')
         with pytest.raises(AttributeError):
             obj.id = 42
         with pytest.raises(AttributeError):
-            obj.url = "blablubb"
+            obj.url = "test"
 
 
 class TestSeekContentBlob(TestCase):
@@ -85,19 +86,20 @@ class TestSeekContentBlob(TestCase):
 
     def test_link(self):
         b = t.SeekContentBlob(self.valid_blob2)
-        self.assertEqual("my.website/bla/blo/42/blu/content_blob/4711?parameter=true",b.link)
-        self.assertEqual("my.website/bla/blo/42/blu",b.link_to_model)
+        self.assertEqual("my.website/bla/blo/42/blu/content_blob/4711?parameter=true", b.link)
+        self.assertEqual("my.website/bla/blo/42/blu", b.link_to_model)
+
 
 class TestSeekJson(TestCase):
     valid_json: dict = {'data': {'id': '1234',
                                  'attributes': {'latest_version': '5',
-                                                'content_blobs': [{'content_type': '42', 'link': 'hurra'}]}}}
+                                                'content_blobs': [{'content_type': '42', 'link': 'yay'}]}}}
 
     def test_success(self):
         s = t.SeekJson(self.valid_json)
         self.assertEqual(1234, s.id)
         self.assertEqual(5, s.latest_version)
-        self.assertEqual('hurra', s.content_blobs[0].link)
+        self.assertEqual('yay', s.content_blobs[0].link)
 
     def test_exceptions(self):
         # no exception with valid data
@@ -193,6 +195,7 @@ class TestXmlNamespace(TestCase):
         self.assertEqual(InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH, e.value.reason)
 
         with pytest.raises(InputAnalyseError) as e:
+            # noinspection PyTypeChecker
             t.XmlNamespace(None)
         self.assertEqual(InputAnalyseErrorReason.DATA_NAMESPACE_EMPTY, e.value.reason)
 

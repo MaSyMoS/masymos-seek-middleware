@@ -14,17 +14,22 @@ class Configuration(Enum):
     CONNECTION_TIMEOUT_MORRE = 542, int, "timeout in seconds for any morre request"
     MORRE_SERVER = "http://127.0.0.1:7474", str, "the URL of the morre server to use (without '/morre/')"
 
-    def __init__(self, default_value, value_type:type, explanation: str):
+    __default_value: str
+    __value: str
+    __value_type: type
+    __explanation: str
+
+    def __init__(self, default_value, value_type: type, explanation: str):
 
         self._check(default_value, explanation, value_type)
 
         # init
-        self.__default_value: str = default_value
-        self.__value: str = default_value
+        self.__default_value = default_value
+        self.__value = default_value
         self.__value_type = value_type
-        self.__explanation: str = explanation
+        self.__explanation = explanation
 
-    def _check(self, new_value, explanation, value_type:type):
+    def _check(self, new_value, explanation, value_type: type):
         if type(new_value) != value_type:
             raise ConfigurationException(
                 "critical error in default configuration; wrong configuration value type (%s); key %s",

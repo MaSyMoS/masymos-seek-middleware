@@ -1,24 +1,27 @@
 import logging
+from typing import Optional
 
 import masemiwa.morre_queue as morre
 from masemiwa.input_analyser import InputAnalyseErrorReason, InputAnalyseError
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.input_analyser.meta_checker import MetaChecker
-from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, \
+from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, \
     E502_HTTP_RETURN_CODE_NO_CONNECTION_TO_FILE_DOWNLOAD, E200_HTTP_RETURN_CODE_SUCCESS_ADDED, \
     E500_HTTP_RETURN_CODE_INTERNAL_ERROR, HandleIO, E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
 logger = logging.getLogger(__name__)
 
 
-class handle_insert(HandleIO):
+class HandleInsert(HandleIO):
     """
     handles all INSERT logic for a single model link (can have several content_blob)
     """
+    __link: str
+    __metachecker: Optional[MetaChecker]
 
     def __init__(self, link: str):
-        self.__link: str = link
-        self.__metachecker: MetaChecker = None
+        self.__link = link
+        self.__metachecker = None
 
     def process(self) -> (str, int):
         """
@@ -66,7 +69,7 @@ class handle_insert(HandleIO):
 
         if blobs is not None \
                 and len(blobs) > 0 \
-                and all(isinstance(x, SeekContentBlob) for x in list):
+                and all(isinstance(x, SeekContentBlob) for x in blobs):
             morre.the_queue.add_to_insert_queue_and_eventually_start(blobs)
             return True
 

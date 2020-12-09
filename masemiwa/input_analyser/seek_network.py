@@ -1,17 +1,18 @@
+import logging
 from typing import Dict, Optional
 
 import requests
-import logging
-
-import masemiwa.config as conf
-
 from requests import HTTPError, Response, ConnectTimeout
 from urllib3.exceptions import ConnectTimeoutError
+
+import masemiwa.config as conf
+from masemiwa.input_analyser.beans import SeekUrl, SeekContentBlob
 
 logger = logging.getLogger(__name__)
 
 
-def download_file(url: str, headers: Dict = None) -> Optional[Response]:
+# noinspection PyUnboundLocalVariable
+def _download_file(url: str, headers: Dict = None) -> Optional[Response]:
     """
     downloads a file from any URL
     :param url: the URL
@@ -19,7 +20,7 @@ def download_file(url: str, headers: Dict = None) -> Optional[Response]:
     :return: the Response or None on any known error (will log the error)
     """
     logger.debug("request file %s", url)
-    r: Response = None
+    r: Response
     try:
         if headers is None:
             r = requests.get(url, timeout=conf.Configuration.CONNECTION_TIMEOUT.value)
@@ -31,7 +32,12 @@ def download_file(url: str, headers: Dict = None) -> Optional[Response]:
         return
     except HTTPError:
         code: str = 'unknown'
-        if r:
+        try:
+            r
+        except NameError:
+            # r is not defined - ignore
+            pass
+        else:
             code = r.status_code
 
         logger.warning("unable to get file %s; HTTP-ErrorCode %s", url, code)
@@ -39,3 +45,34 @@ def download_file(url: str, headers: Dict = None) -> Optional[Response]:
 
     logger.debug("successfully got file %s", url)
     return r
+
+
+def download_seek_metadata(seek_url: SeekUrl) -> Optional[dict]:
+    """
+    get json meta data from a seek object
+    :param seek_url: the url o.O
+    :return: None on Error else json-filled-dict, hopefully
+    """
+
+    headers = {
+        "Accept": "application/vnd.api+json",
+        "Accept-Charset": "UTF-8"
+    }
+
+    r: Response = _download_file(seek_url.url, headers=headers)
+    if r is None:
+        return
+    return r.json()
+
+
+def download_blob_content(blob: SeekContentBlob) -> Optional[str]:
+    """
+    get XML for content_blob-link
+    :param blob: the SeekContentBlob object
+    :return: None on Error else xml as text
+    """
+
+    r: Response = _download_file(blob.link + "/download")
+    if r is None:
+        return
+    return r.text

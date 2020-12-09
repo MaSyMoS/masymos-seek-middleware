@@ -10,9 +10,7 @@ gunicorn --bind 0.0.0.0:5000 start_server:app
 
 """
 
-
 # TODO handle configuration
-
 
 
 # debug mode

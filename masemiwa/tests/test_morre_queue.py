@@ -38,13 +38,13 @@ class TestMorreQueue(TestCase):
         self.assertEqual(self.c1, i)
 
     def test_insert_queue_exceptions(self):
-        with pytest.raises(TypeError) as e:
+        with pytest.raises(TypeError):
             f = t.MorreQueue()
             f._add_to_insert_queue([42])
 
         q = t.MorreQueue()
         q._add_to_insert_queue([self.c1])
-        with pytest.raises(TypeError) as e:
+        with pytest.raises(TypeError):
             q._add_to_insert_queue([42])
 
     def test_insert_queue_consistency(self):

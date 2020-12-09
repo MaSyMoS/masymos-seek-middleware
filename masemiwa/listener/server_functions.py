@@ -1,22 +1,22 @@
-from flask import Flask
-from flask import request
 import logging
 
-from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
+from flask import Flask
+from flask import request
+
 from masemiwa.listener import E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
-from masemiwa.listener.delete import handle_delete
-from masemiwa.listener.insert import handle_insert
+from masemiwa.listener.delete import HandleDelete
+from masemiwa.listener.insert import HandleInsert
 
 logger = logging.getLogger(__name__)
 
 app = Flask("MaSeMiWa")
 
 
-def __check_if_valid_post_json_request(request: request, key_to_check: str = 'link') -> bool:
-    if request.method == 'POST' \
-            and request.is_json \
-            and key_to_check in dict(request.get_json()) \
-            and str(dict(request.get_json()).get(key_to_check)).strip() != "":
+def __check_if_valid_post_json_request(req: request, key_to_check: str = 'link') -> bool:
+    if req.method == 'POST' \
+            and req.is_json \
+            and key_to_check in dict(req.get_json()) \
+            and str(dict(req.get_json()).get(key_to_check)).strip() != "":
         return True
     return False
 
@@ -43,7 +43,7 @@ def insert() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
-    i: handle_insert = handle_insert(link)
+    i: HandleInsert = HandleInsert(link)
 
     return i.process()
 
@@ -55,7 +55,7 @@ def delete() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
-    d: handle_insert = handle_delete(link)
+    d: HandleDelete = HandleDelete(link)
 
     return d.process()
 

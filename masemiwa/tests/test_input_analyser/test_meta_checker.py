@@ -16,6 +16,7 @@ class TestMime(unittest.TestCase):
         self.assertFalse(t.MetaChecker._check_mime_type('wrong'))
 
     def test_number(self):
+        # noinspection PyTypeChecker
         self.assertFalse(t.MetaChecker._check_mime_type(42))
 
     def test_wrong_mime(self):
@@ -117,7 +118,7 @@ class TestExtractNamespace(TestCase):
         self.assertEqual(4, test.version)
 
         test = t.MetaChecker._extract_namespace(
-            '<blablubb xmlns="http://sed-ml.org" />')
+            '<yay xmlns="http://sed-ml.org" />')
         self.assertEqual("http://sed-ml.org", test.namespace)
         self.assertIsNone(test.level)
         self.assertIsNone(test.version)
@@ -136,12 +137,12 @@ class TestExtractNamespace(TestCase):
         with pytest.raises(InputAnalyseError) as e:
             t.MetaChecker._extract_namespace(
                 '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4a" />')
-        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE, e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE, e.value.reason)
 
         with pytest.raises(InputAnalyseError) as e:
             t.MetaChecker._extract_namespace(
                 '<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2y" version="4" />')
-        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE, e.value.reason)
+        self.assertEqual(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE, e.value.reason)
 
     def test_invalid_xml(self):
         with pytest.raises(InputAnalyseError) as e:

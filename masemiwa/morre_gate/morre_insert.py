@@ -1,5 +1,4 @@
 import logging
-from abc import ABC
 
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.morre_gate import MorreConnect
@@ -9,6 +8,8 @@ logger = logging.getLogger(__name__)
 
 
 class MorreInsert(MorreConnect):
+    __blob: SeekContentBlob
+
     def __init__(self, blob: SeekContentBlob):
         super().__init__()
 
@@ -31,4 +32,4 @@ class MorreInsert(MorreConnect):
 
         return process_response(response,
                                 success_msg="insert - successfully add {0}".format(self.__blob.link),
-                                error_msg="insert - failed to add {0}".format(self.__blob.__link))
+                                error_msg="insert - failed to add {0}".format(self.__blob.link))

@@ -1,13 +1,12 @@
 import logging
 from typing import Optional
 from urllib.error import HTTPError
-from urllib.parse import ParseResult, urljoin
 
 import requests
-
-import masemiwa.config as conf
 from requests import Response, ConnectTimeout
 from urllib3.exceptions import ConnectTimeoutError
+
+import masemiwa.config as conf
 
 _MODEL_UPDATE_SERVICE_URL = "/morre/model_update_service/"
 
@@ -18,9 +17,10 @@ def _prepare_url(module: str):
     return conf.Configuration.MORRE_SERVER.value + _MODEL_UPDATE_SERVICE_URL + module
 
 
+# noinspection PyUnboundLocalVariable
 def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
     """
-    :param module: the last part of the URL. i.e. `add_modul`
+    :param module: the last part of the URL. i.e. `add_module`
     :param data: the JSON to send
     :return: the returning JSON as dict
     """
@@ -33,7 +33,7 @@ def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
     }
 
     logger.debug("send request to morre %s", url)
-    r: Response = None
+    r: Response
     try:
         r = requests.post(url, data=data,
                           headers=headers, timeout=conf.Configuration.CONNECTION_TIMEOUT_MORRE.value)
@@ -43,20 +43,25 @@ def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
         return
     except HTTPError:
         code: str = 'unknown'
-        if r:
+        try:
+            r
+        except NameError:
+            # r is not defined - ignore
+            pass
+        else:
             code = r.status_code
 
         logger.warning("unable to make request %s; HTTP-ErrorCode %s", url, code)
         return
 
     logger.debug("successfully got feedback %s", url)
-    return r
+    return r.json()
 
 
 def process_response(response, success_msg: str = "success", error_msg: str = "error") -> bool:
     """
     checks, if morre response is OK
-    :param response: morres response
+    :param response: morre's response
     :param success_msg: the logging message to display on success
     :param error_msg: the logging message to display on error
     :return: True, if OK, else False

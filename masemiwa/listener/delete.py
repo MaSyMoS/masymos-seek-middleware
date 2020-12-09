@@ -9,13 +9,14 @@ from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, E204_
 logger = logging.getLogger(__name__)
 
 
-class handle_delete(HandleIO):
+class HandleDelete(HandleIO):
     """
     handles all DELETE logic for a single model link (can have several content_blob)
     """
+    __link: str
 
     def __init__(self, link: str):
-        self.__link: str = link
+        self.__link = link
 
     def process(self) -> (str, int):
         """
@@ -23,12 +24,10 @@ class handle_delete(HandleIO):
         :return: the HTTP message and code
         """
 
-        valid: bool = False
         # create objects
         try:
             seek_url: SeekUrl = SeekUrl(self.__link)
             self.__link = seek_url.url
-            valid = True
         except InputAnalyseError as e:
             if e.reason is InputAnalyseErrorReason.URL_INVALID:
                 logger.error("unable to parse SEEK link, %s, %s", e.reason, e.reason.error_message)
@@ -37,11 +36,10 @@ class handle_delete(HandleIO):
             logger.debug("abort, %s, %s, %s", e.reason, e.reason.error_message, self.__link)
             return e.reason.error_message, E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO
 
-        if valid:
-            # pass to morre-queue
-            if not self._send():
-                return "FATAL unable to add {0} to delete queue; check the logs!".format(
-                    self.__link), E500_HTTP_RETURN_CODE_INTERNAL_ERROR
+        # pass to morre-queue
+        if not self._send():
+            return "FATAL unable to add {0} to delete queue; check the logs!".format(
+                self.__link), E500_HTTP_RETURN_CODE_INTERNAL_ERROR
 
         return "added {0} to delete-queue".format(self.__link), E200_HTTP_RETURN_CODE_SUCCESS_ADDED
 

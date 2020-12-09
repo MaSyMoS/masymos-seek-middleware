@@ -1,45 +1,49 @@
+import logging
 import re
 from typing import List
-
-import logging
-from xml.etree import ElementTree as ET
-from xml.etree.ElementTree import ElementTree
+from xml.etree import ElementTree as ElementTreeFunctions
+from xml.etree.ElementTree import ElementTree, Element
 
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 from masemiwa.input_analyser.beans import SeekContentBlob, XmlNamespace, SeekUrl, SeekJson, SeekContentBlobType
-from masemiwa.input_analyser.seek_talker import _download_seek_metadata, _download_blob_content
+from masemiwa.input_analyser.seek_network import download_seek_metadata, download_blob_content
 
 logger = logging.getLogger(__name__)
 
 
-class MetaChecker():
+class MetaChecker:
     """
     this class combines all meta checks done for a SEEK model
     extracts all valid content blobs
     raises InputAnalyseError on any error
     """
+    __json: SeekJson
+    __one_download_failed: bool
+    __valid: bool
+    __valid_blobs: List[SeekContentBlob]
+    __seek_url: SeekUrl
 
     def __init__(self, url: str):
-        self.__valid_blobs: List[SeekContentBlob] = []
-        self.__valid: bool = False
+        self.__valid_blobs = []
+        self.__valid = False
         self.__one_download_failed = False
 
         # parse URL
-        self.__url: SeekUrl = SeekUrl(url)
+        self.__seek_url = SeekUrl(url)
 
         # get metadata
-        seek_json: dict = _download_seek_metadata(self.__url)
+        seek_json: dict = download_seek_metadata(self.__seek_url)
         if seek_json is None:
-            logger.debug("unable to get metadata from url %s", self.__url)
-            raise InputAnalyseError(InputAnalyseErrorReason.URL_NO_CONTENT, self.__url)
+            logger.debug("unable to get metadata from url %s", self.__seek_url)
+            raise InputAnalyseError(InputAnalyseErrorReason.URL_NO_CONTENT, self.__seek_url.url)
 
         # parse JSON, check metadata
-        self.__json: SeekJson = SeekJson(seek_json)
+        self.__json = SeekJson(seek_json)
 
         # check content_blobs
         blobs: List[SeekContentBlob] = self.__json.content_blobs
         if blobs is None or len(blobs) == 0:
-            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, self.__url)
+            raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, self.__seek_url.url)
         blob: SeekContentBlob
         for blob in blobs:
             try:
@@ -62,7 +66,7 @@ class MetaChecker():
 
     @property
     def url(self) -> SeekUrl:
-        return self.__url
+        return self.__seek_url
 
     @property
     def valid_blobs(self) -> List[SeekContentBlob]:
@@ -73,7 +77,7 @@ class MetaChecker():
         return self.__one_download_failed
 
     def __repr__(self):
-        return "metachecker#" + str(self.__url.url)
+        return "metachecker#" + str(self.__seek_url.url)
 
     @staticmethod
     def _check_content_blob(blob: SeekContentBlob) -> bool:
@@ -92,7 +96,7 @@ class MetaChecker():
         logger.debug("mime check passed")
 
         # CHECK NAMESPACE, LEVEL and VERSION
-        xml: str = _download_blob_content(blob)
+        xml: str = download_blob_content(blob)
         if xml is None:
             logger.debug("unable to download file for %s", blob.__repr__())
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_FILE_NOT_FOUND)
@@ -141,14 +145,14 @@ class MetaChecker():
     @staticmethod
     def _extract_namespace(xml: str) -> XmlNamespace:
         # parse XML
-        root: ElementTree.Element
+        root: ElementTree
         try:
-            root: ElementTree = ET.fromstring(xml.strip())
-        except ET.ParseError:
+            root = ElementTreeFunctions.fromstring(xml.strip())
+        except ElementTreeFunctions.ParseError:
             logger.debug("unable to parse file")
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_NOT_VALID_XML)
 
-        child: ElementTree.Element
+        child: Element
         data: dict = {}
         for child in root.findall('.'):
             try:
@@ -161,14 +165,14 @@ class MetaChecker():
                 try:
                     data['version'] = int(child.attrib['version'])
                 except ValueError:
-                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE)
+                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE)
                 except KeyError:
                     # optional
                     pass
                 try:
                     data['level'] = int(child.attrib['level'])
                 except ValueError:
-                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSEABLE)
+                    raise InputAnalyseError(InputAnalyseErrorReason.DATA_ATTRIBUTE_NOT_PARSABLE)
                 except KeyError:
                     # optional
                     pass

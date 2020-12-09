@@ -9,31 +9,34 @@ from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 logger = logging.getLogger(__name__)
 
 
-class SeekUrl():
+class SeekUrl:
     """
     parse and interpret a SEEk URL
     :raises InputAnalyseError on error
     """
+    __input: ParseResult
 
     def __init__(self, url: str):
-        self.__input: ParseResult = urlparse(url)
+        self.__input = urlparse(url)
 
         # remove unnecessary components
+        # noinspection PyProtectedMember
         self.__input = self.__input._replace(params=''). \
             _replace(query=''). \
             _replace(fragment='')
 
         # remove endings like '.json'
         if '.' in self.__input.path:
+            # noinspection PyProtectedMember
             self.__input = self.__input._replace(path=self.__input.path.split(".")[0])
 
         try:
             if self.url is None or self.url.strip() == "" or self.id is None:
                 logger.debug("URL invalid - result-URL or ID is empty: {0}".format(url))
                 raise Exception("URL invalid - result-URL or ID is empty: {0}".format(url))
-        except Exception as e:
+        except Exception:
             # this try is for the url.strip() call
-            logger.debug("URL invalid")
+            logger.debug("URL invalid (%s)", url)
             raise InputAnalyseError(InputAnalyseErrorReason.URL_INVALID, url)
 
     @property
@@ -58,11 +61,13 @@ class SeekContentBlobType(Enum):
     SEDML = "SEDML"
 
 
-class SeekContentBlob():
+class SeekContentBlob:
     """
     container for a content_blob JSON object; including base check (type, keys)
     :raises `InputAnalyseError`
     """
+    __json: dict
+    __type: Optional[SeekContentBlobType]
 
     @property
     def mime(self) -> str:
@@ -79,7 +84,7 @@ class SeekContentBlob():
     @property
     def link_to_model(self) -> str:
         """
-        :return:URL to model without "conten_blob/…"
+        :return:URL to model without "content_blob/…"
         """
         return self.link.rsplit('/content_blob', 1)[0]
 
@@ -88,7 +93,7 @@ class SeekContentBlob():
 
     def __init__(self, json: dict):
         self.__type = None
-        self.__json: dict = json
+        self.__json = json
         try:
             if self.mime.strip() == '' or \
                     self.link.strip() == '':
@@ -101,7 +106,7 @@ class SeekContentBlob():
         return "seek-blob-json#" + self.link
 
 
-class SeekJson():
+class SeekJson:
     """
     container for the whole JSON returned from SEEK; including base check (type, keys)
     :raises `InputAnalyseError`
@@ -155,12 +160,15 @@ class SeekJson():
         return "seek-json#" + str(self.id)
 
 
-class XmlNamespace():
+class XmlNamespace:
     """
     container for the namespace + level + version
     with a bit logic to check level/version from namespace against given level/version
     :raises XmlNamespaceVersionLevelMismatchException
     """
+    __namespace: str
+    __level: int
+    __version: int
 
     def __init__(self, namespace: str, level: Optional[int] = None, version: Optional[int] = None):
         # check namespace
