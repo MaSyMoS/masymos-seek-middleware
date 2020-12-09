@@ -28,7 +28,7 @@ class SeekUrl():
             self.__input = self.__input._replace(path=self.__input.path.split(".")[0])
 
         try:
-            if self.url is None or self.url.strip() is '' or self.id is None:
+            if self.url is None or self.url.strip() == "" or self.id is None:
                 logger.debug("URL invalid - result-URL or ID is empty: {0}".format(url))
                 raise Exception("URL invalid - result-URL or ID is empty: {0}".format(url))
         except Exception as e:
@@ -90,8 +90,8 @@ class SeekContentBlob():
         self.__type = None
         self.__json: dict = json
         try:
-            if self.mime.strip() is '' or \
-                    self.link.strip() is '':
+            if self.mime.strip() == '' or \
+                    self.link.strip() == '':
                 raise ValueError("MIME or LINK of content_blob empty")
         except (ValueError, KeyError) as e:
             logger.debug("content_blob json invalid, error: %s", e)
@@ -164,11 +164,13 @@ class XmlNamespace():
 
     def __init__(self, namespace: str, level: Optional[int] = None, version: Optional[int] = None):
         # check namespace
-        if namespace is None or namespace.strip() is "":
+        if namespace is None or namespace.strip() == "":
             logger.debug("namespace cannot be empty or None")
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_EMPTY)
 
         # get level and version from namespace
+        namespace_level: int
+        namespace_version: int
         namespace_level, namespace_version = self._extract_level_version_from_namespace(namespace)
 
         # compare level/version with level/version from namespace
@@ -182,8 +184,8 @@ class XmlNamespace():
         if namespace_version is None:
             namespace_version = version
 
-        if level is not namespace_level or \
-                version is not namespace_version:
+        if level != namespace_level or \
+                version != namespace_version:
             logger.debug("level/version ({0}/{1}) is not matching with namespace level/version ({2}/{3})".format(
                 level, version, namespace_level, namespace_version))
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH, namespace)

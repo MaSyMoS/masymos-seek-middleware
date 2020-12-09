@@ -51,7 +51,7 @@ class handle_delete(HandleIO):
         """
 
         if self.__link is not None \
-                and self.__link.strip() is "":
+                and self.__link.strip() == "":
             morre.the_queue.add_to_delete_queue_and_eventually_start(self.__link)
             return True
 

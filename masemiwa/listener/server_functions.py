@@ -16,7 +16,7 @@ def __check_if_valid_post_json_request(request: request, key_to_check: str = 'li
     if request.method == 'POST' \
             and request.is_json \
             and key_to_check in dict(request.get_json()) \
-            and str(dict(request.get_json()).get(key_to_check)).strip() is not "":
+            and str(dict(request.get_json()).get(key_to_check)).strip() != "":
         return True
     return False
 

@@ -123,11 +123,11 @@ class MorreQueue(Thread):
         - delete all morre entries defines in delete queue
         - insert all entries defines in insert queue
             - check delete queue before every insert - if there is still an entry in the delete queue, this is an update
-        - wehen queue is empty, run annotation index
+        - when queue is empty, run annotation index
         """
         logger.debug("start the Morre-Queue")
 
-        while len(self.__queue_insert) + len(self.__queue_delete) is not 0:
+        while len(self.__queue_insert) + len(self.__queue_delete) != 0:
             if len(self.__queue_delete) > 0:
                 # send DELETE to Morre
                 next_delete: str = self._pop_from_delete_queue()
@@ -159,5 +159,5 @@ class MorreQueue(Thread):
         logger.debug("finish the Morre-Queue")
 
 
-# this is the one and only Morre-Queue - a Thread runing in the background, managing the talking to Morre
+# this is the one and only Morre-Queue - a Thread running in the background, managing the talking to Morre
 the_queue: MorreQueue = MorreQueue()

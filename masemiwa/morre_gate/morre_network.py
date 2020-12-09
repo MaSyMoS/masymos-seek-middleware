@@ -51,3 +51,27 @@ def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
 
     logger.debug("successfully got feedback %s", url)
     return r
+
+
+def process_response(response, success_msg: str = "success", error_msg: str = "error") -> bool:
+    """
+    checks, if morre response is OK
+    :param response: morres response
+    :param success_msg: the logging message to display on success
+    :param error_msg: the logging message to display on error
+    :return: True, if OK, else False
+    """
+
+    if response \
+            and response.get('ok') is not None \
+            and str(response.get('ok')).strip().lower() == "true":
+        logger.info(success_msg)
+        return True
+
+    response_message: str = ""
+    if response \
+            and response.get('message') is not None:
+        response_message = response.get('message')
+
+    logger.info("%s|%s", error_msg, response_message)
+    return False

@@ -38,7 +38,7 @@ class MetaChecker():
 
         # check content_blobs
         blobs: List[SeekContentBlob] = self.__json.content_blobs
-        if blobs is None or len(blobs) is 0:
+        if blobs is None or len(blobs) == 0:
             raise InputAnalyseError(InputAnalyseErrorReason.CONTENT_BLOB_CONTENT_INVALID, self.__url)
         blob: SeekContentBlob
         for blob in blobs:
@@ -126,7 +126,7 @@ class MetaChecker():
                 return True
 
         elif namespace.namespace.startswith('http://sed-ml.org'):
-            if namespace.level is 1 \
+            if namespace.level == 1 \
                     and namespace.version < 3:
                 blob.set_type(SeekContentBlobType.SEDML)
                 return True

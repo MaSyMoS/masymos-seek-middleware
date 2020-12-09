@@ -3,7 +3,7 @@ from abc import ABC
 
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.morre_gate import MorreConnect
-from masemiwa.morre_gate.morre_network import send_post_request_with_json
+from masemiwa.morre_gate.morre_network import send_post_request_with_json, process_response
 
 logger = logging.getLogger(__name__)
 
@@ -19,16 +19,6 @@ class MorreDelete(MorreConnect):
         data: dict = dict(fileId=self.__link)
         response: dict = send_post_request_with_json('delete_model_by_fileid', data)
 
-        if response \
-                and response.get('ok') is not None \
-                and str(response.get('ok')).strip().lower() is "true":
-            logger.info("delete - successfully removed %s", self.__link)
-            return True
-
-        response_message: str = ""
-        if response \
-                and response.get('message') is not None:
-            response_message = response.get('message')
-
-        logger.info("delete - failed to remove %s|%s", self.__link, response_message)
-        return False
+        return process_response(response,
+                                success_msg="delete - successfully removed {0}".format(self.__link),
+                                error_msg="delete - failed to remove {0}".format(self.__link))
