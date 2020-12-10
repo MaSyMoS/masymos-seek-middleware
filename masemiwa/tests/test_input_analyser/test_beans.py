@@ -11,23 +11,23 @@ from masemiwa.input_analyser.beans import SeekContentBlobType, SeekUrl
 
 class TestSeekUrlObject(TestCase):
     def test_success(self):
-        obj = masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/24.json?version=3')
+        obj = SeekUrl('https://fairdomhub.org/models/24.json?version=3')
         self.assertEqual('https://fairdomhub.org/models/24', obj.url)
         self.assertEqual(24, obj.id)
 
     def test_inkscape(self):
         with pytest.raises(InputAnalyseError) as e:
-            masemiwa.input_analyser.beans.SeekUrl('inkscape.org')
+            SeekUrl('inkscape.org')
         self.assertEqual(InputAnalyseErrorReason.URL_INVALID, e.value.reason)
 
     def test_incomplete(self):
         with pytest.raises(InputAnalyseError) as e:
-            masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/')
+            SeekUrl('https://fairdomhub.org/models/')
         self.assertEqual(InputAnalyseErrorReason.URL_INVALID, e.value.reason)
 
     # noinspection PyPropertyAccess
     def test_readonly_attributes(self):
-        obj: SeekUrl = masemiwa.input_analyser.beans.SeekUrl('https://fairdomhub.org/models/24.json?version=3')
+        obj: SeekUrl = SeekUrl('https://fairdomhub.org/models/24.json?version=3')
         with pytest.raises(AttributeError):
             obj.id = 42
         with pytest.raises(AttributeError):

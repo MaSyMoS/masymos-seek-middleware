@@ -1,5 +1,5 @@
 import logging
-from .listener.server_functions import app
+from masemiwa.listener.server_functions import app
 
 logger = logging.getLogger(__name__)
 
