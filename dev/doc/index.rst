@@ -25,7 +25,8 @@ Table of Content
     :caption: Usage
     :maxdepth: 2
     
-    usage
+    use_usage
+    use_docker
 
 .. toctree::
     :caption: Development
