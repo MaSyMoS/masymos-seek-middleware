@@ -3,7 +3,6 @@ from unittest import TestCase
 
 import pytest
 
-import masemiwa.input_analyser.beans
 import masemiwa.input_analyser.beans as t
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
 from masemiwa.input_analyser.beans import SeekContentBlobType, SeekUrl

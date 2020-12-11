@@ -13,7 +13,7 @@ class Configuration(Enum):
     CONNECTION_TIMEOUT = 10, int, "timeout in seconds for any non-morre request"
     CONNECTION_TIMEOUT_MORRE = 542, int, "timeout in seconds for any morre request"
     MORRE_SERVER = "http://127.0.0.1:7474", str, "the URL of the morre server to use (without '/morre/')"
-    LOG_DIRECTORY = "/opt/logs", str, "the directory where the logs are stored"
+    LOG_CONFIGURATION = "/opt/config/masemiwa_log.cfg", str, "the absolute path to the log-configuration-file"
 
     __default_value: str
     __value: str

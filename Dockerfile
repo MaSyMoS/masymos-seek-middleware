@@ -5,7 +5,9 @@ WORKDIR /opt/app
 RUN pip install -r requirements.txt \
                    gunicorn;        \
     mkdir -p /opt/config;           \
-    mkdir -p /opt/logs;
+    chmod 666 /opt/config;          \
+    mkdir -p /opt/logs;             \
+    chmod 666 /opt/logs;
 
 VOLUME /opt/config
 VOLUME /opt/logs
