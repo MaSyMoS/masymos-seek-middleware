@@ -26,6 +26,7 @@ Table of Content
     :maxdepth: 2
     
     use_usage
+    use_configure
     use_docker
 
 .. toctree::

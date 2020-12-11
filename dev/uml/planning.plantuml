@@ -38,12 +38,12 @@ then [content_blob Check] as [blob]   lasts 2 days and is     100% completed
 then [MetaChecker] as [metachecker]   lasts 1 days and is     100% completed
 then [JSON-HTTP-Server] as [http]   lasts 4 days and is   100% completed
 then [Threadify] as [thread]   lasts 2 days and is   100% completed
-then [Morre Interface] as [morre]   lasts 4 days and is   60% completed
-then [Configuration and Logger] as [log]   lasts 1 days and is   35% completed
-then [Dockerisation] as [docker]   lasts 2 days and is   0% completed
+then [Morre Interface] as [morre]   lasts 4 days and is   70% completed
+then [Configuration and Logger] as [log]   lasts 2 days and is   60% completed
+then [Dockerisation] as [docker]   lasts 3 days and is   80% completed
 
 -- MaSyMoS --
-[Morre: add Funktions to change work with SEEK-content_blob-id miwa#12] as [id]   lasts 2 days and is   10% completed  and ends at [morre]'s end
+[Morre: add Funktions to change work with SEEK-content_blob-id miwa#12] as [id]   lasts 2 days and is   100% completed  and ends at [morre]'s end
 then [exchange lib for resolving URN/CompactID core#12] lasts 3 days and is 0% completed
 then [Exception thrown from SBML library core#9] lasts 1 days and is 50% completed
 
