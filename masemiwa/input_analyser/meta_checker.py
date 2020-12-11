@@ -57,7 +57,7 @@ class MetaChecker:
                 elif e.reason is InputAnalyseErrorReason.DATA_NAMESPACE_LEVEL_VERSION_MISMATCH:
                     logger.info("namespace vs. attribute level/version mismatch in file %s", blob.link)
                 else:
-                    logger.debug("unable to process content blob %s; %s - %s",
+                    logger.info("unable to process content blob %s; %s - %s",
                                  blob.link, e.reason, e.reason.error_message)
 
     @property

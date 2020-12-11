@@ -7,7 +7,8 @@ from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.input_analyser.meta_checker import MetaChecker
 from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, \
     E502_HTTP_RETURN_CODE_NO_CONNECTION_TO_FILE_DOWNLOAD, E200_HTTP_RETURN_CODE_SUCCESS_ADDED, \
-    E500_HTTP_RETURN_CODE_INTERNAL_ERROR, HandleIO, E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
+    E500_HTTP_RETURN_CODE_INTERNAL_ERROR, HandleIO, E405_HTTP_RETURN_CODE_MALFORMED_REQUEST, \
+    E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO
 
 logger = logging.getLogger(__name__)
 
@@ -49,6 +50,8 @@ class HandleInsert(HandleIO):
             if not self._send():
                 return "FATAL unable to add {0} to insert queue; check the logs!".format(
                     self.__link), E500_HTTP_RETURN_CODE_INTERNAL_ERROR
+        else:
+            return "model {0} cannot be used with MORRE".format(self.__link), E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO
 
         return "added {0} to insert-queue".format(self.__link), E200_HTTP_RETURN_CODE_SUCCESS_ADDED
 

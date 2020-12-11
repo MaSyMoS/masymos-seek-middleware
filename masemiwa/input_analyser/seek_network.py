@@ -59,7 +59,7 @@ def download_seek_metadata(seek_url: SeekUrl) -> Optional[dict]:
         "Accept-Charset": "UTF-8"
     }
 
-    r: Response = _download_file(seek_url.url, headers=headers)
+    r: Response = _download_file(seek_url.url + ".json", headers=headers)
     if r is None:
         return
     return r.json()

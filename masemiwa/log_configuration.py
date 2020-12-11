@@ -17,7 +17,7 @@ keys=formatter1
 keys=stream, file
 
 [formatter_formatter1]
-format=%(asctime)s %(name)s %(threadName)s [%(levelname)s] %(filename)s:%(lineno)d | %(message)s
+format=%(asctime)s %(threadName)s [%(levelname)s] %(name)s|%(filename)s:%(lineno)d | %(message)s
 
 [handler_stream]
 class=StreamHandler

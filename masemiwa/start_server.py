@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.DEBUG)
 log_configuration.reload_log_configuration()
 logger = logging.getLogger(__name__)
 
-logger.info("started MaSeMiWa")
+logger.info("started MaSeMiWa ----------------------------------------------------------------------------------------")
 
 # debug mode
 if __name__ == "__main__":
