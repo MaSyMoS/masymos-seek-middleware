@@ -32,10 +32,10 @@ def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
         "Accept-Charset": "UTF-8"
     }
 
-    logger.debug("send request to morre %s", url)
+    logger.debug("send request to morre %s %s %s", url, data, headers)
     r: Response
     try:
-        r = requests.post(url, data=data,
+        r = requests.post(url, data=str(data),
                           headers=headers, timeout=conf.Configuration.CONNECTION_TIMEOUT_MORRE.value)
         r.raise_for_status()
     except (ConnectionError, NewConnectionError, OSError) as e:

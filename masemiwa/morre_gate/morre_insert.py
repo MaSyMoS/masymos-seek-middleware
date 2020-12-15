@@ -25,7 +25,7 @@ class MorreInsert(MorreConnect):
         logger.debug("insert - start sending %s", self.__blob.link)
 
         data: dict = dict(fileId=self.__blob.link,
-                          url=self.__blob.link,
+                          url=self.__blob.link + "/download",
                           modelType=self.__blob.type.value,
                           enforceUniqueFileId=True)
         response: dict = send_post_request_with_json('add_model', data)
