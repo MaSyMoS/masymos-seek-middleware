@@ -49,11 +49,11 @@ class HandleDelete(HandleIO):
         """
 
         if self.__link is not None \
-                and self.__link.strip() == "":
+                and self.__link.strip() != "":
             morre.the_queue.add_to_delete_queue_and_eventually_start(self.__link)
             return True
 
         logger.fatal(
-            "the seems to be a check missing, \
-            this list here is empty or has the wrong type of objects. this must not happen here!")
+            "there seems to be a check missing, "
+            "this list here is empty or has the wrong type of objects. this must not happen here!")
         return False

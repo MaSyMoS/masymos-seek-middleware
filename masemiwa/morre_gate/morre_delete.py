@@ -10,7 +10,6 @@ class MorreDelete(MorreConnect):
     __link: str
 
     def __init__(self, link: str):
-        super().__init__(link)
         self.__link = link
 
     def send(self) -> bool:

@@ -11,8 +11,6 @@ class MorreInsert(MorreConnect):
     __blob: SeekContentBlob
 
     def __init__(self, blob: SeekContentBlob):
-        super().__init__()
-
         if not blob \
                 or type(blob) is not SeekContentBlob \
                 or blob.link.strip() == "":

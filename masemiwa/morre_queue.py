@@ -145,10 +145,11 @@ class MorreQueue(Thread):
         while True:
 
             inserted_something: bool = False
-            while len(self.__queue_insert) + len(self.__queue_delete) != 0:
+            while (len(self.__queue_insert) + len(self.__queue_delete)) > 0:
                 if len(self.__queue_delete) > 0:
                     # send DELETE to Morre
                     next_delete: str = self._pop_from_delete_queue()
+                    logger.debug("Q:DEL %s",next_delete)
                     delete: MorreDelete = MorreDelete(next_delete)
                     delete.send()
                     continue
@@ -156,11 +157,13 @@ class MorreQueue(Thread):
                 if len(self.__queue_insert) > 0:
                     inserted_something = True
                     next_insert: SeekContentBlob = self._pop_from_insert_queue()
+                    logger.debug("Q:INS %s",next_insert)
 
                     if next_insert.link_to_model in self.__queue_delete:
                         # this is an UPDATE → fist delete, then insert
                         # send DELETE to Morre
                         next_delete: str = self._pop_from_delete_queue(next_insert)
+                        logger.debug("Q:DEL2 %s", next_insert)
                         delete: MorreDelete = MorreDelete(next_delete)
                         delete.send()
 

@@ -31,6 +31,7 @@ def batch() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'links'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     links: list = list(dict(request.get_json()).get('links'))
+    logger.debug("called BATCH: %s items", len(links))
     # TODO
 
     return "ok"
@@ -44,6 +45,7 @@ def insert() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
+    logger.debug("called INSERT: %s", link)
     i: HandleInsert = HandleInsert(link)
 
     return i.process()
@@ -56,6 +58,7 @@ def delete() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
+    logger.debug("called DELETE: %s", link)
     d: HandleDelete = HandleDelete(link)
 
     return d.process()
@@ -68,6 +71,7 @@ def update() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
+    logger.debug("called UPDATE: %s", link)
     # TODO update
 
     return "ok"
