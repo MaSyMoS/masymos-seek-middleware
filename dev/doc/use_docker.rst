@@ -44,3 +44,21 @@ Hints
 - stop the container with :c_bash:`docker stop masemiwa`
 - see console output with :c_bash:`docker logs --follow masemiwa`
 - get a root bash inside the running container with :c_bash:`docker exec -u 0 -it masemiwa bash`
+
+Connect MaSeMiWa and MaSyMoS Morre with Docker
+##############################################
+- requirements
+    - MaSeMiWa is running in Docker, see above
+        - run ``start_docker.sh`` → creates Docker Container ``masemiwa``
+    - MaSyMoS Morre is running with Neo4J in Docker, `see here <https://masymos.readthedocs.io/en/latest/main_setup.html>`__
+        - run ``run-neo4j-server.sh`` → creates Docker Container ``masymos_neo4j``
+- create Docker Network and add the two machines
+
+    .. code-block:: bash
+
+        docker network create masy
+        docker network connect masy masymos_neo4j
+        docker network connect masy masemiwa
+
+- hints
+    - if you rename something or if you use other ports, make sure, to update the MaSeMiWa configuration
