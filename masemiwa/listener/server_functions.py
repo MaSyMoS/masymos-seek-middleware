@@ -6,6 +6,7 @@ from flask import request
 from masemiwa.listener import E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 from masemiwa.listener.delete import HandleDelete
 from masemiwa.listener.insert import HandleInsert
+from masemiwa.morre_queue import the_queue, init_morre_queue
 
 logger = logging.getLogger(__name__)
 
@@ -67,7 +68,15 @@ def update() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     link: str = str(dict(request.get_json()).get('link')).strip()
-    # TODO delete
-    # ToDo insert
+    # TODO update
 
     return "ok"
+
+
+@app.route('/restart_queue', methods=['POST'])
+def shutdown():
+    logger.info("restating the morre queue was requested")
+    if the_queue.is_alive:
+        the_queue.stop()
+    init_morre_queue()
+    return "restarted"

@@ -1,6 +1,9 @@
 import logging
 import threading
 from threading import Thread, Lock
+from time import sleep
+
+import atexit
 
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.morre_gate.morre_annotations import MorreAnnotations
@@ -21,6 +24,7 @@ class MorreQueue(Thread):
 
     def __init__(self):
         super().__init__()
+        self.__stop_thread = False
         # make synchronise possible
         self.__lock = threading.Lock()
         # create queues
@@ -138,38 +142,65 @@ class MorreQueue(Thread):
         """
         logger.debug("start the Morre-Queue")
 
-        while len(self.__queue_insert) + len(self.__queue_delete) != 0:
-            if len(self.__queue_delete) > 0:
-                # send DELETE to Morre
-                next_delete: str = self._pop_from_delete_queue()
-                delete: MorreDelete = MorreDelete(next_delete)
-                delete.send()
-                continue
+        while True:
 
-            if len(self.__queue_insert) > 0:
-                next_insert: SeekContentBlob = self._pop_from_insert_queue()
-
-                if next_insert.link_to_model in self.__queue_delete:
-                    # this is an UPDATE → fist delete, then insert
+            inserted_something: bool = False
+            while len(self.__queue_insert) + len(self.__queue_delete) != 0:
+                if len(self.__queue_delete) > 0:
                     # send DELETE to Morre
-                    next_delete: str = self._pop_from_delete_queue(next_insert)
+                    next_delete: str = self._pop_from_delete_queue()
                     delete: MorreDelete = MorreDelete(next_delete)
                     delete.send()
+                    continue
 
-                # send INSERT to Morre
-                insert: MorreInsert = MorreInsert(next_insert)
-                insert.send()
-                # TODO handle a return false here with adding the blob/link to the backlog and try later
-                #  https://github.com/MaSyMoS/masymos-seek-middleware/issues/11
+                if len(self.__queue_insert) > 0:
+                    inserted_something = True
+                    next_insert: SeekContentBlob = self._pop_from_insert_queue()
 
-        logger.debug("start Annotation Indexing")
+                    if next_insert.link_to_model in self.__queue_delete:
+                        # this is an UPDATE → fist delete, then insert
+                        # send DELETE to Morre
+                        next_delete: str = self._pop_from_delete_queue(next_insert)
+                        delete: MorreDelete = MorreDelete(next_delete)
+                        delete.send()
 
-        # Annotation Indexing
-        annotations: MorreAnnotations = MorreAnnotations()
-        annotations.send()
+                    # send INSERT to Morre
+                    insert: MorreInsert = MorreInsert(next_insert)
+                    insert.send()
+                    # TODO handle a return false here with adding the blob/link to the backlog and try later
+                    #  https://github.com/MaSyMoS/masymos-seek-middleware/issues/11
 
-        logger.debug("finish the Morre-Queue")
+            if inserted_something:
+                logger.debug("start Annotation Indexing")
+
+                # Annotation Indexing
+                annotations: MorreAnnotations = MorreAnnotations()
+                annotations.send()
+
+            sleep(1)
+            if self.__stop_thread:
+                logger.debug("stop the Morre-Queue")
+                break
+
+    @atexit.register
+    def stop(self) -> None:
+        """
+        will stop the Thread
+        """
+        if self.is_alive:
+            logger.debug("stopping the Morre-Queue requested")
+        else:
+            logger.debug("stopping the Morre-Queue requested, but queue is not running")
+        self.__stop_thread = True
 
 
 # this is the one and only Morre-Queue - a Thread running in the background, managing the talking to Morre
-the_queue: MorreQueue = MorreQueue()
+the_queue: MorreQueue
+
+
+def init_morre_queue() -> None:
+    global the_queue
+    the_queue = MorreQueue()
+
+
+init_morre_queue()

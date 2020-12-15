@@ -4,7 +4,7 @@ from urllib.error import HTTPError
 
 import requests
 from requests import Response, ConnectTimeout
-from urllib3.exceptions import ConnectTimeoutError
+from urllib3.exceptions import ConnectTimeoutError, NewConnectionError
 
 import masemiwa.config as conf
 
@@ -38,8 +38,11 @@ def send_post_request_with_json(module: str, data: dict) -> Optional[dict]:
         r = requests.post(url, data=data,
                           headers=headers, timeout=conf.Configuration.CONNECTION_TIMEOUT_MORRE.value)
         r.raise_for_status()
-    except ConnectTimeoutError or ConnectTimeout:
-        logger.warning("timeout - unable to make request %s; Timeout!", url)
+    except (ConnectionError, NewConnectionError, OSError) as e:
+        logger.warning("unable to make Morre request %s; Connection not possible!(%s)", url, e)
+        return
+    except (ConnectTimeoutError, ConnectTimeout):
+        logger.warning("timeout - unable to make Morre request %s; Timeout!", url)
         return
     except HTTPError:
         code: str = 'unknown'

@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.7
 
 COPY . /opt/app
 WORKDIR /opt/app
@@ -13,4 +13,4 @@ VOLUME /opt/config
 VOLUME /opt/logs
 
 #CMD [ "python", "/opt/app/masemiwa/start_server.py" ]
-CMD [ "gunicorn", "--bind", "0.0.0.0:4242", "masemiwa.start_server:app" ]
+ENTRYPOINT [ "gunicorn", "--bind", "0.0.0.0:4242", "masemiwa.start_server:app" ]
