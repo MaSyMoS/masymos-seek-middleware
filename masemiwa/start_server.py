@@ -1,10 +1,8 @@
 import logging
-import atexit
 
+import masemiwa.config as config
 from masemiwa import log_configuration
 from masemiwa.listener.server_functions import app
-from masemiwa.morre_queue import MorreQueue, the_queue
-import masemiwa.config as config
 
 """
 

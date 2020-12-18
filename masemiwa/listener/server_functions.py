@@ -3,7 +3,9 @@ import logging
 from flask import Flask
 from flask import request
 
-from masemiwa.listener import E405_HTTP_RETURN_CODE_MALFORMED_REQUEST, E200_HTTP_RETURN_CODE_SUCCESS_ADDED
+from masemiwa.listener import E405_HTTP_RETURN_CODE_MALFORMED_REQUEST, E200_HTTP_RETURN_CODE_SUCCESS_ADDED, \
+    E503_HTTP_RETURN_CODE_MORRE_QUEUE_HAS_STOPPED
+from masemiwa.listener.batch_insert import HandleBatch
 from masemiwa.listener.delete import HandleDelete
 from masemiwa.listener.insert import HandleInsert
 from masemiwa.morre_queue import the_queue, init_morre_queue
@@ -35,8 +37,11 @@ def _add_status_to_message(t: tuple = "unknown") -> (str, int):
     return "{0} - {1}".format(status, msg), status
 
 
-_ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE = (
-    "503 - Morre-Queue is not running; internal error, check the logs!", 503)
+_E405_HTTP_RETURN_CODE_MALFORMED_REQUEST_RETURN_VALUE = (
+    "use POST and send json data with mime 'application/json' and field 'link'",
+    E405_HTTP_RETURN_CODE_MALFORMED_REQUEST)
+_E503_ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE = (
+    "503 - Morre-Queue is not running; internal error, check the logs!", E503_HTTP_RETURN_CODE_MORRE_QUEUE_HAS_STOPPED)
 
 
 def _abort_because_morre_queue_has_stopped() -> bool:
@@ -59,13 +64,13 @@ def batch() -> (str, int):
         return "use POST and send json data with mime 'application/json' and field 'links'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
 
     if _abort_because_morre_queue_has_stopped():
-        return _ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
+        return _E503_ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
 
     links: list = list(dict(request.get_json()).get('links'))
     logger.debug("called BATCH: %s items", len(links))
-    # TODO
+    b: HandleBatch = HandleBatch(links)
 
-    return _add_status_to_message(("ok", E200_HTTP_RETURN_CODE_SUCCESS_ADDED))
+    return _add_status_to_message(b.process())
 
 
 @app.route('/insert', methods=['POST'])
@@ -73,10 +78,10 @@ def insert() -> (str, int):
     # check if link is valid
     if not _check_if_valid_post_json_request(request):
         logger.warning("malformed INSERT request")
-        return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
+        return _E405_HTTP_RETURN_CODE_MALFORMED_REQUEST_RETURN_VALUE
 
     if _abort_because_morre_queue_has_stopped():
-        return _ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
+        return _E503_ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
 
     link: str = str(dict(request.get_json()).get('link')).strip()
     logger.debug("called INSERT: %s", link)
@@ -89,10 +94,10 @@ def insert() -> (str, int):
 def delete() -> (str, int):
     if not _check_if_valid_post_json_request(request):
         logger.warning("malformed DELETE request")
-        return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
+        return _E405_HTTP_RETURN_CODE_MALFORMED_REQUEST_RETURN_VALUE
 
     if _abort_because_morre_queue_has_stopped():
-        return _ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
+        return _E503_ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
 
     link: str = str(dict(request.get_json()).get('link')).strip()
     logger.debug("called DELETE: %s", link)
@@ -105,10 +110,10 @@ def delete() -> (str, int):
 def update() -> (str, int):
     if not _check_if_valid_post_json_request(request):
         logger.warning("malformed UPDATE request")
-        return "use POST and send json data with mime 'application/json' and field 'link'", E405_HTTP_RETURN_CODE_MALFORMED_REQUEST
+        return _E405_HTTP_RETURN_CODE_MALFORMED_REQUEST_RETURN_VALUE
 
     if _abort_because_morre_queue_has_stopped():
-        return _ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
+        return _E503_ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE
 
     link: str = str(dict(request.get_json()).get('link')).strip()
     logger.debug("called UPDATE: %s", link)
