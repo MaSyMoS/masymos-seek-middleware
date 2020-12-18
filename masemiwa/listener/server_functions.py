@@ -22,8 +22,17 @@ def _check_if_valid_post_json_request(req: request, key_to_check: str = 'link') 
     return False
 
 
-def _add_status_to_message(msg: str = "unknown", status: int = 0) -> (str, int):
-    return str(status) + " - " + msg, status
+def _add_status_to_message(t: tuple = "unknown") -> (str, int):
+    msg: str
+    status: int = -1
+    if type(t) is tuple and len(t) == 2:
+        msg = t[0]
+        if type(t[1]) is int:
+            status = int(t[1])
+    else:
+        msg = str(t)
+
+    return "{0} - {1}".format(status, msg), status
 
 
 _ABORT_BECAUSE_MORRE_QUEUE_HAS_STOPPED_RETURN_VALUE = (
@@ -34,7 +43,8 @@ def _abort_because_morre_queue_has_stopped() -> bool:
     """
     :return: true, if morre-queue was started but isn't running anymore
     """
-    if the_queue.is_alive():
+    if the_queue.has_been_started_yet is False \
+            or the_queue.is_alive():
         return False
 
     return True
@@ -55,7 +65,7 @@ def batch() -> (str, int):
     logger.debug("called BATCH: %s items", len(links))
     # TODO
 
-    return _add_status_to_message("ok", E200_HTTP_RETURN_CODE_SUCCESS_ADDED)
+    return _add_status_to_message(("ok", E200_HTTP_RETURN_CODE_SUCCESS_ADDED))
 
 
 @app.route('/insert', methods=['POST'])
@@ -104,7 +114,7 @@ def update() -> (str, int):
     logger.debug("called UPDATE: %s", link)
     # TODO update
 
-    return _add_status_to_message("ok", E200_HTTP_RETURN_CODE_SUCCESS_ADDED)
+    return _add_status_to_message(("ok", E200_HTTP_RETURN_CODE_SUCCESS_ADDED))
 
 
 @app.route('/restart_queue', methods=['POST'])
@@ -113,4 +123,4 @@ def shutdown():
     if the_queue.is_alive:
         the_queue.stop()
     init_morre_queue()
-    return _add_status_to_message("restarted", E200_HTTP_RETURN_CODE_SUCCESS_ADDED)
+    return _add_status_to_message(("restarted", E200_HTTP_RETURN_CODE_SUCCESS_ADDED))

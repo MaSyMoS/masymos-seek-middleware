@@ -11,7 +11,7 @@ import masemiwa.input_analyser.seek_network as t
 class TestDownloadSeekMetadata(unittest.TestCase):
     @responses.activate
     def test_mock_200(self):
-        responses.add(responses.GET, 'https://my-url.org/models/42',
+        responses.add(responses.GET, 'https://my-url.org/models/42.json',
                       json={'some': 'thing'}, status=200)
 
         # 200
@@ -27,9 +27,9 @@ class TestDownloadSeekMetadata(unittest.TestCase):
 
     @responses.activate
     def test_mock_400(self):
-        responses.add(responses.GET, 'https://my-url.org/models/52',
+        responses.add(responses.GET, 'https://my-url.org/models/52.json',
                       status=403)
-        responses.add(responses.GET, 'https://my-url.org/models/62',
+        responses.add(responses.GET, 'https://my-url.org/models/62.json',
                       status=404)
 
         # 403, 404
@@ -38,9 +38,9 @@ class TestDownloadSeekMetadata(unittest.TestCase):
 
     @responses.activate
     def test_mock_error(self):
-        responses.add(responses.GET, 'https://my-url.org/models/142',
+        responses.add(responses.GET, 'https://my-url.org/models/142.json',
                       status=200, body=ConnectTimeoutError())
-        responses.add(responses.GET, 'https://my-url.org/models/143',
+        responses.add(responses.GET, 'https://my-url.org/models/143.json',
                       status=200, body=HTTPError())
 
         # error handling

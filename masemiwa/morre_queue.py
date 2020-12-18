@@ -21,9 +21,11 @@ class MorreQueue(Thread):
     __queue_delete: set
     __queue_insert: list
     __lock: Lock
+    __has_been_started_yet: bool
 
     def __init__(self):
         super().__init__()
+        self.__has_been_started_yet = False
         self.__stop_thread = False
         # make synchronise possible
         self.__lock = threading.Lock()
@@ -132,6 +134,10 @@ class MorreQueue(Thread):
     def delete_queue_length(self) -> int:
         return len(self.__queue_delete)
 
+    @property
+    def has_been_started_yet(self) -> bool:
+        return self.__has_been_started_yet
+
     def run(self) -> None:
         """
         idea behind the runner:
@@ -141,6 +147,7 @@ class MorreQueue(Thread):
         - when queue is empty, run annotation index
         """
         logger.debug("start the Morre-Queue")
+        self.__has_been_started_yet = True
 
         while True:
 
@@ -149,7 +156,7 @@ class MorreQueue(Thread):
                 if len(self.__queue_delete) > 0:
                     # send DELETE to Morre
                     next_delete: str = self._pop_from_delete_queue()
-                    logger.debug("Q:DEL %s",next_delete)
+                    logger.debug("Q:DEL %s", next_delete)
                     delete: MorreDelete = MorreDelete(next_delete)
                     delete.send()
                     continue
@@ -157,7 +164,7 @@ class MorreQueue(Thread):
                 if len(self.__queue_insert) > 0:
                     inserted_something = True
                     next_insert: SeekContentBlob = self._pop_from_insert_queue()
-                    logger.debug("Q:INS %s",next_insert)
+                    logger.debug("Q:INS %s", next_insert)
 
                     if next_insert.link_to_model in self.__queue_delete:
                         # this is an UPDATE → fist delete, then insert

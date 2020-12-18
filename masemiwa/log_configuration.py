@@ -4,7 +4,7 @@ import logging
 import logging.config
 import os
 
-from masemiwa.config import Configuration
+import masemiwa.config as conf
 
 _log_default_config = """
 [loggers]
@@ -35,19 +35,19 @@ level=DEBUG
 """
 
 
-def _overwrite_config_file():
-    with open(Configuration.LOG_CONFIGURATION.value, 'w') as fp:
+def _overwrite_log_config_file():
+    with open(conf.Configuration.LOG_CONFIGURATION_FILE.value, 'w') as fp:
         fp.write(_log_default_config)
 
 
 def reload_log_configuration():
-    conf_file = Configuration.LOG_CONFIGURATION.value
+    conf_file = conf.Configuration.LOG_CONFIGURATION_FILE.value
     new_log_file: bool = False
 
     # check, if file exists
     if not os.path.exists(conf_file) \
             or os.path.getsize(conf_file) == 0:
-        _overwrite_config_file()
+        _overwrite_log_config_file()
         new_log_file = True
 
     # load log configuration
