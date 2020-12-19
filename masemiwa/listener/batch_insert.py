@@ -9,6 +9,9 @@ logger = logging.getLogger(__name__)
 
 
 class HandleBatch(HandleIO):
+    """
+    handles all BATCH logic for a multiple model links (each can have several content_blob)
+    """
     __links: list
     __blobs: list
 

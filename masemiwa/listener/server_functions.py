@@ -8,6 +8,7 @@ from masemiwa.listener import E405_HTTP_RETURN_CODE_MALFORMED_REQUEST, E200_HTTP
 from masemiwa.listener.batch_insert import HandleBatch
 from masemiwa.listener.delete import HandleDelete
 from masemiwa.listener.insert import HandleInsert
+from masemiwa.listener.update import HandleUpdate
 from masemiwa.morre_queue import the_queue, init_morre_queue
 
 logger = logging.getLogger(__name__)
@@ -117,9 +118,9 @@ def update() -> (str, int):
 
     link: str = str(dict(request.get_json()).get('link')).strip()
     logger.debug("called UPDATE: %s", link)
-    # TODO update
+    u: HandleUpdate = HandleUpdate(link)
 
-    return _add_status_to_message(("ok", E200_HTTP_RETURN_CODE_SUCCESS_ADDED))
+    return u.process()
 
 
 @app.route('/restart_queue', methods=['POST'])
