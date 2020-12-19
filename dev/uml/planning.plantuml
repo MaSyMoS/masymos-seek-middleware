@@ -38,9 +38,10 @@ then [content_blob Check] as [blob]   lasts 2 days and is     100% completed
 then [MetaChecker] as [metachecker]   lasts 1 days and is     100% completed
 then [JSON-HTTP-Server] as [http]   lasts 4 days and is   100% completed
 then [Threadify] as [thread]   lasts 2 days and is   100% completed
-then [Morre Interface] as [morre]   lasts 4 days and is   70% completed
-then [Configuration and Logger] as [log]   lasts 2 days and is   60% completed
-then [Dockerisation] as [docker]   lasts 3 days and is   80% completed
+then [Morre Interface] as [morre]   lasts 4 days and is   100% completed
+then [Configuration and Logger] as [log]   lasts 2 days and is   100% completed
+then [Dockerisation] as [docker]   lasts 3 days and is   100% completed
+then [INSERT/UPDATE/DELETE/BATCH] as [crud] lasts 5 days and is 70% completed
 
 -- MaSyMoS --
 [Morre: add Funktions to change work with SEEK-content_blob-id miwa#12] as [id]   lasts 2 days and is   100% completed  and ends at [morre]'s end

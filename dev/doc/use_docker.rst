@@ -9,6 +9,11 @@ Docker
 .. contents:: 
     :local:
 
+.. WARNING:: by default the server is not secured at all
+
+    - Authentication is disabled (run-parameter ``--env "NEO4J_AUTH=none"``)
+    - make sure to set your firewall rules to keep the server in you zone only
+
 Build MaSeMiWa-Docker-Image yourself
 ####################################
 
