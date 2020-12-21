@@ -11,10 +11,11 @@ class Test(TestCase):
     valid_conf1: list = [("connection_timeout", 42),
                          ("connection_timeout_morre", 1234),
                          ("MORRE_SERVER", "http://123.12.12.31:5432"),
-                         ("log_configuration_file", "/my/folder/mimamu.configuration")]
+                         ("log_configuration_file", "/my/folder/something.configuration")]
+    # noinspection SpellCheckingInspection
     valid_conf2: list = [("CONNECTION_TIMEOUT", 42),
                          ("coNNection_timeout_morre", 1234),
-                         ("log_CONFIGURATION_file", "/my/folder/mimamu.configuration")]
+                         ("log_CONFIGURATION_file", "/my/folder/something.configuration")]
     invalid_conf1: list = [("unknown_key", 42)]
     invalid_conf2: list = [("connection_timeout_morre", "twenty-three")]
 

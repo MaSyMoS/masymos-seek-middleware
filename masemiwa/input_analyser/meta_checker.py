@@ -58,7 +58,7 @@ class MetaChecker:
                     logger.info("namespace vs. attribute level/version mismatch in file %s", blob.link)
                 else:
                     logger.info("unable to process content blob %s; %s - %s",
-                                 blob.link, e.reason, e.reason.error_message)
+                                blob.link, e.reason, e.reason.error_message)
 
     @property
     def is_valid(self) -> bool:
@@ -100,7 +100,6 @@ class MetaChecker:
         if xml is None:
             logger.debug("unable to download file for %s", blob.__repr__())
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_FILE_NOT_FOUND)
-            pass
         if not MetaChecker._check_namespace(blob, xml):
             logger.debug("namespace check FAILED for %s", blob.__repr__())
             raise InputAnalyseError(InputAnalyseErrorReason.DATA_NAMESPACE_NOT_SUPPORTED, blob.__repr__())

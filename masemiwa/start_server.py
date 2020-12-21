@@ -20,7 +20,9 @@ config.reload_configuration()
 log_configuration.reload_log_configuration()
 logger = logging.getLogger(__name__)
 
-logger.info("started MaSeMiWa ----------------------------------------------------------------------------------------")
+logger.info(
+    "started MaSeMiWa {0} -----------------------------------------------------------------------------------".format(
+        config.MASEMIWA_VERSION))
 
 # debug mode
 if __name__ == "__main__":

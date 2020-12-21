@@ -2,6 +2,8 @@ import os
 from configparser import ConfigParser
 from enum import Enum, unique
 
+MASEMIWA_VERSION: str = "1.0.0"
+
 CONFIGURATION_FILE: str = '/opt/config/masemiwa.cfg'
 CONFIGURATION_DEFAULT_SECTION: str = 'MaSeMiWa'
 

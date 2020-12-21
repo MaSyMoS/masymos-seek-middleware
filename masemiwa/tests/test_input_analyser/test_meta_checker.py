@@ -17,7 +17,7 @@ class TestMime(unittest.TestCase):
 
     def test_number(self):
         # noinspection PyTypeChecker
-        self.assertFalse(t.MetaChecker._check_mime_type(42))
+        self.assertFalse(t.MetaChecker._check_mime_type(42))  # NOSONAR
 
     def test_wrong_mime(self):
         self.assertFalse(t.MetaChecker._check_mime_type('text/plain'))

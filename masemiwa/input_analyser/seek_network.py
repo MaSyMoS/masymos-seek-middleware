@@ -27,8 +27,8 @@ def _download_file(url: str, headers: Dict = None) -> Optional[Response]:
         else:
             r = requests.get(url, headers=headers, timeout=conf.Configuration.CONNECTION_TIMEOUT.value)
         r.raise_for_status()
-    except ConnectTimeoutError or ConnectTimeout:
-        logger.warning("timeout - unable to get file %s; Timeout!", url)
+    except (ConnectTimeoutError, ConnectTimeout) as e:
+        logger.warning("timeout - unable to get file %s; Timeout! %s", url, e)
         return
     except HTTPError:
         code: str = 'unknown'

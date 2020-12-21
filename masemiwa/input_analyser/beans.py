@@ -1,7 +1,7 @@
 import logging
+import re
 from enum import unique, Enum
 from typing import List, Optional, Match
-import re
 from urllib.parse import ParseResult, urlparse
 
 from masemiwa.input_analyser import InputAnalyseError, InputAnalyseErrorReason
@@ -33,7 +33,8 @@ class SeekUrl:
         try:
             if self.url is None or self.url.strip() == "" or self.id is None:
                 logger.debug("URL invalid - result-URL or ID is empty: {0}".format(url))
-                raise Exception("URL invalid - result-URL or ID is empty: {0}".format(url))
+                raise InputAnalyseError(InputAnalyseErrorReason.URL_INVALID,
+                                        "URL invalid - result-URL or ID is empty: {0}".format(url))
         except Exception:
             # this try is for the url.strip() call
             logger.debug("URL invalid (%s)", url)
@@ -133,7 +134,7 @@ class SeekJson:
             try:
                 obj = SeekContentBlob(blob)
             except InputAnalyseError as e:
-                logger.debug("skip blob, error initialising SeekContentBlob", e)
+                logger.debug("skip blob, error initialising SeekContentBlob %s", e)
                 continue
             ret.append(obj)
         return ret
