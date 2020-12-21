@@ -31,7 +31,7 @@ formatter=formatter1
 
 [logger_root]
 handlers=stream, file
-level=DEBUG
+level=INFO
 """
 
 
