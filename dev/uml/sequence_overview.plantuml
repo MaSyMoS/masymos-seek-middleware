@@ -14,14 +14,14 @@ group #fda check logic<sup>(//see activity UML//)</sup>
 seek            <-      miwa            : get json
 seek            -->     miwa
 
-seek            <-      miwa            : OPT: get content_blob (files)
-seek            -->     miwa
+miwa            ->]            : OPT: get content_blob (files)
+miwa            <--]
 
 end
 !enddefinelong
 
 !definelong process_queue()
-miwa            -->     miwa            : process queue
+miwa            -->     miwa            : process queue (on SUCCESS)
 
     activate miwa
 
@@ -30,20 +30,20 @@ miwa            -->     miwa            : process queue
     miwa            ->      morre           : ""add_model""
         activate morre
         
-        morre           ->]                     : get file from the Internet
+        morre           ->]                     : get content_blob (files)
         morre           <--]
 
         morre           ->      db              : insert new model
             activate db
-        morre           <--     db              : SUCCESS
+        morre           <--     db              : return code
             deactivate db
         
-    miwa            <--     morre           : SUCCESS
+    miwa            <--     morre           : return code
         deactivate morre
     
     end
 
-    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
+    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB// (on SUCCESS)
         activate morre
 
         loop #efe annotations
@@ -53,12 +53,12 @@ miwa            -->     miwa            : process queue
 
         morre           ->      db              : insert additional data
             activate db
-        morre           <--     db              : SUCCESS
+        morre           <--     db              : return code
             deactivate db
         
         end
     
-    miwa            <--     morre           : SUCCESS
+    miwa            <--     morre           : return code
         deactivate morre 
 
     deactivate miwa
@@ -84,7 +84,7 @@ activate seek #aaf
 
 hnote over seek
     * user added a public model
-    * user made a model public
+    * OR user made a model public
 end note
 
 seek            ->      miwa            : insert_model(id)
@@ -92,7 +92,7 @@ seek            ->      miwa            : insert_model(id)
 
 check_logic()
 
-seek            <--     miwa            : SUCCESS
+seek            <--     miwa            : return code + message
     deactivate miwa
 
 process_queue()
@@ -107,7 +107,7 @@ process_queue()
 
 hnote over seek
     * user deleted a public model
-    * user made a public model non-public
+    * OR user made a public model non-public
 end note
 
 seek            ->      miwa            : delete_model(id)
@@ -118,13 +118,13 @@ seek            ->      miwa            : delete_model(id)
     
         morre           ->      db              : delete model
             activate db
-        morre           <--     db              : SUCCESS
+        morre           <--     db              : return code
             deactivate db
 
-    miwa            <--     morre           : SUCCESS
+    miwa            <--     morre           : return code
         deactivate morre 
 
-seek            <-      miwa            : SUCCESS
+seek            <-      miwa            : return code + message
     deactivate miwa 
 
 
@@ -147,7 +147,7 @@ seek            ->      miwa            : update_model(id)
         # do an INSERT
     end note
 
-seek            <-      miwa            : SUCCESS
+seek            <-      miwa            : return code + message
     deactivate miwa 
 
 
@@ -156,10 +156,10 @@ seek            <-      miwa            : SUCCESS
 == BATCH ==
 
 hnote over seek
-    * admin forces recreation of masymos-db
+    * admin wants to insert many files at once
+      i.e. after database recreation
     * can take several hours
-    * data is not usable before annotating is done,
-       so wait with the SUCCESS until finished
+    * data is not usable before annotating is done
 end note
 
 
@@ -170,16 +170,7 @@ loop list
 check_logic()
 end
 
-miwa            ->      morre           : delete whole database
-    activate morre
-    morre           ->      db              : delete whole database
-        activate db
-    morre           <--     db
-        deactivate db
-miwa            <--     morre           : SUCCESS
-    deactivate morre
-
-seek            <--     miwa            : SUCCESS
+seek            <--     miwa            : return code + message
 deactivate miwa
 
 process_queue()

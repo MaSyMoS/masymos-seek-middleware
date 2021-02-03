@@ -1,221 +1,209 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2328px" preserveAspectRatio="none" style="width:899px;height:2328px;" version="1.1" viewBox="0 0 899 2328" width="899px" zoomAndPan="magnify">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2226px" preserveAspectRatio="none" style="width:905px;height:2226px;" version="1.1" viewBox="0 0 905 2226" width="905px" zoomAndPan="magnify">
     <defs />
-    <g><text fill="#000000" font-family="Helvetica" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="300.25" y="41.3486">MaSiMiWa - Sequence Overview</text><text fill="#000000" font-family="Helvetica" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="162" x="364.25" y="62.3018">for a valid request</text>
-        <rect fill="#DDDDDD" height="2242.7734" style="stroke: #A80036; stroke-width: 1.0;" width="530.5" x="341" y="74.5469" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="70" x="571.25" y="86.6138">MaSyMoS</text>
-        <rect fill="#AAAAFF" height="2077.0469" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="163" y="165.9766" />
-        <rect fill="#AAFFAA" height="2077.0469" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="165.9766" />
-        <rect fill="#FFFFFF" height="149.0391" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="278.5078" />
-        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="464.6797" />
-        <rect fill="#FFFFFF" height="145.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1002.0703" />
-        <rect fill="#FFFFFF" height="79.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1268.2656" />
-        <rect fill="#FFFFFF" height="281.5703" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1498.4609" />
-        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1817.1641" />
-        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="522.9453" />
-        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="719.875" />
-        <rect fill="#FFFFFF" height="87.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="1031.2031" />
-        <rect fill="#FFFFFF" height="72.2656" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="1678.6328" />
-        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="1875.4297" />
-        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="2072.3594" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="595.2109" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="816.2734" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="1060.3359" />
-        <rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="1707.7656" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="1947.6953" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="2168.7578" />
-        <rect fill="#FFDDAA" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="296" x="133" y="293.5078" />
-        <rect fill="#EEFFEE" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="542.5" x="335" y="484.6797" />
-        <rect fill="#EEFFEE" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="346" x="531.5" y="734.875" />
-        <rect fill="#FFFFFF" height="137.0391" style="stroke: #000000; stroke-width: 2.0;" width="316" x="123" y="1513.4609" />
-        <rect fill="#FFDDAA" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="296" x="133" y="1537.5938" />
-        <rect fill="#EEFFEE" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="542.5" x="335" y="1837.1641" />
-        <rect fill="#EEFFEE" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="346" x="531.5" y="2087.3594" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="168" x2="168" y1="155.9766" y2="2252.0234" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="382" x2="382" y1="155.9766" y2="2252.0234" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="599.5" x2="599.5" y1="155.9766" y2="2252.0234" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="772.5" x2="772.5" y1="155.9766" y2="2252.0234" />
-        <rect fill="#FEFECE" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="143" y="124.6797" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="150" y="144.6748">SEEK</text>
-        <rect fill="#FEFECE" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="143" y="2251.0234" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="150" y="2271.0186">SEEK</text><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="345" y="152.6748">MaSiMiWa</text>
-        <ellipse cx="382" cy="123.6797" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
-        <polygon fill="#A80036" points="378,111.6797,384,106.6797,382,111.6797,384,116.6797,378,111.6797" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="345" y="2264.0186">MaSiMiWa</text>
-        <ellipse cx="382" cy="2283.3203" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
-        <polygon fill="#A80036" points="378,2271.3203,384,2266.3203,382,2271.3203,384,2276.3203,378,2271.3203" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="541.5" y="152.6748">MaSyMoS-Morre</text>
-        <ellipse cx="600" cy="123.6797" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
-        <polygon fill="#A80036" points="596,111.6797,602,106.6797,600,111.6797,602,116.6797,596,111.6797" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="541.5" y="2264.0186">MaSyMoS-Morre</text>
-        <ellipse cx="600" cy="2283.3203" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
-        <polygon fill="#A80036" points="596,2271.3203,602,2266.3203,600,2271.3203,602,2276.3203,596,2271.3203" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="183" x="678.5" y="152.6748">masymos_neo4j_database</text>
-        <path d="M755,103.6797 C755,93.6797 773,93.6797 773,93.6797 C773,93.6797 791,93.6797 791,103.6797 L791,129.6797 C791,139.6797 773,139.6797 773,139.6797 C773,139.6797 755,139.6797 755,129.6797 L755,103.6797 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;" />
-        <path d="M755,103.6797 C755,113.6797 773,113.6797 773,113.6797 C773,113.6797 791,113.6797 791,103.6797 " fill="none" style="stroke: #000000; stroke-width: 1.5;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="183" x="678.5" y="2264.0186">masymos_neo4j_database</text>
-        <path d="M755,2277.3203 C755,2267.3203 773,2267.3203 773,2267.3203 C773,2267.3203 791,2267.3203 791,2277.3203 L791,2303.3203 C791,2313.3203 773,2313.3203 773,2313.3203 C773,2313.3203 755,2313.3203 755,2303.3203 L755,2277.3203 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;" />
-        <path d="M755,2277.3203 C755,2287.3203 773,2287.3203 773,2287.3203 C773,2287.3203 791,2287.3203 791,2277.3203 " fill="none" style="stroke: #000000; stroke-width: 1.5;" />
-        <rect fill="#AAAAFF" height="2077.0469" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="163" y="165.9766" />
-        <rect fill="#AAFFAA" height="2077.0469" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="165.9766" />
-        <rect fill="#FFFFFF" height="149.0391" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="278.5078" />
-        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="464.6797" />
-        <rect fill="#FFFFFF" height="145.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1002.0703" />
-        <rect fill="#FFFFFF" height="79.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1268.2656" />
-        <rect fill="#FFFFFF" height="281.5703" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1498.4609" />
-        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="382" y="1817.1641" />
-        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="522.9453" />
-        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="719.875" />
-        <rect fill="#FFFFFF" height="87.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="1031.2031" />
-        <rect fill="#FFFFFF" height="72.2656" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="1678.6328" />
-        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="1875.4297" />
-        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="595" y="2072.3594" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="595.2109" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="816.2734" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="1060.3359" />
-        <rect fill="#FFFFFF" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="1707.7656" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="1947.6953" />
-        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="768" y="2168.7578" />
-        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="884.5" x="3" y="186.543" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="186.543" y2="186.543" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="189.543" y2="189.543" />
-        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="70" x="410.25" y="175.9766" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="51" x="416.25" y="192.0435">INSERT</text>
-        <polygon fill="#FBFB77" points="76,214.1094,260,214.1094,270,233.1094,260,252.1094,76,252.1094,66,233.1094,76,214.1094" style="stroke: #A80036; stroke-width: 1.0;" />
-        <ellipse cx="83.5" cy="225.7422" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="89" y="230.1763">user added a public model</text>
-        <ellipse cx="83.5" cy="240.875" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="166" x="89" y="245.3091">user made a model public</text>
-        <polygon fill="#A80036" points="370,274.5078,380,278.5078,370,282.5078,374,278.5078" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="173" x2="376" y1="278.5078" y2="278.5078" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="180" y="273.4419">insert_model(id)</text>
-        <path d="M133,293.5078 L366,293.5078 L366,302.5078 L356,312.5078 L133,312.5078 L133,293.5078 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
-        <rect fill="none" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="296" x="133" y="293.5078" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="83" x="148" y="309.0825">check logic</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="231" y="303.79">(</text><text fill="#000000" font-family="Helvetica" font-size="10" font-style="italic" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="95" x="236" y="303.79">see activity UML</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="331" y="303.79">)</text>
-        <polygon fill="#A80036" points="184,330.2813,174,334.2813,184,338.2813,180,334.2813" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="178" x2="381" y1="334.2813" y2="334.2813" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="51" x="190" y="329.2153">get json</text>
-        <polygon fill="#A80036" points="370,344.2813,380,348.2813,370,352.2813,374,348.2813" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="173" x2="376" y1="348.2813" y2="348.2813" />
-        <polygon fill="#A80036" points="184,373.4141,174,377.4141,184,381.4141,180,377.4141" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="178" x2="381" y1="377.4141" y2="377.4141" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="180" x="190" y="372.3481">OPT: get content_blob (files)</text>
-        <polygon fill="#A80036" points="370,387.4141,380,391.4141,370,395.4141,374,391.4141" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="173" x2="376" y1="391.4141" y2="391.4141" />
-        <polygon fill="#A80036" points="184,423.5469,174,427.5469,184,431.5469,180,427.5469" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="178" x2="376" y1="427.5469" y2="427.5469" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="190" y="422.481">SUCCESS</text>
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="387" x2="434" y1="451.6797" y2="451.6797" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="434" x2="434" y1="451.6797" y2="464.6797" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="393" x2="434" y1="464.6797" y2="464.6797" />
-        <polygon fill="#A80036" points="403,460.6797,393,464.6797,403,468.6797,399,464.6797" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="399" y="446.6138">process queue</text>
-        <path d="M335,484.6797 L412,484.6797 L412,491.6797 L402,501.6797 L335,501.6797 L335,484.6797 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
-        <rect fill="none" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="542.5" x="335" y="484.6797" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="350" y="497.7466">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="50" x="427" y="496.8901">[queue]</text>
-        <polygon fill="#A80036" points="583,518.9453,593,522.9453,583,526.9453,587,522.9453" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="392" x2="589" y1="522.9453" y2="522.9453" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="399" y="517.8794">add_model</text>
-        <polygon fill="#A80036" points="875.5,548.0781,885.5,552.0781,875.5,556.0781,879.5,552.0781" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="881.5" y1="552.0781" y2="552.0781" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="156" x="612" y="547.0122">get file from the Internet</text>
-        <polygon fill="#A80036" points="616,562.0781,606,566.0781,616,570.0781,612,566.0781" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="886.5" y1="566.0781" y2="566.0781" />
-        <polygon fill="#A80036" points="756,591.2109,766,595.2109,756,599.2109,760,595.2109" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="762" y1="595.2109" y2="595.2109" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="612" y="590.145">insert new model</text>
-        <polygon fill="#A80036" points="616,620.3438,606,624.3438,616,628.3438,612,624.3438" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="772" y1="624.3438" y2="624.3438" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="622" y="619.2778">SUCCESS</text>
-        <polygon fill="#A80036" points="403,649.4766,393,653.4766,403,657.4766,399,653.4766" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="397" x2="599" y1="653.4766" y2="653.4766" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="409" y="648.4106">SUCCESS</text>
-        <polygon fill="#A80036" points="583,715.875,593,719.875,583,723.875,587,719.875" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="392" x2="589" y1="719.875" y2="719.875" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="399" y="684.5435">create_annotation_index</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="165" x="399" y="699.6763">upgrade annotations, etc.</text><text fill="#000000" font-family="Helvetica" font-size="13" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="107" x="399" y="714.8091">for the whole DB</text>
-        <path d="M531.5,734.875 L608.5,734.875 L608.5,741.875 L598.5,751.875 L531.5,751.875 L531.5,734.875 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
-        <rect fill="none" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="346" x="531.5" y="734.875" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="546.5" y="747.9419">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="623.5" y="747.0854">[annotations]</text>
-        <polygon fill="#A80036" points="875.5,769.1406,885.5,773.1406,875.5,777.1406,879.5,773.1406" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="881.5" y1="773.1406" y2="773.1406" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="167" x="612" y="768.0747">get data from the Internet</text>
-        <polygon fill="#A80036" points="616,783.1406,606,787.1406,616,791.1406,612,787.1406" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="886.5" y1="787.1406" y2="787.1406" />
-        <polygon fill="#A80036" points="756,812.2734,766,816.2734,756,820.2734,760,816.2734" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="762" y1="816.2734" y2="816.2734" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="135" x="612" y="811.2075">insert additional data</text>
-        <polygon fill="#A80036" points="616,841.4063,606,845.4063,616,849.4063,612,845.4063" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="772" y1="845.4063" y2="845.4063" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="622" y="840.3403">SUCCESS</text>
-        <polygon fill="#A80036" points="398,877.5391,388,881.5391,398,885.5391,394,881.5391" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="392" x2="599" y1="881.5391" y2="881.5391" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="404" y="876.4731">SUCCESS</text>
-        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="884.5" x="3" y="910.1055" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="910.1055" y2="910.1055" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="913.1055" y2="913.1055" />
-        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="73" x="408.75" y="899.5391" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="54" x="414.75" y="915.606">DELETE</text>
-        <polygon fill="#FBFB77" points="42,937.6719,293,937.6719,303,956.6719,293,975.6719,42,975.6719,32,956.6719,42,937.6719" style="stroke: #A80036; stroke-width: 1.0;" />
-        <ellipse cx="49.5" cy="949.3047" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="177" x="55" y="953.7388">user deleted a public model</text>
-        <ellipse cx="49.5" cy="964.4375" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="236" x="55" y="968.8716">user made a public model non-public</text>
-        <polygon fill="#A80036" points="370,998.0703,380,1002.0703,370,1006.0703,374,1002.0703" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="173" x2="376" y1="1002.0703" y2="1002.0703" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="108" x="180" y="997.0044">delete_model(id)</text>
-        <polygon fill="#A80036" points="583,1027.2031,593,1031.2031,583,1035.2031,587,1031.2031" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="392" x2="589" y1="1031.2031" y2="1031.2031" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="96" x="399" y="1026.1372">delete_model</text>
-        <polygon fill="#A80036" points="756,1056.3359,766,1060.3359,756,1064.3359,760,1060.3359" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="762" y1="1060.3359" y2="1060.3359" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="84" x="612" y="1055.27">delete model</text>
-        <polygon fill="#A80036" points="616,1085.4688,606,1089.4688,616,1093.4688,612,1089.4688" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="772" y1="1089.4688" y2="1089.4688" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="622" y="1084.4028">SUCCESS</text>
-        <polygon fill="#A80036" points="403,1114.6016,393,1118.6016,403,1122.6016,399,1118.6016" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="397" x2="599" y1="1118.6016" y2="1118.6016" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="409" y="1113.5356">SUCCESS</text>
-        <polygon fill="#A80036" points="184,1143.7344,174,1147.7344,184,1151.7344,180,1147.7344" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="178" x2="376" y1="1147.7344" y2="1147.7344" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="190" y="1142.6685">SUCCESS</text>
-        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="884.5" x="3" y="1176.3008" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="1176.3008" y2="1176.3008" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="1179.3008" y2="1179.3008" />
-        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="77" x="406.75" y="1165.7344" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="58" x="412.75" y="1181.8013">UPDATE</text>
-        <polygon fill="#FBFB77" points="74,1203.8672,262,1203.8672,272,1222.8672,262,1241.8672,74,1241.8672,64,1222.8672,74,1203.8672" style="stroke: #A80036; stroke-width: 1.0;" />
-        <ellipse cx="81.5" cy="1215.5" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="173" x="87" y="1219.9341">user uploads a new version</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="110" x="88" y="1235.0669">to a public model</text>
-        <polygon fill="#A80036" points="370,1264.2656,380,1268.2656,370,1272.2656,374,1268.2656" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="173" x2="376" y1="1268.2656" y2="1268.2656" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="113" x="180" y="1263.1997">update_model(id)</text>
-        <path d="M318,1281.2656 L318,1321.2656 L835,1321.2656 L835,1291.2656 L825,1281.2656 L318,1281.2656 " fill="#FFFFFF" style="stroke: #A80036; stroke-width: 1.0;" />
-        <path d="M825,1281.2656 L825,1291.2656 L835,1291.2656 L825,1281.2656 " fill="#FFFFFF" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="12" x="521.75" y="1298.3325">1.</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="537.75" y="1298.3325">do a DELETE</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="12" x="521.75" y="1313.4653">2.</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="85" x="537.75" y="1313.4653">do an INSERT</text>
-        <polygon fill="#A80036" points="184,1343.6641,174,1347.6641,184,1351.6641,180,1347.6641" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="178" x2="376" y1="1347.6641" y2="1347.6641" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="190" y="1342.5981">SUCCESS</text>
-        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="884.5" x="3" y="1376.2305" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="1376.2305" y2="1376.2305" />
-        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="887.5" y1="1379.2305" y2="1379.2305" />
-        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="68" x="411.25" y="1365.6641" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="49" x="417.25" y="1381.731">BATCH</text>
-        <polygon fill="#FBFB77" points="18,1403.7969,319,1403.7969,329,1437.7969,319,1471.7969,18,1471.7969,8,1437.7969,18,1403.7969" style="stroke: #A80036; stroke-width: 1.0;" />
-        <ellipse cx="25.5" cy="1415.4297" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="256" x="31" y="1419.8638">admin forces recreation of masymos-db</text>
-        <ellipse cx="25.5" cy="1430.5625" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="145" x="31" y="1434.9966">can take several hours</text>
-        <ellipse cx="25.5" cy="1445.6953" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="286" x="31" y="1450.1294">data is not usable before annotating is done,</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="249" x="32" y="1465.2622">so wait with the SUCCESS until finished</text>
-        <polygon fill="#A80036" points="370,1494.4609,380,1498.4609,370,1502.4609,374,1498.4609" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="173" x2="376" y1="1498.4609" y2="1498.4609" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="177" x="180" y="1493.395">insert_models(id&lt;&lt;List&gt;&gt;)</text>
-        <path d="M123,1513.4609 L200,1513.4609 L200,1520.4609 L190,1530.4609 L123,1530.4609 L123,1513.4609 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
-        <rect fill="none" height="137.0391" style="stroke: #000000; stroke-width: 2.0;" width="316" x="123" y="1513.4609" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="138" y="1526.5278">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="30" x="215" y="1525.6714">[list]</text>
-        <path d="M133,1537.5938 L366,1537.5938 L366,1546.5938 L356,1556.5938 L133,1556.5938 L133,1537.5938 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
-        <rect fill="none" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="296" x="133" y="1537.5938" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="83" x="148" y="1553.1685">check logic</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="231" y="1547.876">(</text><text fill="#000000" font-family="Helvetica" font-size="10" font-style="italic" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="95" x="236" y="1547.876">see activity UML</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="331" y="1547.876">)</text>
-        <polygon fill="#A80036" points="184,1574.3672,174,1578.3672,184,1582.3672,180,1578.3672" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="178" x2="381" y1="1578.3672" y2="1578.3672" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="51" x="190" y="1573.3013">get json</text>
-        <polygon fill="#A80036" points="370,1588.3672,380,1592.3672,370,1596.3672,374,1592.3672" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="173" x2="376" y1="1592.3672" y2="1592.3672" />
-        <polygon fill="#A80036" points="184,1617.5,174,1621.5,184,1625.5,180,1621.5" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="178" x2="381" y1="1621.5" y2="1621.5" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="180" x="190" y="1616.4341">OPT: get content_blob (files)</text>
-        <polygon fill="#A80036" points="370,1631.5,380,1635.5,370,1639.5,374,1635.5" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="173" x2="376" y1="1635.5" y2="1635.5" />
-        <polygon fill="#A80036" points="583,1674.6328,593,1678.6328,583,1682.6328,587,1678.6328" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="392" x2="589" y1="1678.6328" y2="1678.6328" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="399" y="1673.5669">delete whole database</text>
-        <polygon fill="#A80036" points="756,1703.7656,766,1707.7656,756,1711.7656,760,1707.7656" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="762" y1="1707.7656" y2="1707.7656" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="612" y="1702.6997">delete whole database</text>
-        <polygon fill="#A80036" points="616,1717.7656,606,1721.7656,616,1725.7656,612,1721.7656" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="772" y1="1721.7656" y2="1721.7656" />
-        <polygon fill="#A80036" points="403,1746.8984,393,1750.8984,403,1754.8984,399,1750.8984" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="397" x2="599" y1="1750.8984" y2="1750.8984" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="409" y="1745.8325">SUCCESS</text>
-        <polygon fill="#A80036" points="184,1776.0313,174,1780.0313,184,1784.0313,180,1780.0313" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="178" x2="376" y1="1780.0313" y2="1780.0313" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="190" y="1774.9653">SUCCESS</text>
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="387" x2="434" y1="1804.1641" y2="1804.1641" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="434" x2="434" y1="1804.1641" y2="1817.1641" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="393" x2="434" y1="1817.1641" y2="1817.1641" />
-        <polygon fill="#A80036" points="403,1813.1641,393,1817.1641,403,1821.1641,399,1817.1641" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="399" y="1799.0981">process queue</text>
-        <path d="M335,1837.1641 L412,1837.1641 L412,1844.1641 L402,1854.1641 L335,1854.1641 L335,1837.1641 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
-        <rect fill="none" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="542.5" x="335" y="1837.1641" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="350" y="1850.231">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="50" x="427" y="1849.3745">[queue]</text>
-        <polygon fill="#A80036" points="583,1871.4297,593,1875.4297,583,1879.4297,587,1875.4297" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="392" x2="589" y1="1875.4297" y2="1875.4297" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="399" y="1870.3638">add_model</text>
-        <polygon fill="#A80036" points="875.5,1900.5625,885.5,1904.5625,875.5,1908.5625,879.5,1904.5625" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="881.5" y1="1904.5625" y2="1904.5625" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="156" x="612" y="1899.4966">get file from the Internet</text>
-        <polygon fill="#A80036" points="616,1914.5625,606,1918.5625,616,1922.5625,612,1918.5625" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="886.5" y1="1918.5625" y2="1918.5625" />
-        <polygon fill="#A80036" points="756,1943.6953,766,1947.6953,756,1951.6953,760,1947.6953" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="762" y1="1947.6953" y2="1947.6953" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="612" y="1942.6294">insert new model</text>
-        <polygon fill="#A80036" points="616,1972.8281,606,1976.8281,616,1980.8281,612,1976.8281" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="772" y1="1976.8281" y2="1976.8281" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="622" y="1971.7622">SUCCESS</text>
-        <polygon fill="#A80036" points="403,2001.9609,393,2005.9609,403,2009.9609,399,2005.9609" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="397" x2="599" y1="2005.9609" y2="2005.9609" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="409" y="2000.895">SUCCESS</text>
-        <polygon fill="#A80036" points="583,2068.3594,593,2072.3594,583,2076.3594,587,2072.3594" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="392" x2="589" y1="2072.3594" y2="2072.3594" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="399" y="2037.0278">create_annotation_index</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="165" x="399" y="2052.1606">upgrade annotations, etc.</text><text fill="#000000" font-family="Helvetica" font-size="13" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="107" x="399" y="2067.2935">for the whole DB</text>
-        <path d="M531.5,2087.3594 L608.5,2087.3594 L608.5,2094.3594 L598.5,2104.3594 L531.5,2104.3594 L531.5,2087.3594 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
-        <rect fill="none" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="346" x="531.5" y="2087.3594" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="546.5" y="2100.4263">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="623.5" y="2099.5698">[annotations]</text>
-        <polygon fill="#A80036" points="875.5,2121.625,885.5,2125.625,875.5,2129.625,879.5,2125.625" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="881.5" y1="2125.625" y2="2125.625" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="167" x="612" y="2120.5591">get data from the Internet</text>
-        <polygon fill="#A80036" points="616,2135.625,606,2139.625,616,2143.625,612,2139.625" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="886.5" y1="2139.625" y2="2139.625" />
-        <polygon fill="#A80036" points="756,2164.7578,766,2168.7578,756,2172.7578,760,2168.7578" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0;" x1="605" x2="762" y1="2168.7578" y2="2168.7578" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="135" x="612" y="2163.6919">insert additional data</text>
-        <polygon fill="#A80036" points="616,2193.8906,606,2197.8906,616,2201.8906,612,2197.8906" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="610" x2="772" y1="2197.8906" y2="2197.8906" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="622" y="2192.8247">SUCCESS</text>
-        <polygon fill="#A80036" points="398,2230.0234,388,2234.0234,398,2238.0234,394,2234.0234" style="stroke: #A80036; stroke-width: 1.0;" />
-        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="392" x2="599" y1="2234.0234" y2="2234.0234" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="404" y="2228.9575">SUCCESS</text><text fill="#888888" font-family="Helvetica" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="95" x="792.5" y="12.2822">version: 03.12.2020</text>
-        <!--MD5=[e677ba9b2e66a32849309fef35aee5c2]
+    <g><text fill="#000000" font-family="Helvetica" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="303.25" y="41.3486">MaSiMiWa - Sequence Overview</text><text fill="#000000" font-family="Helvetica" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="162" x="367.25" y="62.3018">for a valid request</text>
+        <rect fill="#DDDDDD" height="2141.375" style="stroke: #A80036; stroke-width: 1.0;" width="541.5" x="336" y="74.5469" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="70" x="571.75" y="86.6138">MaSyMoS</text>
+        <rect fill="#AAAAFF" height="1975.6484" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="161" y="165.9766" />
+        <rect fill="#AAFFAA" height="1975.6484" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="372" y="165.9766" />
+        <rect fill="#FFFFFF" height="149.0391" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="278.5078" />
+        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="464.6797" />
+        <rect fill="#FFFFFF" height="145.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1002.0703" />
+        <rect fill="#FFFFFF" height="79.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1268.2656" />
+        <rect fill="#FFFFFF" height="180.1719" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1498.4609" />
+        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1715.7656" />
+        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="522.9453" />
+        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="719.875" />
+        <rect fill="#FFFFFF" height="87.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="1031.2031" />
+        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="1774.0313" />
+        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="1970.9609" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="595.2109" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="816.2734" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="1060.3359" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="1846.2969" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="2067.3594" />
+        <rect fill="#FFDDAA" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="457" x="131" y="293.5078" />
+        <rect fill="#EEFFEE" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="553.5" x="330" y="484.6797" />
+        <rect fill="#EEFFEE" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="337" x="546.5" y="734.875" />
+        <rect fill="#FFFFFF" height="137.0391" style="stroke: #000000; stroke-width: 2.0;" width="467" x="121" y="1513.4609" />
+        <rect fill="#FFDDAA" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="457" x="131" y="1537.5938" />
+        <rect fill="#EEFFEE" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="553.5" x="330" y="1735.7656" />
+        <rect fill="#EEFFEE" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="337" x="546.5" y="1985.9609" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="166" x2="166" y1="155.9766" y2="2150.625" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="377" x2="377" y1="155.9766" y2="2150.625" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="614.5" x2="614.5" y1="155.9766" y2="2150.625" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="778.5" x2="778.5" y1="155.9766" y2="2150.625" />
+        <rect fill="#FEFECE" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="141" y="124.6797" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="148" y="144.6748">SEEK</text>
+        <rect fill="#FEFECE" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="141" y="2149.625" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="148" y="2169.6201">SEEK</text><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="340" y="152.6748">MaSiMiWa</text>
+        <ellipse cx="377" cy="123.6797" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
+        <polygon fill="#A80036" points="373,111.6797,379,106.6797,377,111.6797,379,116.6797,373,111.6797" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="340" y="2162.6201">MaSiMiWa</text>
+        <ellipse cx="377" cy="2181.9219" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
+        <polygon fill="#A80036" points="373,2169.9219,379,2164.9219,377,2169.9219,379,2174.9219,373,2169.9219" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="556.5" y="152.6748">MaSyMoS-Morre</text>
+        <ellipse cx="615" cy="123.6797" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
+        <polygon fill="#A80036" points="611,111.6797,617,106.6797,615,111.6797,617,116.6797,611,111.6797" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="556.5" y="2162.6201">MaSyMoS-Morre</text>
+        <ellipse cx="615" cy="2181.9219" fill="#FEFECE" rx="12" ry="12" style="stroke: #A80036; stroke-width: 2.0;" />
+        <polygon fill="#A80036" points="611,2169.9219,617,2164.9219,615,2169.9219,617,2174.9219,611,2169.9219" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="183" x="684.5" y="152.6748">masymos_neo4j_database</text>
+        <path d="M761,103.6797 C761,93.6797 779,93.6797 779,93.6797 C779,93.6797 797,93.6797 797,103.6797 L797,129.6797 C797,139.6797 779,139.6797 779,139.6797 C779,139.6797 761,139.6797 761,129.6797 L761,103.6797 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;" />
+        <path d="M761,103.6797 C761,113.6797 779,113.6797 779,113.6797 C779,113.6797 797,113.6797 797,103.6797 " fill="none" style="stroke: #000000; stroke-width: 1.5;" /><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="183" x="684.5" y="2162.6201">masymos_neo4j_database</text>
+        <path d="M761,2175.9219 C761,2165.9219 779,2165.9219 779,2165.9219 C779,2165.9219 797,2165.9219 797,2175.9219 L797,2201.9219 C797,2211.9219 779,2211.9219 779,2211.9219 C779,2211.9219 761,2211.9219 761,2201.9219 L761,2175.9219 " fill="#FEFECE" style="stroke: #000000; stroke-width: 1.5;" />
+        <path d="M761,2175.9219 C761,2185.9219 779,2185.9219 779,2185.9219 C779,2185.9219 797,2185.9219 797,2175.9219 " fill="none" style="stroke: #000000; stroke-width: 1.5;" />
+        <rect fill="#AAAAFF" height="1975.6484" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="161" y="165.9766" />
+        <rect fill="#AAFFAA" height="1975.6484" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="372" y="165.9766" />
+        <rect fill="#FFFFFF" height="149.0391" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="278.5078" />
+        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="464.6797" />
+        <rect fill="#FFFFFF" height="145.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1002.0703" />
+        <rect fill="#FFFFFF" height="79.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1268.2656" />
+        <rect fill="#FFFFFF" height="180.1719" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1498.4609" />
+        <rect fill="#FFFFFF" height="416.8594" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="377" y="1715.7656" />
+        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="522.9453" />
+        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="719.875" />
+        <rect fill="#FFFFFF" height="87.3984" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="1031.2031" />
+        <rect fill="#FFFFFF" height="130.5313" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="1774.0313" />
+        <rect fill="#FFFFFF" height="161.6641" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="610" y="1970.9609" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="595.2109" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="816.2734" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="1060.3359" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="1846.2969" />
+        <rect fill="#FFFFFF" height="29.1328" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="774" y="2067.3594" />
+        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="890.5" x="3" y="186.543" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="186.543" y2="186.543" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="189.543" y2="189.543" />
+        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="70" x="413.25" y="175.9766" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="51" x="419.25" y="192.0435">INSERT</text>
+        <polygon fill="#FBFB77" points="64,214.1094,267,214.1094,277,233.1094,267,252.1094,64,252.1094,54,233.1094,64,214.1094" style="stroke: #A80036; stroke-width: 1.0;" />
+        <ellipse cx="71.5" cy="225.7422" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="77" y="230.1763">user added a public model</text>
+        <ellipse cx="71.5" cy="240.875" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="188" x="77" y="245.3091">OR user made a model public</text>
+        <polygon fill="#A80036" points="365,274.5078,375,278.5078,365,282.5078,369,278.5078" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="171" x2="371" y1="278.5078" y2="278.5078" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="178" y="273.4419">insert_model(id)</text>
+        <path d="M131,293.5078 L364,293.5078 L364,302.5078 L354,312.5078 L131,312.5078 L131,293.5078 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
+        <rect fill="none" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="457" x="131" y="293.5078" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="83" x="146" y="309.0825">check logic</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="229" y="303.79">(</text><text fill="#000000" font-family="Helvetica" font-size="10" font-style="italic" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="95" x="234" y="303.79">see activity UML</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="329" y="303.79">)</text>
+        <polygon fill="#A80036" points="182,330.2813,172,334.2813,182,338.2813,178,334.2813" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="176" x2="376" y1="334.2813" y2="334.2813" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="51" x="188" y="329.2153">get json</text>
+        <polygon fill="#A80036" points="365,344.2813,375,348.2813,365,352.2813,369,348.2813" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="171" x2="371" y1="348.2813" y2="348.2813" />
+        <polygon fill="#A80036" points="881.5,373.4141,891.5,377.4141,881.5,381.4141,885.5,377.4141" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="387" x2="887.5" y1="377.4141" y2="377.4141" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="180" x="394" y="372.3481">OPT: get content_blob (files)</text>
+        <polygon fill="#A80036" points="398,387.4141,388,391.4141,398,395.4141,394,391.4141" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="392" x2="892.5" y1="391.4141" y2="391.4141" />
+        <polygon fill="#A80036" points="182,423.5469,172,427.5469,182,431.5469,178,427.5469" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="176" x2="371" y1="427.5469" y2="427.5469" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="152" x="188" y="422.481">return code + message</text>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="382" x2="429" y1="451.6797" y2="451.6797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="429" x2="429" y1="451.6797" y2="464.6797" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="388" x2="429" y1="464.6797" y2="464.6797" />
+        <polygon fill="#A80036" points="398,460.6797,388,464.6797,398,468.6797,394,464.6797" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="191" x="394" y="446.6138">process queue (on SUCCESS)</text>
+        <path d="M330,484.6797 L407,484.6797 L407,491.6797 L397,501.6797 L330,501.6797 L330,484.6797 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
+        <rect fill="none" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="553.5" x="330" y="484.6797" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="345" y="497.7466">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="50" x="422" y="496.8901">[queue]</text>
+        <polygon fill="#A80036" points="598,518.9453,608,522.9453,598,526.9453,602,522.9453" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="387" x2="604" y1="522.9453" y2="522.9453" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="394" y="517.8794">add_model</text>
+        <polygon fill="#A80036" points="881.5,548.0781,891.5,552.0781,881.5,556.0781,885.5,552.0781" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="887.5" y1="552.0781" y2="552.0781" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="147" x="627" y="547.0122">get content_blob (files)</text>
+        <polygon fill="#A80036" points="631,562.0781,621,566.0781,631,570.0781,627,566.0781" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="892.5" y1="566.0781" y2="566.0781" />
+        <polygon fill="#A80036" points="762,591.2109,772,595.2109,762,599.2109,766,595.2109" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="768" y1="595.2109" y2="595.2109" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="627" y="590.145">insert new model</text>
+        <polygon fill="#A80036" points="631,620.3438,621,624.3438,631,628.3438,627,624.3438" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="778" y1="624.3438" y2="624.3438" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="637" y="619.2778">return code</text>
+        <polygon fill="#A80036" points="398,649.4766,388,653.4766,398,657.4766,394,653.4766" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="392" x2="614" y1="653.4766" y2="653.4766" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="404" y="648.4106">return code</text>
+        <polygon fill="#A80036" points="598,715.875,608,719.875,598,723.875,602,719.875" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="387" x2="604" y1="719.875" y2="719.875" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="394" y="684.5435">create_annotation_index</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="165" x="394" y="699.6763">upgrade annotations, etc.</text><text fill="#000000" font-family="Helvetica" font-size="13" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="107" x="394" y="714.8091">for the whole DB</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="93" x="505" y="714.8091">(on SUCCESS)</text>
+        <path d="M546.5,734.875 L623.5,734.875 L623.5,741.875 L613.5,751.875 L546.5,751.875 L546.5,734.875 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
+        <rect fill="none" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="337" x="546.5" y="734.875" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="561.5" y="747.9419">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="638.5" y="747.0854">[annotations]</text>
+        <polygon fill="#A80036" points="881.5,769.1406,891.5,773.1406,881.5,777.1406,885.5,773.1406" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="887.5" y1="773.1406" y2="773.1406" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="167" x="627" y="768.0747">get data from the Internet</text>
+        <polygon fill="#A80036" points="631,783.1406,621,787.1406,631,791.1406,627,787.1406" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="892.5" y1="787.1406" y2="787.1406" />
+        <polygon fill="#A80036" points="762,812.2734,772,816.2734,762,820.2734,766,816.2734" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="768" y1="816.2734" y2="816.2734" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="135" x="627" y="811.2075">insert additional data</text>
+        <polygon fill="#A80036" points="631,841.4063,621,845.4063,631,849.4063,627,845.4063" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="778" y1="845.4063" y2="845.4063" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="637" y="840.3403">return code</text>
+        <polygon fill="#A80036" points="393,877.5391,383,881.5391,393,885.5391,389,881.5391" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="387" x2="614" y1="881.5391" y2="881.5391" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="399" y="876.4731">return code</text>
+        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="890.5" x="3" y="910.1055" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="910.1055" y2="910.1055" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="913.1055" y2="913.1055" />
+        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="73" x="411.75" y="899.5391" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="54" x="417.75" y="915.606">DELETE</text>
+        <polygon fill="#FBFB77" points="29,937.6719,302,937.6719,312,956.6719,302,975.6719,29,975.6719,19,956.6719,29,937.6719" style="stroke: #A80036; stroke-width: 1.0;" />
+        <ellipse cx="36.5" cy="949.3047" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="177" x="42" y="953.7388">user deleted a public model</text>
+        <ellipse cx="36.5" cy="964.4375" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="258" x="42" y="968.8716">OR user made a public model non-public</text>
+        <polygon fill="#A80036" points="365,998.0703,375,1002.0703,365,1006.0703,369,1002.0703" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="171" x2="371" y1="1002.0703" y2="1002.0703" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="108" x="178" y="997.0044">delete_model(id)</text>
+        <polygon fill="#A80036" points="598,1027.2031,608,1031.2031,598,1035.2031,602,1031.2031" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="387" x2="604" y1="1031.2031" y2="1031.2031" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="96" x="394" y="1026.1372">delete_model</text>
+        <polygon fill="#A80036" points="762,1056.3359,772,1060.3359,762,1064.3359,766,1060.3359" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="768" y1="1060.3359" y2="1060.3359" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="84" x="627" y="1055.27">delete model</text>
+        <polygon fill="#A80036" points="631,1085.4688,621,1089.4688,631,1093.4688,627,1089.4688" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="778" y1="1089.4688" y2="1089.4688" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="637" y="1084.4028">return code</text>
+        <polygon fill="#A80036" points="398,1114.6016,388,1118.6016,398,1122.6016,394,1118.6016" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="392" x2="614" y1="1118.6016" y2="1118.6016" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="404" y="1113.5356">return code</text>
+        <polygon fill="#A80036" points="182,1143.7344,172,1147.7344,182,1151.7344,178,1147.7344" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="176" x2="371" y1="1147.7344" y2="1147.7344" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="152" x="188" y="1142.6685">return code + message</text>
+        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="890.5" x="3" y="1176.3008" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="1176.3008" y2="1176.3008" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="1179.3008" y2="1179.3008" />
+        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="77" x="409.75" y="1165.7344" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="58" x="415.75" y="1181.8013">UPDATE</text>
+        <polygon fill="#FBFB77" points="72,1203.8672,260,1203.8672,270,1222.8672,260,1241.8672,72,1241.8672,62,1222.8672,72,1203.8672" style="stroke: #A80036; stroke-width: 1.0;" />
+        <ellipse cx="79.5" cy="1215.5" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="173" x="85" y="1219.9341">user uploads a new version</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="110" x="86" y="1235.0669">to a public model</text>
+        <polygon fill="#A80036" points="365,1264.2656,375,1268.2656,365,1272.2656,369,1268.2656" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="171" x2="371" y1="1268.2656" y2="1268.2656" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="113" x="178" y="1263.1997">update_model(id)</text>
+        <path d="M313,1281.2656 L313,1321.2656 L841,1321.2656 L841,1291.2656 L831,1281.2656 L313,1281.2656 " fill="#FFFFFF" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M831,1281.2656 L831,1291.2656 L841,1291.2656 L831,1281.2656 " fill="#FFFFFF" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="12" x="522.25" y="1298.3325">1.</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="538.25" y="1298.3325">do a DELETE</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="12" x="522.25" y="1313.4653">2.</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="85" x="538.25" y="1313.4653">do an INSERT</text>
+        <polygon fill="#A80036" points="182,1343.6641,172,1347.6641,182,1351.6641,178,1347.6641" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="176" x2="371" y1="1347.6641" y2="1347.6641" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="152" x="188" y="1342.5981">return code + message</text>
+        <rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="890.5" x="3" y="1376.2305" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="1376.2305" y2="1376.2305" />
+        <line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="893.5" y1="1379.2305" y2="1379.2305" />
+        <rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="68" x="414.25" y="1365.6641" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="49" x="420.25" y="1381.731">BATCH</text>
+        <polygon fill="#FBFB77" points="18,1403.7969,315,1403.7969,325,1437.7969,315,1471.7969,18,1471.7969,8,1437.7969,18,1403.7969" style="stroke: #A80036; stroke-width: 1.0;" />
+        <ellipse cx="25.5" cy="1415.4297" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="259" x="31" y="1419.8638">admin wants to insert many files at once</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="186" x="28" y="1434.9966">i.e. after database recreation</text>
+        <ellipse cx="25.5" cy="1445.6953" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="145" x="31" y="1450.1294">can take several hours</text>
+        <ellipse cx="25.5" cy="1460.8281" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="282" x="31" y="1465.2622">data is not usable before annotating is done</text>
+        <polygon fill="#A80036" points="365,1494.4609,375,1498.4609,365,1502.4609,369,1498.4609" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="171" x2="371" y1="1498.4609" y2="1498.4609" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="177" x="178" y="1493.395">insert_models(id&lt;&lt;List&gt;&gt;)</text>
+        <path d="M121,1513.4609 L198,1513.4609 L198,1520.4609 L188,1530.4609 L121,1530.4609 L121,1513.4609 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
+        <rect fill="none" height="137.0391" style="stroke: #000000; stroke-width: 2.0;" width="467" x="121" y="1513.4609" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="136" y="1526.5278">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="30" x="213" y="1525.6714">[list]</text>
+        <path d="M131,1537.5938 L364,1537.5938 L364,1546.5938 L354,1556.5938 L131,1556.5938 L131,1537.5938 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
+        <rect fill="none" height="105.9063" style="stroke: #000000; stroke-width: 2.0;" width="457" x="131" y="1537.5938" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="83" x="146" y="1553.1685">check logic</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="229" y="1547.876">(</text><text fill="#000000" font-family="Helvetica" font-size="10" font-style="italic" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="95" x="234" y="1547.876">see activity UML</text><text fill="#000000" font-family="Helvetica" font-size="10" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="5" x="329" y="1547.876">)</text>
+        <polygon fill="#A80036" points="182,1574.3672,172,1578.3672,182,1582.3672,178,1578.3672" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="176" x2="376" y1="1578.3672" y2="1578.3672" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="51" x="188" y="1573.3013">get json</text>
+        <polygon fill="#A80036" points="365,1588.3672,375,1592.3672,365,1596.3672,369,1592.3672" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="171" x2="371" y1="1592.3672" y2="1592.3672" />
+        <polygon fill="#A80036" points="881.5,1617.5,891.5,1621.5,881.5,1625.5,885.5,1621.5" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="387" x2="887.5" y1="1621.5" y2="1621.5" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="180" x="394" y="1616.4341">OPT: get content_blob (files)</text>
+        <polygon fill="#A80036" points="398,1631.5,388,1635.5,398,1639.5,394,1635.5" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="392" x2="892.5" y1="1635.5" y2="1635.5" />
+        <polygon fill="#A80036" points="182,1674.6328,172,1678.6328,182,1682.6328,178,1678.6328" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="176" x2="371" y1="1678.6328" y2="1678.6328" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="152" x="188" y="1673.5669">return code + message</text>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="382" x2="429" y1="1702.7656" y2="1702.7656" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="429" x2="429" y1="1702.7656" y2="1715.7656" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="388" x2="429" y1="1715.7656" y2="1715.7656" />
+        <polygon fill="#A80036" points="398,1711.7656,388,1715.7656,398,1719.7656,394,1715.7656" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="191" x="394" y="1697.6997">process queue (on SUCCESS)</text>
+        <path d="M330,1735.7656 L407,1735.7656 L407,1742.7656 L397,1752.7656 L330,1752.7656 L330,1735.7656 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
+        <rect fill="none" height="176.7969" style="stroke: #000000; stroke-width: 2.0;" width="553.5" x="330" y="1735.7656" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="345" y="1748.8325">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="50" x="422" y="1747.9761">[queue]</text>
+        <polygon fill="#A80036" points="598,1770.0313,608,1774.0313,598,1778.0313,602,1774.0313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="387" x2="604" y1="1774.0313" y2="1774.0313" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="394" y="1768.9653">add_model</text>
+        <polygon fill="#A80036" points="881.5,1799.1641,891.5,1803.1641,881.5,1807.1641,885.5,1803.1641" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="887.5" y1="1803.1641" y2="1803.1641" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="147" x="627" y="1798.0981">get content_blob (files)</text>
+        <polygon fill="#A80036" points="631,1813.1641,621,1817.1641,631,1821.1641,627,1817.1641" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="892.5" y1="1817.1641" y2="1817.1641" />
+        <polygon fill="#A80036" points="762,1842.2969,772,1846.2969,762,1850.2969,766,1846.2969" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="768" y1="1846.2969" y2="1846.2969" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="627" y="1841.231">insert new model</text>
+        <polygon fill="#A80036" points="631,1871.4297,621,1875.4297,631,1879.4297,627,1875.4297" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="778" y1="1875.4297" y2="1875.4297" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="637" y="1870.3638">return code</text>
+        <polygon fill="#A80036" points="398,1900.5625,388,1904.5625,398,1908.5625,394,1904.5625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="392" x2="614" y1="1904.5625" y2="1904.5625" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="404" y="1899.4966">return code</text>
+        <polygon fill="#A80036" points="598,1966.9609,608,1970.9609,598,1974.9609,602,1970.9609" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="387" x2="604" y1="1970.9609" y2="1970.9609" /><text fill="#000000" font-family="monospace" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="394" y="1935.6294">create_annotation_index</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="165" x="394" y="1950.7622">upgrade annotations, etc.</text><text fill="#000000" font-family="Helvetica" font-size="13" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="107" x="394" y="1965.895">for the whole DB</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="93" x="505" y="1965.895">(on SUCCESS)</text>
+        <path d="M546.5,1985.9609 L623.5,1985.9609 L623.5,1992.9609 L613.5,2002.9609 L546.5,2002.9609 L546.5,1985.9609 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;" />
+        <rect fill="none" height="118.5313" style="stroke: #000000; stroke-width: 2.0;" width="337" x="546.5" y="1985.9609" /><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="561.5" y="1999.0278">loop</text><text fill="#000000" font-family="Helvetica" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="638.5" y="1998.1714">[annotations]</text>
+        <polygon fill="#A80036" points="881.5,2020.2266,891.5,2024.2266,881.5,2028.2266,885.5,2024.2266" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="887.5" y1="2024.2266" y2="2024.2266" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="167" x="627" y="2019.1606">get data from the Internet</text>
+        <polygon fill="#A80036" points="631,2034.2266,621,2038.2266,631,2042.2266,627,2038.2266" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="892.5" y1="2038.2266" y2="2038.2266" />
+        <polygon fill="#A80036" points="762,2063.3594,772,2067.3594,762,2071.3594,766,2067.3594" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="620" x2="768" y1="2067.3594" y2="2067.3594" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="135" x="627" y="2062.2935">insert additional data</text>
+        <polygon fill="#A80036" points="631,2092.4922,621,2096.4922,631,2100.4922,627,2096.4922" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="625" x2="778" y1="2096.4922" y2="2096.4922" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="637" y="2091.4263">return code</text>
+        <polygon fill="#A80036" points="393,2128.625,383,2132.625,393,2136.625,389,2132.625" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="387" x2="614" y1="2132.625" y2="2132.625" /><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="399" y="2127.5591">return code</text><text fill="#888888" font-family="Helvetica" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="95" x="798.5" y="12.2822">version: 03.02.2021</text>
+        <!--MD5=[5ad935ac536ca1f45bfe06e8a7832400]
 @startuml
 
 title MaSiMiWa - Sequence Overview\nfor a valid request
@@ -232,14 +220,14 @@ group #fda check logic<sup>(//see activity UML//)</sup>
 seek            <-      miwa            : get json
 seek            - ->     miwa
 
-seek            <-      miwa            : OPT: get content_blob (files)
-seek            - ->     miwa
+miwa            ->]            : OPT: get content_blob (files)
+miwa            <- -]
 
 end
 !enddefinelong
 
 !definelong process_queue()
-miwa            - ->     miwa            : process queue
+miwa            - ->     miwa            : process queue (on SUCCESS)
 
     activate miwa
 
@@ -248,20 +236,20 @@ miwa            - ->     miwa            : process queue
     miwa            ->      morre           : ""add_model""
         activate morre
         
-        morre           ->]                     : get file from the Internet
+        morre           ->]                     : get content_blob (files)
         morre           <- -]
 
         morre           ->      db              : insert new model
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
         
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre
     
     end
 
-    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
+    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB// (on SUCCESS)
         activate morre
 
         loop #efe annotations
@@ -271,12 +259,12 @@ miwa            - ->     miwa            : process queue
 
         morre           ->      db              : insert additional data
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
         
         end
     
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre 
 
     deactivate miwa
@@ -302,7 +290,7 @@ activate seek #aaf
 
 hnote over seek
     * user added a public model
-    * user made a model public
+    * OR user made a model public
 end note
 
 seek            ->      miwa            : insert_model(id)
@@ -310,7 +298,7 @@ seek            ->      miwa            : insert_model(id)
 
 check_logic()
 
-seek            <- -     miwa            : SUCCESS
+seek            <- -     miwa            : return code + message
     deactivate miwa
 
 process_queue()
@@ -325,7 +313,7 @@ process_queue()
 
 hnote over seek
     * user deleted a public model
-    * user made a public model non-public
+    * OR user made a public model non-public
 end note
 
 seek            ->      miwa            : delete_model(id)
@@ -336,13 +324,13 @@ seek            ->      miwa            : delete_model(id)
     
         morre           ->      db              : delete model
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
 
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre 
 
-seek            <-      miwa            : SUCCESS
+seek            <-      miwa            : return code + message
     deactivate miwa 
 
 
@@ -365,7 +353,7 @@ seek            ->      miwa            : update_model(id)
         # do an INSERT
     end note
 
-seek            <-      miwa            : SUCCESS
+seek            <-      miwa            : return code + message
     deactivate miwa 
 
 
@@ -374,10 +362,10 @@ seek            <-      miwa            : SUCCESS
 == BATCH ==
 
 hnote over seek
-    * admin forces recreation of masymos-db
+    * admin wants to insert many files at once
+      i.e. after database recreation
     * can take several hours
-    * data is not usable before annotating is done,
-       so wait with the SUCCESS until finished
+    * data is not usable before annotating is done
 end note
 
 
@@ -388,16 +376,7 @@ loop list
 check_logic()
 end
 
-miwa            ->      morre           : delete whole database
-    activate morre
-    morre           ->      db              : delete whole database
-        activate db
-    morre           <- -     db
-        deactivate db
-miwa            <- -     morre           : SUCCESS
-    deactivate morre
-
-seek            <- -     miwa            : SUCCESS
+seek            <- -     miwa            : return code + message
 deactivate miwa
 
 process_queue()
@@ -411,7 +390,7 @@ process_queue()
 @startuml
 
 title MaSiMiWa - Sequence Overview\nfor a valid request
-header version: 03.12.2020
+header version: 03.02.2021
 
 skinparam defaultFontName Helvetica
 skinparam shadowing false
@@ -439,7 +418,7 @@ activate seek #aaf
 
 hnote over seek
     * user added a public model
-    * user made a model public
+    * OR user made a model public
 end note
 
 seek            ->      miwa            : insert_model(id)
@@ -450,15 +429,15 @@ group #fda check logic<sup>(//see activity UML//)</sup>
 seek            <-      miwa            : get json
 seek            - ->     miwa
 
-seek            <-      miwa            : OPT: get content_blob (files)
-seek            - ->     miwa
+miwa            ->]            : OPT: get content_blob (files)
+miwa            <- -]
 
 end
 
-seek            <- -     miwa            : SUCCESS
+seek            <- -     miwa            : return code + message
     deactivate miwa
 
-miwa            - ->     miwa            : process queue
+miwa            - ->     miwa            : process queue (on SUCCESS)
 
     activate miwa
 
@@ -467,20 +446,20 @@ miwa            - ->     miwa            : process queue
     miwa            ->      morre           : ""add_model""
         activate morre
         
-        morre           ->]                     : get file from the Internet
+        morre           ->]                     : get content_blob (files)
         morre           <- -]
 
         morre           ->      db              : insert new model
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
         
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre
     
     end
 
-    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
+    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB// (on SUCCESS)
         activate morre
 
         loop #efe annotations
@@ -490,12 +469,12 @@ miwa            - ->     miwa            : process queue
 
         morre           ->      db              : insert additional data
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
         
         end
     
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre 
 
     deactivate miwa
@@ -510,7 +489,7 @@ miwa            - ->     miwa            : process queue
 
 hnote over seek
     * user deleted a public model
-    * user made a public model non-public
+    * OR user made a public model non-public
 end note
 
 seek            ->      miwa            : delete_model(id)
@@ -521,13 +500,13 @@ seek            ->      miwa            : delete_model(id)
     
         morre           ->      db              : delete model
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
 
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre 
 
-seek            <-      miwa            : SUCCESS
+seek            <-      miwa            : return code + message
     deactivate miwa 
 
 
@@ -550,7 +529,7 @@ seek            ->      miwa            : update_model(id)
         # do an INSERT
     end note
 
-seek            <-      miwa            : SUCCESS
+seek            <-      miwa            : return code + message
     deactivate miwa 
 
 
@@ -559,10 +538,10 @@ seek            <-      miwa            : SUCCESS
 == BATCH ==
 
 hnote over seek
-    * admin forces recreation of masymos-db
+    * admin wants to insert many files at once
+      i.e. after database recreation
     * can take several hours
-    * data is not usable before annotating is done,
-       so wait with the SUCCESS until finished
+    * data is not usable before annotating is done
 end note
 
 
@@ -575,25 +554,16 @@ group #fda check logic<sup>(//see activity UML//)</sup>
 seek            <-      miwa            : get json
 seek            - ->     miwa
 
-seek            <-      miwa            : OPT: get content_blob (files)
-seek            - ->     miwa
+miwa            ->]            : OPT: get content_blob (files)
+miwa            <- -]
 
 end
 end
 
-miwa            ->      morre           : delete whole database
-    activate morre
-    morre           ->      db              : delete whole database
-        activate db
-    morre           <- -     db
-        deactivate db
-miwa            <- -     morre           : SUCCESS
-    deactivate morre
-
-seek            <- -     miwa            : SUCCESS
+seek            <- -     miwa            : return code + message
 deactivate miwa
 
-miwa            - ->     miwa            : process queue
+miwa            - ->     miwa            : process queue (on SUCCESS)
 
     activate miwa
 
@@ -602,20 +572,20 @@ miwa            - ->     miwa            : process queue
     miwa            ->      morre           : ""add_model""
         activate morre
         
-        morre           ->]                     : get file from the Internet
+        morre           ->]                     : get content_blob (files)
         morre           <- -]
 
         morre           ->      db              : insert new model
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
         
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre
     
     end
 
-    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB//
+    miwa            ->      morre           : ""create_annotation_index""\nupgrade annotations, etc.\n//for the whole DB// (on SUCCESS)
         activate morre
 
         loop #efe annotations
@@ -625,12 +595,12 @@ miwa            - ->     miwa            : process queue
 
         morre           ->      db              : insert additional data
             activate db
-        morre           <- -     db              : SUCCESS
+        morre           <- -     db              : return code
             deactivate db
         
         end
     
-    miwa            <- -     morre           : SUCCESS
+    miwa            <- -     morre           : return code
         deactivate morre 
 
     deactivate miwa
