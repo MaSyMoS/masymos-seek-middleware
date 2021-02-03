@@ -58,7 +58,7 @@ else (valid)
             if (one download failed?) then (yes)
                 stoperror(Return 502)
             else
-                stopsuccess(Return 204)
+                stopsuccess(Return 202)
             endif
 
     endif

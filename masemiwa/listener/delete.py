@@ -3,7 +3,7 @@ import logging
 import masemiwa.morre_queue as morre
 from masemiwa.input_analyser import InputAnalyseErrorReason, InputAnalyseError
 from masemiwa.input_analyser.beans import SeekUrl
-from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, \
+from masemiwa.listener import E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK, E202_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, \
     E200_HTTP_RETURN_CODE_SUCCESS_ADDED, E500_HTTP_RETURN_CODE_INTERNAL_ERROR, HandleIO
 
 logger = logging.getLogger(__name__)
@@ -34,7 +34,7 @@ class HandleDelete(HandleIO):
                 return e.reason.error_message, E404_HTTP_RETURN_CODE_NO_CONNECTION_TO_SEEK
 
             logger.debug("abort, %s, %s, %s", e.reason, e.reason.error_message, self.__link)
-            return e.reason.error_message, E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO
+            return e.reason.error_message, E202_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO
 
         # pass to morre-queue
         if not self._send():

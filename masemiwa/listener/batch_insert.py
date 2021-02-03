@@ -2,7 +2,7 @@ import logging
 
 import masemiwa.morre_queue as morre
 from masemiwa.listener import HandleIO, E500_HTTP_RETURN_CODE_INTERNAL_ERROR, \
-    E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, E200_HTTP_RETURN_CODE_SUCCESS_ADDED
+    E202_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO, E200_HTTP_RETURN_CODE_SUCCESS_ADDED
 from masemiwa.listener.insert import HandleInsert
 
 logger = logging.getLogger(__name__)
@@ -42,7 +42,7 @@ class HandleBatch(HandleIO):
                 return "FATAL unable to add {0} content_blob links to insert queue; check the logs!".format(
                     len(self.__blobs)), E500_HTTP_RETURN_CODE_INTERNAL_ERROR
         else:
-            return "models cannot be used with MORRE", E204_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO
+            return "models cannot be used with MORRE", E202_HTTP_RETURN_CODE_SUCCESS_NOTHING_TO_DO
 
         return "added {0} content_blob links to insert-queue".format(
             len(self.__blobs)), E200_HTTP_RETURN_CODE_SUCCESS_ADDED

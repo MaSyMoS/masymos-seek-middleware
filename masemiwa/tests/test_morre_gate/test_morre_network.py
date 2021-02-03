@@ -1,7 +1,6 @@
 from unittest import TestCase
 
 import masemiwa.config as conf
-
 import masemiwa.morre_gate.morre_network as t
 
 

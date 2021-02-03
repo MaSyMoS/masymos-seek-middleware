@@ -16,7 +16,7 @@ INSERT single entry
 - example with curl: :c_bash:`curl -v POST http://localhost:4242/insert -H "Content-Type: application/json" -d '{"link":"https://fairdomhub.org/models/24.json?version=3"}'`
 - return codes
     - ``200`` success - something was added to Morre-Insert-Queue
-    - ``204`` success - data checked successfully, nothing added to Morre-Queue
+    - ``202`` success - data checked successfully, nothing added to Morre-Queue
     - ``404`` unable to get metadata for this link (cannot connect to SEEK)
     - ``405`` malformed request
     - ``500`` a fatal server error occurred
@@ -58,7 +58,7 @@ BATCH-INSERT
 - Attention: many possible errors are ignored here by MaSeMiWa in the return 
 - return codes
     - ``200`` success - something was added to Morre-Insert-Queue
-    - ``204`` success - data checked successfully, nothing added to Morre-Queue
+    - ``202`` success - data checked successfully, nothing added to Morre-Queue
     - ``405`` malformed request
     - ``500`` a fatal server error occurred
     - ``503`` something stopped the Morre-Queue-Thread running in MaSeMiWa, check the logs to find the problems. You can restart the Queue with ``/restart_queue``

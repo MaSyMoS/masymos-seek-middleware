@@ -1,9 +1,8 @@
+import atexit
 import logging
 import threading
 from threading import Thread, Lock
 from time import sleep
-
-import atexit
 
 from masemiwa.input_analyser.beans import SeekContentBlob
 from masemiwa.morre_gate.morre_annotations import MorreAnnotations
