@@ -1,6 +1,6 @@
 @startuml
 
-title MaSiMiWa - Sequence Overview\nfor a valid request
+title MaSeMiWa - Sequence Overview\nfor a valid request
 header version: %date("dd.MM.yyyy")
 'header version: 23.11.2018
 
@@ -72,7 +72,7 @@ miwa            -->     miwa            : process queue (on SUCCESS)
 
 participant "SEEK" as seek
 box "MaSyMoS"
-    control "MaSiMiWa" as miwa
+    control "MaSeMiWa" as miwa
     control "MaSyMoS-Morre" as morre
     database "masymos_neo4j_database" as db
 

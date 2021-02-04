@@ -1,6 +1,6 @@
 @startuml
 
-title MaSiMiWa - Overview
+title MaSeMiWa - Overview
 header version: %date("dd.MM.yyyy")
 'header version: 23.11.2018
 
@@ -10,7 +10,7 @@ skinparam shadowing false
 
 node "SEEK" as seek
 
-component "masymos_masimiwa" as d_miwa <<docker-container>> #ccf {
+component "masymos_masemiwa" as d_miwa <<docker-container>> #ccf {
     node "MaSyMoS-SEEK-Middleware" as miwa #fff
 }
 
